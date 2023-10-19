@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://ch1wvgvuahnit"]
+[gd_scene load_steps=4 format=3 uid="uid://ch1wvgvuahnit"]
 
 [ext_resource type="PackedScene" uid="uid://cr81v0u4ichr" path="res://player/PlayerChar.tscn" id="1_mkr1u"]
+[ext_resource type="PackedScene" uid="uid://dbvi8foqa1c82" path="res://ui/version_gui.tscn" id="2_c7vam"]
+[ext_resource type="Script" path="res://TempWalls.gd" id="2_erp3r"]
 
 [node name="World" type="Node2D"]
 
@@ -8,6 +10,14 @@
 position = Vector2(148, 81)
 
 [node name="TempWalls" type="StaticBody2D" parent="."]
+script = ExtResource("2_erp3r")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TempWalls"]
-polygon = PackedVector2Array(0, 0, 24, 0, 32, 48, 32, 72, 40, 96, 40, 120, 48, 144, 48, 168, 56, 176, 72, 176, 96, 176, 104, 176, 104, 136, 128, 136, 128, 176, 160, 176, 160, 120, 184, 120, 184, 176, 216, 176, 216, 104, 232, 104, 232, 176, 288, 176, 296, 144, 312, 112, 312, 88, 304, 48, 296, 24, 304, 8, 312, 0, 320, 0, 320, 176, 320, 184, 0, 184)
+polygon = PackedVector2Array(0, 0, 24, 0, 32, 48, 32, 72, 40, 96, 40, 120, 48, 144, 48, 168, 56, 176, 72, 176, 96, 176, 104, 176, 106, 155, 128, 154, 128, 176, 160, 176, 160, 155, 185, 151, 187, 174, 212, 172, 216, 149, 235, 143, 258, 159, 288, 176, 296, 144, 312, 112, 312, 88, 304, 48, 296, 24, 304, 8, 312, 0, 320, 0, 320, 176, 320, 184, 0, 184)
+
+[node name="Polygon2D" type="Polygon2D" parent="TempWalls"]
+modulate = Color(0.588235, 0.282353, 0.0470588, 1)
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="VersionGUI" parent="GUI" instance=ExtResource("2_c7vam")]
