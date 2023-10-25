@@ -1,10 +1,83 @@
-[gd_scene load_steps=4 format=3 uid="uid://cr81v0u4ichr"]
+[gd_scene load_steps=9 format=3 uid="uid://cr81v0u4ichr"]
 
 [ext_resource type="Texture2D" uid="uid://dvj4y8d4pwk6g" path="res://player/player.png" id="1_e17rk"]
 [ext_resource type="Script" path="res://player/PlayerChar.gd" id="1_ti4np"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rqff0"]
 size = Vector2(8, 15)
+
+[sub_resource type="Animation" id="Animation_jboyu"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_eyq4x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qydjt"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 8, 9, 4]
+}
+
+[sub_resource type="Animation" id="Animation_o0p5c"]
+resource_name = "jump"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vjkms"]
+_data = {
+"RESET": SubResource("Animation_eyq4x"),
+"idle": SubResource("Animation_jboyu"),
+"jump": SubResource("Animation_o0p5c"),
+"run": SubResource("Animation_qydjt")
+}
 
 [node name="Player" type="CharacterBody2D"]
 floor_snap_length = 2.0
@@ -18,3 +91,11 @@ hframes = 12
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_rqff0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vjkms")
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -8)

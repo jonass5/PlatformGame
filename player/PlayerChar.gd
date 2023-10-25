@@ -8,7 +8,10 @@ extends CharacterBody2D
 @export var jump_force = 128
 @export var max_fall_velocity = 128
 
-func _physics_process(delta):
+@onready var animation_player = $AnimationPlayer
+@onready var sprite_2d = $Sprite2D
+
+func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
 	
 	var input_axis = Input.get_axis("ui_left", "ui_right")
@@ -19,23 +22,44 @@ func _physics_process(delta):
 		apply_friction(delta)
 	
 	jump_check()
-	
+	update_animation(input_axis)
 	move_and_slide()
 
-func is_moving(input_axis):
+
+func is_moving(input_axis: float) -> bool:
 	return input_axis != 0
 
-func apply_gravity(delta):
+
+func apply_gravity(delta: float) -> void:
 	if not is_on_floor():
 		velocity.y = move_toward(velocity.y, max_fall_velocity, gravity * delta)
 
-func apply_acceleration(delta, input_axis):
+
+func apply_acceleration(delta: float, input_axis: float) -> void:
 	if is_moving(input_axis):
 		velocity.x = move_toward(velocity.x, input_axis * max_velocity, acceleration * delta)
 
-func apply_friction(delta):
+
+func apply_friction(delta: float) -> void:
 	velocity.x = move_toward(velocity.x, 0, friction * delta)
 
-func jump_check():
-	if Input.is_action_just_pressed("ui_up") and is_on_floor():
-		velocity.y = -jump_force
+
+func jump_check() -> void:
+	if  is_on_floor():
+		if Input.is_action_just_pressed("ui_up"):
+			velocity.y = -jump_force
+	else:
+		if Input.is_action_just_released("ui_up") and velocity.y < -jump_force / 2.0:
+			velocity.y = -jump_force / 2.0
+
+
+func update_animation(input_axis: float) -> void:
+	if is_moving(input_axis):
+		animation_player.play("run")
+		sprite_2d.scale.x = sign(input_axis)
+	else:
+		animation_player.play("idle")
+	
+	if not is_on_floor():
+		animation_player.play("jump")
+
