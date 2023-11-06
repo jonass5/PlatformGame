@@ -2,21 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://cr81v0u4ichr" path="res://player/PlayerChar.tscn" id="1_mkr1u"]
 [ext_resource type="PackedScene" uid="uid://dbvi8foqa1c82" path="res://ui/version_gui.tscn" id="2_c7vam"]
-[ext_resource type="Script" path="res://TempWalls.gd" id="2_erp3r"]
+[ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_qs7xu"]
 
 [node name="World" type="Node2D"]
 
 [node name="PlayerChar" parent="." instance=ExtResource("1_mkr1u")]
 position = Vector2(148, 81)
 
-[node name="TempWalls" type="StaticBody2D" parent="."]
-script = ExtResource("2_erp3r")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TempWalls"]
-polygon = PackedVector2Array(0, 0, 24, 0, 32, 48, 32, 72, 40, 96, 40, 120, 48, 144, 48, 168, 56, 176, 72, 176, 96, 176, 104, 176, 106, 155, 128, 154, 128, 176, 160, 176, 160, 155, 185, 151, 187, 174, 212, 172, 216, 149, 235, 143, 258, 159, 288, 176, 296, 144, 312, 112, 312, 88, 304, 48, 296, 24, 304, 8, 312, 0, 320, 0, 320, 176, 320, 184, 0, 184)
-
-[node name="Polygon2D" type="Polygon2D" parent="TempWalls"]
-modulate = Color(0.588235, 0.282353, 0.0470588, 1)
+[node name="WorldTileMap" parent="." instance=ExtResource("2_qs7xu")]
+layer_0/tile_data = PackedInt32Array(262147, 65536, 1, 327683, 65536, 1, 393219, 65536, 1, 393220, 65536, 1, 458756, 65536, 1, 458757, 65536, 1, 458758, 65536, 1, 458759, 65536, 1, 458760, 65536, 1, 458761, 65536, 1, 458762, 65536, 1, 524299, 65536, 1, 524300, 65536, 1, 458764, 65536, 1, 458765, 65536, 1, 458766, 65536, 1, 393230, 65536, 1, 393231, 65536, 1, 327695, 65536, 1, 262159, 65536, 1, 196623, 65536, 1, 131087, 65536, 1, 131088, 65536, 1, 65552, 65536, 1, 16, 65536, 1, 15, 65536, 1, 14, 65536, 1, 13, 65536, 1, 262146, 65536, 1, 196610, 65536, 1, 196609, 65536, 1, 131073, 65536, 1, 65537, 65536, 1, 65538, 65536, 1, 65539, 65536, 1, 3, 65536, 1, 4, 65536, 1, 5, 65536, 1)
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
