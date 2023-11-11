@@ -12,6 +12,7 @@ const DustEffectScene = preload("res://effects/dust_effect.tscn")
 
 @onready var animation_player = $AnimationPlayer
 @onready var sprite_2d = $Sprite2D
+@onready var coyote_jump_timer = $CoyoteJumpTimer
 
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
@@ -25,7 +26,11 @@ func _physics_process(delta: float) -> void:
 	
 	jump_check()
 	update_animation(input_axis)
+	var was_on_floor = is_on_floor()
 	move_and_slide()
+	var just_left_edge = was_on_floor and not is_on_floor() and velocity.y >= 0
+	if just_left_edge:
+		coyote_jump_timer.start()
 
 
 func create_dust_effect() -> void:
@@ -54,10 +59,10 @@ func apply_friction(delta: float) -> void:
 
 
 func jump_check() -> void:
-	if  is_on_floor():
+	if  is_on_floor() or coyote_jump_timer.time_left > 0.0:
 		if Input.is_action_just_pressed("ui_up"):
 			velocity.y = -jump_force
-	else:
+	if not is_on_floor():
 		if Input.is_action_just_released("ui_up") and velocity.y < -jump_force / 2.0:
 			velocity.y = -jump_force / 2.0
 
