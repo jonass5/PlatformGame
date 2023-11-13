@@ -13,11 +13,12 @@ const DustEffectScene = preload("res://effects/dust_effect.tscn")
 @onready var animation_player = $AnimationPlayer
 @onready var sprite_2d = $Sprite2D
 @onready var coyote_jump_timer = $CoyoteJumpTimer
+@onready var player_blaster = $PlayerBlaster
 
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
 	
-	var input_axis = Input.get_axis("ui_left", "ui_right")
+	var input_axis = Input.get_axis("move_left", "move_right")
 	
 	if is_moving(input_axis):
 		apply_acceleration(delta, input_axis)
@@ -25,6 +26,10 @@ func _physics_process(delta: float) -> void:
 		apply_friction(delta)
 	
 	jump_check()
+	
+	if(Input.is_action_just_pressed("fire")):
+		player_blaster.fire_bullet()
+	
 	update_animation(input_axis)
 	var was_on_floor = is_on_floor()
 	move_and_slide()
@@ -60,17 +65,22 @@ func apply_friction(delta: float) -> void:
 
 func jump_check() -> void:
 	if  is_on_floor() or coyote_jump_timer.time_left > 0.0:
-		if Input.is_action_just_pressed("ui_up"):
+		if Input.is_action_just_pressed("jump"):
 			velocity.y = -jump_force
 	if not is_on_floor():
-		if Input.is_action_just_released("ui_up") and velocity.y < -jump_force / 2.0:
+		if Input.is_action_just_released("jump") and velocity.y < -jump_force / 2.0:
 			velocity.y = -jump_force / 2.0
 
 
 func update_animation(input_axis: float) -> void:
+	sprite_2d.scale.x = sign(get_local_mouse_position().x)
+	
+	if abs(sprite_2d.scale.x) != 1: 
+		sprite_2d.scale.x = 1
+	
 	if is_moving(input_axis):
 		animation_player.play("run")
-		sprite_2d.scale.x = sign(input_axis)
+		animation_player.speed_scale = input_axis * sprite_2d.scale.x
 	else:
 		animation_player.play("idle")
 	

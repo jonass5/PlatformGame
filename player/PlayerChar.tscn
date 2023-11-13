@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cr81v0u4ichr"]
+[gd_scene load_steps=10 format=3 uid="uid://cr81v0u4ichr"]
 
 [ext_resource type="Texture2D" uid="uid://dvj4y8d4pwk6g" path="res://player/player.png" id="1_e17rk"]
 [ext_resource type="Script" path="res://player/PlayerChar.gd" id="1_ti4np"]
+[ext_resource type="PackedScene" uid="uid://hybo2nuxhtx" path="res://player/player_blaster.tscn" id="2_wq8nx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rqff0"]
 size = Vector2(8, 15)
@@ -101,10 +102,20 @@ floor_constant_speed = true
 floor_snap_length = 2.0
 script = ExtResource("1_ti4np")
 
+[node name="PlayerBlaster" parent="." instance=ExtResource("2_wq8nx")]
+show_behind_parent = true
+position = Vector2(2, -8)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -12)
 texture = ExtResource("1_e17rk")
 hframes = 12
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Sprite2D"]
+position = Vector2(2, 4)
+remote_path = NodePath("../../PlayerBlaster")
+update_rotation = false
+update_scale = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7.5)
