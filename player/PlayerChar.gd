@@ -15,6 +15,7 @@ const DustEffectScene = preload("res://effects/dust_effect.tscn")
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var player_blaster = $PlayerBlaster
 @onready var fire_rate_timer = $FireRateTimer
+@onready var drop_timer = $DropTimer
 
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
@@ -32,7 +33,12 @@ func _physics_process(delta: float) -> void:
 		fire_rate_timer.start()
 		player_blaster.fire_bullet()
 	
+	if Input.is_action_just_pressed("crouch"):
+		set_collision_mask_value(2, false)
+		drop_timer.start()
+	
 	update_animation(input_axis)
+	
 	var was_on_floor = is_on_floor()
 	move_and_slide()
 	var just_left_edge = was_on_floor and not is_on_floor() and velocity.y >= 0
@@ -86,3 +92,7 @@ func update_animation(input_axis: float) -> void:
 	if not is_on_floor():
 		animation_player.play("jump")
 
+
+
+func _on_drop_timer_timeout():
+	set_collision_mask_value(2, true)

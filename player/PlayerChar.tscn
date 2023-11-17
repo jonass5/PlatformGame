@@ -139,3 +139,9 @@ one_shot = true
 [node name="FireRateTimer" type="Timer" parent="."]
 wait_time = 0.25
 one_shot = true
+
+[node name="DropTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="DropTimer" to="." method="_on_drop_timer_timeout"]
