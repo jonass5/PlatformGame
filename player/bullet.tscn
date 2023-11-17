@@ -1,7 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://tvqpngocac6b"]
+[gd_scene load_steps=6 format=3 uid="uid://tvqpngocac6b"]
 
 [ext_resource type="Texture2D" uid="uid://byx24j4y2ai6m" path="res://player/player_bullet.png" id="1_qgcrl"]
 [ext_resource type="PackedScene" uid="uid://cv6mum3x7ft5v" path="res://projectile.tscn" id="1_wreq3"]
+
+[sub_resource type="Animation" id="Animation_4nboe"]
+resource_name = "fire"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_8d64t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cd30u"]
+_data = {
+"RESET": SubResource("Animation_8d64t"),
+"fire": SubResource("Animation_4nboe")
+}
 
 [node name="Bullet" instance=ExtResource("1_wreq3")]
 
@@ -13,3 +50,9 @@ scale = Vector2(0.4, 0.3)
 texture = ExtResource("1_qgcrl")
 hframes = 2
 frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+autoplay = "fire"
+libraries = {
+"": SubResource("AnimationLibrary_cd30u")
+}
