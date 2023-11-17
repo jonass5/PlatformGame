@@ -5,7 +5,7 @@ extends Node2D
 
 var velocity = Vector2.ZERO
 
-func _ready():
+func update_velocity():
 	velocity.x = speed
 	velocity = velocity.rotated(rotation)
 

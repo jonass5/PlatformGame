@@ -12,3 +12,4 @@ func _process(delta):
 func fire_bullet():
 	var bullet = Utils.instanciate_scene_on_world(BulletScene, muzzle.global_position)
 	bullet.rotation = blaster_sprite.rotation
+	bullet.update_velocity()

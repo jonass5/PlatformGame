@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjmwfevbcje08"]
+[gd_scene load_steps=3 format=3 uid="uid://tvqpngocac6b"]
 
 [ext_resource type="Texture2D" uid="uid://byx24j4y2ai6m" path="res://player/player_bullet.png" id="1_qgcrl"]
+[ext_resource type="PackedScene" uid="uid://cv6mum3x7ft5v" path="res://projectile.tscn" id="1_wreq3"]
 
-[node name="Bullet" type="Node2D"]
+[node name="Bullet" instance=ExtResource("1_wreq3")]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="VisibleOnScreenNotifier2D" parent="." index="0"]
+position = Vector2(2.38419e-07, 0)
+scale = Vector2(0.4, 0.3)
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1"]
 texture = ExtResource("1_qgcrl")
 hframes = 2
 frame = 1
