@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://ch1wvgvuahnit"]
+[gd_scene load_steps=5 format=3 uid="uid://ch1wvgvuahnit"]
 
 [ext_resource type="PackedScene" uid="uid://cr81v0u4ichr" path="res://player/PlayerChar.tscn" id="1_mkr1u"]
+[ext_resource type="Script" path="res://world.gd" id="1_pxeu2"]
 [ext_resource type="PackedScene" uid="uid://dbvi8foqa1c82" path="res://ui/version_gui.tscn" id="2_c7vam"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_qs7xu"]
 
 [node name="World" type="Node2D"]
+script = ExtResource("1_pxeu2")
 
 [node name="PlayerChar" parent="." instance=ExtResource("1_mkr1u")]
 position = Vector2(148, 81)
