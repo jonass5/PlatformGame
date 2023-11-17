@@ -39,10 +39,7 @@ func _physics_process(delta: float) -> void:
 
 
 func create_dust_effect() -> void:
-	var dust_effect = DustEffectScene.instantiate()
-	var main = get_tree().current_scene
-	main.add_child(dust_effect)
-	dust_effect.global_position = global_position
+	Utils.instanciate_scene_on_world(DustEffectScene, global_position)
 
 
 func is_moving(input_axis: float) -> bool:
