@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://pby4dccp26xd"]
+
+[ext_resource type="Texture2D" uid="uid://dyhktjpx7um0u" path="res://world/moving_platform.png" id="1_lhlu6"]
+[ext_resource type="Curve2D" uid="uid://baat5j40kehm7" path="res://world/triangle_path.tres" id="2_g4768"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vte1"]
+size = Vector2(32, 8)
+
+[sub_resource type="Animation" id="Animation_oppuc"]
+resource_name = "path_follow"
+length = 6.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_as5fx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h3aap"]
+_data = {
+"RESET": SubResource("Animation_as5fx"),
+"path_follow": SubResource("Animation_oppuc")
+}
+
+[node name="MovingPlatform" type="Node2D"]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = ExtResource("1_lhlu6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_1vte1")
+one_way_collision = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "path_follow"
+libraries = {
+"": SubResource("AnimationLibrary_h3aap")
+}
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = ExtResource("2_g4768")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+rotates = false
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Path2D/PathFollow2D"]
+remote_path = NodePath("../../../AnimatableBody2D")
