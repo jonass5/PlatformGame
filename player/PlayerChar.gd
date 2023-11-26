@@ -109,9 +109,11 @@ func _on_drop_timer_timeout():
 
 
 func _on_hurtbox_hurt(hitbox, damage):
+	Events.add_screenshake.emit(10, 0.1)
 	camera_2d.reparent(get_tree().current_scene)
 	queue_free()
 	
 func check_void():
 	if(global_position.y > 200):
+		Events.add_screenshake.emit(25, 0.1)
 		global_transform.origin = startPosition
