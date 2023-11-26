@@ -33,3 +33,7 @@ func is_on_ledge() -> bool:
 
 func turn_around() -> void:
 	direction *= -1.0
+	
+func _on_hurtbox_hurt(hitbox, damage):
+	print(damage)
+	queue_free()

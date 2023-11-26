@@ -1,10 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://c77cvrcmrwist"]
+[gd_scene load_steps=8 format=3 uid="uid://c77cvrcmrwist"]
 
 [ext_resource type="Texture2D" uid="uid://c6jkhgb11mu2c" path="res://enemies/walking_enemy.png" id="1_cjplw"]
 [ext_resource type="Script" path="res://enemies/walking_enemy.gd" id="1_mnclh"]
+[ext_resource type="PackedScene" uid="uid://5uy3efkbsge6" path="res://collisions/hurtbox.tscn" id="3_3ppk1"]
+[ext_resource type="PackedScene" uid="uid://dsyg0t3624o83" path="res://collisions/hitbox.tscn" id="4_4fdfs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wr4c"]
 size = Vector2(8, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhibs"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olcer"]
+size = Vector2(17, 11)
 
 [node name="WalkingEnemy" type="CharacterBody2D"]
 collision_layer = 8
@@ -25,3 +33,19 @@ shape = SubResource("RectangleShape2D_6wr4c")
 [node name="FloorCast" type="RayCast2D" parent="."]
 position = Vector2(0, -5)
 target_position = Vector2(0, 12)
+
+[node name="Hurtbox" parent="." instance=ExtResource("3_3ppk1")]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_vhibs")
+
+[node name="Hitbox" parent="." instance=ExtResource("4_4fdfs")]
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-0.5, -10.5)
+shape = SubResource("RectangleShape2D_olcer")
+
+[connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
