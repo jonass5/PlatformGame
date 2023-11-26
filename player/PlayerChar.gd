@@ -19,7 +19,15 @@ const JumpEffectScene = preload("res://effects/jump_effect.tscn")
 @onready var drop_timer = $DropTimer
 @onready var camera_2d = $Camera2D
 
+var startPosition : Vector2
+
+func _ready():
+	startPosition = global_position
+
 func _physics_process(delta: float) -> void:
+	
+	check_void()
+	
 	apply_gravity(delta)
 	
 	var input_axis = Input.get_axis("move_left", "move_right")
@@ -103,3 +111,7 @@ func _on_drop_timer_timeout():
 func _on_hurtbox_hurt(hitbox, damage):
 	camera_2d.reparent(get_tree().current_scene)
 	queue_free()
+	
+func check_void():
+	if(global_position.y > 200):
+		global_transform.origin = startPosition
