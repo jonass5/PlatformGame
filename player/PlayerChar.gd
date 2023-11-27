@@ -26,8 +26,6 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 
-	check_void()
-
 	apply_gravity(delta)
 
 	var input_axis = Input.get_axis("move_left", "move_right")
@@ -113,13 +111,8 @@ func _on_hurtbox_hurt(hitbox, damage):
 	camera_2d.reparent(get_tree().current_scene)
 	queue_free()
 
-func check_void():
-	if(global_position.y > 500):
-		pass
-
 
 func reached_void():
-	print("reached_void")
 	Events.add_screenshake.emit(25, 0.1)
 	global_transform.origin = startPosition
 	
