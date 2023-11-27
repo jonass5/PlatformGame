@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ch1wvgvuahnit"]
+[gd_scene load_steps=11 format=3 uid="uid://ch1wvgvuahnit"]
 
 [ext_resource type="PackedScene" uid="uid://cr81v0u4ichr" path="res://player/PlayerChar.tscn" id="1_mkr1u"]
 [ext_resource type="Script" path="res://world.gd" id="1_pxeu2"]
@@ -8,6 +8,10 @@
 [ext_resource type="Curve2D" uid="uid://bctrak07wpboy" path="res://world/up_down_path.tres" id="5_6vbni"]
 [ext_resource type="Curve2D" uid="uid://bmesqrcidow56" path="res://world/left_right_path.tres" id="6_peose"]
 [ext_resource type="PackedScene" uid="uid://c77cvrcmrwist" path="res://enemies/walking_enemy.tscn" id="8_0gfi7"]
+[ext_resource type="PackedScene" uid="uid://dddrl1s6kah73" path="res://void.tscn" id="9_sppdf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwn6n"]
+size = Vector2(731, 444)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_pxeu2")
@@ -54,5 +58,14 @@ position = Vector2(100, 0)
 [node name="WalkingEnemy5" parent="." instance=ExtResource("8_0gfi7")]
 position = Vector2(254, 16)
 
+[node name="Void" parent="." instance=ExtResource("9_sppdf")]
+position = Vector2(-25, -223)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Void" index="0"]
+position = Vector2(366, 222)
+shape = SubResource("RectangleShape2D_dwn6n")
+
 [editable path="MovingPlatform2"]
 [editable path="MovingPlatform3"]
+[editable path="Void"]
