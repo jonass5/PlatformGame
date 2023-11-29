@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://hsktkibht8xd"]
+
+[ext_resource type="PackedScene" uid="uid://pby4dccp26xd" path="res://world/moving_platform.tscn" id="1_gtmsq"]
+[ext_resource type="Curve2D" uid="uid://baat5j40kehm7" path="res://world/triangle_path.tres" id="2_ys6ht"]
+
+[node name="TriangleMovingPlatform" instance=ExtResource("1_gtmsq")]
+
+[node name="Path2D" parent="." index="2"]
+curve = ExtResource("2_ys6ht")
