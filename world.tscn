@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ch1wvgvuahnit"]
+[gd_scene load_steps=12 format=3 uid="uid://ch1wvgvuahnit"]
 
 [ext_resource type="PackedScene" uid="uid://cr81v0u4ichr" path="res://player/PlayerChar.tscn" id="1_mkr1u"]
 [ext_resource type="Script" path="res://world.gd" id="1_pxeu2"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_qs7xu"]
 [ext_resource type="PackedScene" uid="uid://pby4dccp26xd" path="res://world/moving_platform.tscn" id="4_oqtl2"]
 [ext_resource type="Curve2D" uid="uid://bctrak07wpboy" path="res://world/up_down_path.tres" id="5_6vbni"]
+[ext_resource type="Curve2D" uid="uid://baat5j40kehm7" path="res://world/triangle_path.tres" id="5_rdweo"]
 [ext_resource type="Curve2D" uid="uid://bmesqrcidow56" path="res://world/left_right_path.tres" id="6_peose"]
 [ext_resource type="PackedScene" uid="uid://c77cvrcmrwist" path="res://enemies/walking_enemy.tscn" id="8_0gfi7"]
 [ext_resource type="PackedScene" uid="uid://dddrl1s6kah73" path="res://void.tscn" id="9_sppdf"]
@@ -24,20 +25,15 @@ layer_0/tile_data = PackedInt32Array(393223, 0, 0, 393224, 65536, 0, 458760, 655
 
 [node name="MovingPlatform" parent="." instance=ExtResource("4_oqtl2")]
 position = Vector2(336, 8)
+path = ExtResource("5_rdweo")
 
 [node name="MovingPlatform2" parent="." instance=ExtResource("4_oqtl2")]
 position = Vector2(40, 56)
-metadata/_edit_group_ = true
-
-[node name="Path2D" parent="MovingPlatform2" index="2"]
-curve = ExtResource("5_6vbni")
+path = ExtResource("5_6vbni")
 
 [node name="MovingPlatform3" parent="." instance=ExtResource("4_oqtl2")]
 position = Vector2(264, -80)
-metadata/_edit_group_ = true
-
-[node name="Path2D" parent="MovingPlatform3" index="2"]
-curve = ExtResource("6_peose")
+path = ExtResource("6_peose")
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -67,6 +63,4 @@ metadata/_edit_group_ = true
 position = Vector2(366, 222)
 shape = SubResource("RectangleShape2D_dwn6n")
 
-[editable path="MovingPlatform2"]
-[editable path="MovingPlatform3"]
 [editable path="Void"]
