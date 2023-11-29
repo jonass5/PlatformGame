@@ -2,6 +2,7 @@ class_name PlayerChar
 extends CharacterBody2D
 
 const DustEffectScene = preload("res://effects/dust_effect.tscn")
+const JumpEffectScene = preload("res://effects/jump_effect.tscn")
 
 @export var acceleration = 512
 @export var max_velocity = 64
@@ -16,29 +17,36 @@ const DustEffectScene = preload("res://effects/dust_effect.tscn")
 @onready var player_blaster = $PlayerBlaster
 @onready var fire_rate_timer = $FireRateTimer
 @onready var drop_timer = $DropTimer
+@onready var camera_2d = $Camera2D
+
+var startPosition : Vector2
+
+func _ready():
+	startPosition = global_position
 
 func _physics_process(delta: float) -> void:
+
 	apply_gravity(delta)
-	
+
 	var input_axis = Input.get_axis("move_left", "move_right")
-	
+
 	if is_moving(input_axis):
 		apply_acceleration(delta, input_axis)
 	else:
 		apply_friction(delta)
-	
+
 	jump_check()
-	
+
 	if Input.is_action_pressed("fire") and fire_rate_timer.time_left == 0:
 		fire_rate_timer.start()
 		player_blaster.fire_bullet()
-	
+
 	if Input.is_action_just_pressed("crouch"):
 		set_collision_mask_value(2, false)
 		drop_timer.start()
-	
+
 	update_animation(input_axis)
-	
+
 	var was_on_floor = is_on_floor()
 	move_and_slide()
 	var just_left_edge = was_on_floor and not is_on_floor() and velocity.y >= 0
@@ -72,6 +80,7 @@ func jump_check() -> void:
 	if  is_on_floor() or coyote_jump_timer.time_left > 0.0:
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = -jump_force
+			Utils.instanciate_scene_on_world(JumpEffectScene, global_position)
 	if not is_on_floor():
 		if Input.is_action_just_released("jump") and velocity.y < -jump_force / 2.0:
 			velocity.y = -jump_force / 2.0
@@ -79,20 +88,31 @@ func jump_check() -> void:
 
 func update_animation(input_axis: float) -> void:
 	sprite_2d.scale.x = sign(get_local_mouse_position().x)
-	
-	if abs(sprite_2d.scale.x) != 1: 
+
+	if abs(sprite_2d.scale.x) != 1:
 		sprite_2d.scale.x = 1
-	
+
 	if is_moving(input_axis):
 		animation_player.play("run")
 		animation_player.speed_scale = input_axis * sprite_2d.scale.x
 	else:
 		animation_player.play("idle")
-	
+
 	if not is_on_floor():
 		animation_player.play("jump")
 
 
-
 func _on_drop_timer_timeout():
 	set_collision_mask_value(2, true)
+
+
+func _on_hurtbox_hurt(hitbox, damage):
+	Events.add_screenshake.emit(10, 0.1)
+	camera_2d.reparent(get_tree().current_scene)
+	queue_free()
+
+
+func reached_void():
+	Events.add_screenshake.emit(25, 0.1)
+	global_transform.origin = startPosition
+	

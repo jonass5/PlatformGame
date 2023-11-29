@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Platform Game"
-config/description="Version 0.6"
+config/description="Version 0.7"
 run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Utils="*res://Utils.gd"
+Events="*res://Events.gd"
 
 [display]
 
@@ -94,6 +95,8 @@ crouch={
 2d_physics/layer_2="OneWayPlatforms"
 2d_physics/layer_3="Player"
 2d_physics/layer_4="Enemy"
+2d_physics/layer_5="PlayerHurtbox"
+2d_physics/layer_6="EnemyHurtbox"
 
 [rendering]
 

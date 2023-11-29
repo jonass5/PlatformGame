@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv6mum3x7ft5v"]
+[gd_scene load_steps=3 format=3 uid="uid://cv6mum3x7ft5v"]
 
 [ext_resource type="Script" path="res://projectile.gd" id="1_8veir"]
+[ext_resource type="PackedScene" uid="uid://dsyg0t3624o83" path="res://collisions/hitbox.tscn" id="2_r6ahc"]
 
 [node name="Projectile" type="Node2D"]
 z_index = 15
@@ -8,4 +9,8 @@ script = ExtResource("1_8veir")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
+[node name="Hitbox" parent="." instance=ExtResource("2_r6ahc")]
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

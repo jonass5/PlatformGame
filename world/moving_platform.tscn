@@ -1,10 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://pby4dccp26xd"]
+[gd_scene load_steps=6 format=3 uid="uid://pby4dccp26xd"]
 
 [ext_resource type="Texture2D" uid="uid://dyhktjpx7um0u" path="res://world/moving_platform.png" id="1_lhlu6"]
-[ext_resource type="Curve2D" uid="uid://baat5j40kehm7" path="res://world/triangle_path.tres" id="2_g4768"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vte1"]
 size = Vector2(32, 8)
+
+[sub_resource type="Animation" id="Animation_as5fx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_oppuc"]
 resource_name = "path_follow"
@@ -21,21 +35,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_as5fx"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Path2D/PathFollow2D:progress_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h3aap"]
@@ -64,7 +63,6 @@ libraries = {
 }
 
 [node name="Path2D" type="Path2D" parent="."]
-curve = ExtResource("2_g4768")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 rotates = false

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqttrppfaytmh"]
+
+[ext_resource type="PackedScene" uid="uid://pby4dccp26xd" path="res://world/moving_platform.tscn" id="1_71w5c"]
+[ext_resource type="Curve2D" uid="uid://bctrak07wpboy" path="res://world/up_down_path.tres" id="2_3wm6p"]
+
+[node name="UpDownMovingPlatform" instance=ExtResource("1_71w5c")]
+
+[node name="Path2D" parent="." index="2"]
+curve = ExtResource("2_3wm6p")
