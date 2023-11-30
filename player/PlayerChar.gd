@@ -18,11 +18,14 @@ const JumpEffectScene = preload("res://effects/jump_effect.tscn")
 @onready var fire_rate_timer = $FireRateTimer
 @onready var drop_timer = $DropTimer
 @onready var camera_2d = $Camera2D
+@onready var hurtbox: Hurtbox = $Hurtbox
 
 var startPosition : Vector2
 
 func _ready():
+	PlayerStats.no_health.connect(die)
 	startPosition = global_position
+
 
 func _physics_process(delta: float) -> void:
 
@@ -102,17 +105,24 @@ func update_animation(input_axis: float) -> void:
 		animation_player.play("jump")
 
 
+func die():
+	camera_2d.reparent(get_tree().current_scene)
+	queue_free()
+
+
 func _on_drop_timer_timeout():
 	set_collision_mask_value(2, true)
 
 
 func _on_hurtbox_hurt(hitbox, damage):
 	Events.add_screenshake.emit(10, 0.1)
-	camera_2d.reparent(get_tree().current_scene)
-	queue_free()
+	PlayerStats.health -= 1
+	hurtbox.is_invincible = true
+	await get_tree().create_timer(1.0).timeout
+	hurtbox.is_invincible = false
 
 
 func reached_void():
 	Events.add_screenshake.emit(25, 0.1)
 	global_transform.origin = startPosition
-	
+
