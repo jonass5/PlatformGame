@@ -25,7 +25,6 @@ layer_0/tile_data = PackedInt32Array(393223, 0, 0, 393224, 65536, 0, 458760, 655
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="VersionGUI" parent="GUI" instance=ExtResource("2_c7vam")]
-visible = false
 
 [node name="WalkingEnemy" parent="." instance=ExtResource("8_0gfi7")]
 position = Vector2(267, 111)
