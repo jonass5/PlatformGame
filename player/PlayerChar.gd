@@ -11,7 +11,8 @@ const JumpEffectScene = preload("res://effects/jump_effect.tscn")
 @export var jump_force = 128
 @export var max_fall_velocity = 128
 
-var air_jump = false
+var air_jump : bool = false
+var state : Callable = move_state
 
 @onready var animation_player = $AnimationPlayer
 @onready var sprite_2d = $Sprite2D
@@ -31,7 +32,10 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
+	state.call(delta)
 
+
+func move_state(delta: float) -> void:
 	apply_gravity(delta)
 
 	var input_axis = Input.get_axis("move_left", "move_right")
@@ -59,6 +63,10 @@ func _physics_process(delta: float) -> void:
 	if just_left_edge:
 		coyote_jump_timer.start()
 
+
+func wall_slide(delta: float) -> void:
+	pass
+	
 
 func create_dust_effect() -> void:
 	Utils.instanciate_scene_on_world(DustEffectScene, global_position)
@@ -98,7 +106,7 @@ func jump_check() -> void:
 			air_jump = false
 
 
-func jump(force):
+func jump(force) -> void:
 	velocity.y = -force
 	Utils.instanciate_scene_on_world(JumpEffectScene, global_position)
 
