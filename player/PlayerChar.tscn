@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cr81v0u4ichr"]
+[gd_scene load_steps=17 format=3 uid="uid://cr81v0u4ichr"]
 
 [ext_resource type="Texture2D" uid="uid://dvj4y8d4pwk6g" path="res://player/player.png" id="1_e17rk"]
 [ext_resource type="Script" path="res://player/PlayerChar.gd" id="1_ti4np"]
@@ -91,12 +91,29 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_pllj6"]
+resource_name = "wall_slide"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vjkms"]
 _data = {
 "RESET": SubResource("Animation_eyq4x"),
 "idle": SubResource("Animation_jboyu"),
 "jump": SubResource("Animation_o0p5c"),
-"run": SubResource("Animation_qydjt")
+"run": SubResource("Animation_qydjt"),
+"wall_slide": SubResource("Animation_pllj6")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyie6"]
