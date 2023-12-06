@@ -81,6 +81,7 @@ func wall_check() -> void:
 	if not is_on_floor() and is_on_wall():
 		state = wall_slide_state
 		air_jump = true
+		create_dust_effect()
 
 
 func wall_detach(delta) -> void:
