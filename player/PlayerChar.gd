@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const DustEffectScene = preload("res://effects/dust_effect.tscn")
 const JumpEffectScene = preload("res://effects/jump_effect.tscn")
+const WallJumpEffectScene = preload("res://effects/wall_jump_effect.tscn")
 
 @export var acceleration = 512
 @export var max_velocity = 64
