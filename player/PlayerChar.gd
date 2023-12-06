@@ -8,6 +8,7 @@ const WallJumpEffectScene = preload("res://effects/wall_jump_effect.tscn")
 @export var acceleration = 512
 @export var max_velocity = 64
 @export var friction = 256
+@export var air_friction = 64
 @export var gravity = 200
 @export var jump_force = 128
 @export var max_fall_velocity = 128
@@ -72,6 +73,7 @@ func wall_slide_state(delta: float) -> void:
 	var wall_normal = get_wall_normal()
 	animation_player.play("wall_slide")
 	sprite_2d.scale.x = sign(wall_normal.x)
+	velocity.y = clampf(velocity.y, -max_wall_slide_speed / 2, max_wall_slide_speed)
 	wall_jump_check(wall_normal.x)
 	apply_wall_slide_gravity(delta)
 	move_and_slide()
@@ -102,7 +104,10 @@ func wall_jump_check(wall_axis) -> void:
 	if Input.is_action_just_pressed("jump"):
 		velocity.x = wall_axis * max_velocity
 		state = move_state
-		jump(jump_force * 0.75)
+		jump(jump_force * 0.75, false)
+		var wall_jump_effect_position = global_position + Vector2(wall_axis * 3.5, -2)
+		var wall_jump_effect = Utils.instanciate_scene_on_world(WallJumpEffectScene, wall_jump_effect_position)
+		wall_jump_effect.scale.x = wall_axis
 
 
 func apply_wall_slide_gravity(delta) -> void:
@@ -133,7 +138,10 @@ func apply_acceleration(delta: float, input_axis: float) -> void:
 
 
 func apply_friction(delta: float) -> void:
-	velocity.x = move_toward(velocity.x, 0, friction * delta)
+	if is_on_floor():
+		velocity.x = move_toward(velocity.x, 0, friction * delta)
+	else:
+		velocity.x = move_toward(velocity.x, 0, air_friction * delta)
 
 
 func jump_check() -> void:
@@ -152,7 +160,7 @@ func jump_check() -> void:
 			air_jump = false
 
 
-func jump(force) -> void:
+func jump(force: float, create_effect: bool = true) -> void:
 	velocity.y = -force
 	Utils.instanciate_scene_on_world(JumpEffectScene, global_position)
 
