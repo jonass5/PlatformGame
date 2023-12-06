@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ch1wvgvuahnit"]
+[gd_scene load_steps=12 format=3 uid="uid://ch1wvgvuahnit"]
 
 [ext_resource type="PackedScene" uid="uid://cr81v0u4ichr" path="res://player/PlayerChar.tscn" id="1_mkr1u"]
 [ext_resource type="Script" path="res://world.gd" id="1_pxeu2"]
 [ext_resource type="PackedScene" uid="uid://dbvi8foqa1c82" path="res://ui/version_gui.tscn" id="2_c7vam"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_qs7xu"]
+[ext_resource type="PackedScene" uid="uid://ciuq1j8jgxaxs" path="res://ui/health_meter.tscn" id="5_r4qfi"]
 [ext_resource type="PackedScene" uid="uid://bqttrppfaytmh" path="res://world/UpDownMovingPlatform.tscn" id="7_8sb3v"]
 [ext_resource type="PackedScene" uid="uid://c77cvrcmrwist" path="res://enemies/walking_enemy.tscn" id="8_0gfi7"]
 [ext_resource type="PackedScene" uid="uid://drusidb24xxab" path="res://world/LeftRightMovingPlatform.tscn" id="8_24a5v"]
@@ -25,7 +26,14 @@ layer_0/tile_data = PackedInt32Array(393223, 0, 0, 393224, 65536, 0, 458760, 655
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="VersionGUI" parent="GUI" instance=ExtResource("2_c7vam")]
-visible = false
+offset_top = 173.0
+offset_right = -300.0
+
+[node name="HealthMeter" parent="GUI" instance=ExtResource("5_r4qfi")]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 3.0
+offset_bottom = 3.0
 
 [node name="WalkingEnemy" parent="." instance=ExtResource("8_0gfi7")]
 position = Vector2(267, 111)

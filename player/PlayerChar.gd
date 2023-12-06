@@ -10,6 +10,11 @@ const JumpEffectScene = preload("res://effects/jump_effect.tscn")
 @export var gravity = 200
 @export var jump_force = 128
 @export var max_fall_velocity = 128
+@export var wall_slide_speed = 42
+@export var max_wall_slide_speed = 128
+
+var air_jump : bool = false
+var state : Callable = move_state
 
 @onready var animation_player = $AnimationPlayer
 @onready var sprite_2d = $Sprite2D
@@ -18,14 +23,25 @@ const JumpEffectScene = preload("res://effects/jump_effect.tscn")
 @onready var fire_rate_timer = $FireRateTimer
 @onready var drop_timer = $DropTimer
 @onready var camera_2d = $Camera2D
+@onready var hurtbox: Hurtbox = $Hurtbox
+@onready var blinking_animation_player = $BlinkingAnimationPlayer
 
 var startPosition : Vector2
 
 func _ready():
+	PlayerStats.no_health.connect(die)
 	startPosition = global_position
 
-func _physics_process(delta: float) -> void:
 
+func _physics_process(delta: float) -> void:
+	state.call(delta)
+	
+	if Input.is_action_pressed("fire") and fire_rate_timer.time_left == 0:
+		fire_rate_timer.start()
+		player_blaster.fire_bullet()
+
+
+func move_state(delta: float) -> void:
 	apply_gravity(delta)
 
 	var input_axis = Input.get_axis("move_left", "move_right")
@@ -36,10 +52,6 @@ func _physics_process(delta: float) -> void:
 		apply_friction(delta)
 
 	jump_check()
-
-	if Input.is_action_pressed("fire") and fire_rate_timer.time_left == 0:
-		fire_rate_timer.start()
-		player_blaster.fire_bullet()
 
 	if Input.is_action_just_pressed("crouch"):
 		set_collision_mask_value(2, false)
@@ -52,6 +64,52 @@ func _physics_process(delta: float) -> void:
 	var just_left_edge = was_on_floor and not is_on_floor() and velocity.y >= 0
 	if just_left_edge:
 		coyote_jump_timer.start()
+	wall_check()
+
+
+func wall_slide_state(delta: float) -> void:
+	var wall_normal = get_wall_normal()
+	animation_player.play("wall_slide")
+	sprite_2d.scale.x = sign(wall_normal.x)
+	wall_jump_check(wall_normal.x)
+	apply_wall_slide_gravity(delta)
+	move_and_slide()
+	wall_detach(delta)
+	
+
+func wall_check() -> void:
+	if not is_on_floor() and is_on_wall():
+		state = wall_slide_state
+		air_jump = true
+
+
+func wall_detach(delta) -> void:
+	if Input.is_action_just_pressed("move_right"):
+		velocity.y = acceleration * delta
+		state = move_state
+		
+	if Input.is_action_just_pressed("move_left"):
+		velocity.x = acceleration * delta
+		state = move_state
+		
+	if not is_on_wall() or is_on_floor():
+		state = move_state
+
+
+func wall_jump_check(wall_axis) -> void:
+	if Input.is_action_just_pressed("jump"):
+		velocity.x = wall_axis * max_velocity
+		state = move_state
+		jump(jump_force * 0.75)
+
+
+func apply_wall_slide_gravity(delta) -> void:
+	var slide_speed = wall_slide_speed
+	
+	if Input.is_action_pressed("crouch"):
+		slide_speed = max_wall_slide_speed
+	
+	velocity.y = move_toward(velocity.y, slide_speed, gravity * delta)
 
 
 func create_dust_effect() -> void:
@@ -77,13 +135,24 @@ func apply_friction(delta: float) -> void:
 
 
 func jump_check() -> void:
+	if is_on_floor():
+		air_jump = true
+		
 	if  is_on_floor() or coyote_jump_timer.time_left > 0.0:
 		if Input.is_action_just_pressed("jump"):
-			velocity.y = -jump_force
-			Utils.instanciate_scene_on_world(JumpEffectScene, global_position)
+			jump(jump_force)
 	if not is_on_floor():
 		if Input.is_action_just_released("jump") and velocity.y < -jump_force / 2.0:
 			velocity.y = -jump_force / 2.0
+		
+		if Input.is_action_just_pressed("jump") and air_jump:
+			jump(jump_force * 0.75)
+			air_jump = false
+
+
+func jump(force) -> void:
+	velocity.y = -force
+	Utils.instanciate_scene_on_world(JumpEffectScene, global_position)
 
 
 func update_animation(input_axis: float) -> void:
@@ -102,17 +171,25 @@ func update_animation(input_axis: float) -> void:
 		animation_player.play("jump")
 
 
+func die():
+	camera_2d.reparent(get_tree().current_scene)
+	queue_free()
+
+
 func _on_drop_timer_timeout():
 	set_collision_mask_value(2, true)
 
 
 func _on_hurtbox_hurt(hitbox, damage):
 	Events.add_screenshake.emit(10, 0.1)
-	camera_2d.reparent(get_tree().current_scene)
-	queue_free()
+	PlayerStats.health -= 1
+	hurtbox.is_invincible = true
+	blinking_animation_player.play("blink")	
+	await blinking_animation_player.animation_finished
+	hurtbox.is_invincible = false
 
 
 func reached_void():
 	Events.add_screenshake.emit(25, 0.1)
 	global_transform.origin = startPosition
-	
+
