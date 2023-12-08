@@ -70,7 +70,7 @@ position = Vector2(244, -76)
 position = Vector2(334, 9)
 
 [node name="PlantEnemy" parent="." instance=ExtResource("11_s7tfg")]
-position = Vector2(81, 33)
+position = Vector2(81, 32)
 rotation = 3.14159
 
 [node name="PlantEnemy2" parent="." instance=ExtResource("11_s7tfg")]
