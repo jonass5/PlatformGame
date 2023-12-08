@@ -35,7 +35,7 @@ func turn_around() -> void:
 	direction *= -1.0
 	
 	
-func _on_hurtbox_hurt(hitbox, damage):
+func _on_hurtbox_hurt(_hitbox, damage):
 	stats.health -= damage
 
 

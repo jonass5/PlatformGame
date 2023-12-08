@@ -15,7 +15,7 @@ func fire_bullet():
 	var bullet = Utils.instanciate_scene_on_world(EnemyBulletScene, bullet_spawn_point.global_position) as Projectile
 	var direction = global_position.direction_to(fire_direction.global_position)
 	var velocity = direction.normalized() * bullet_speed
-	velocity = velocity.rotated(randf_range(-deg_to_rad(spread/2), deg_to_rad(spread/2)))
+	velocity = velocity.rotated(randf_range(-deg_to_rad(spread / 2.0), deg_to_rad(spread / 2.0)))
 	bullet.velocity = velocity
 
 

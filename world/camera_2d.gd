@@ -8,7 +8,7 @@ func _ready():
 	Events.add_screenshake.connect(start_screenshake)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	offset.x = randf_range(-shake, shake)
 	offset.y = randf_range(-shake, shake)
 	

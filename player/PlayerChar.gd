@@ -73,7 +73,7 @@ func wall_slide_state(delta: float) -> void:
 	var wall_normal = get_wall_normal()
 	animation_player.play("wall_slide")
 	sprite_2d.scale.x = sign(wall_normal.x)
-	velocity.y = clampf(velocity.y, -max_wall_slide_speed / 2, max_wall_slide_speed)
+	velocity.y = clampf(velocity.y, -max_wall_slide_speed / 2.0, max_wall_slide_speed)
 	wall_jump_check(wall_normal.x)
 	apply_wall_slide_gravity(delta)
 	move_and_slide()
@@ -162,8 +162,8 @@ func jump_check() -> void:
 
 func jump(force: float, create_effect: bool = true) -> void:
 	velocity.y = -force
-	Utils.instanciate_scene_on_world(JumpEffectScene, global_position)
-
+	if create_effect:
+		Utils.instanciate_scene_on_world(JumpEffectScene, global_position)
 
 func update_animation(input_axis: float) -> void:
 	sprite_2d.scale.x = sign(get_local_mouse_position().x)
@@ -190,7 +190,7 @@ func _on_drop_timer_timeout():
 	set_collision_mask_value(2, true)
 
 
-func _on_hurtbox_hurt(hitbox, damage):
+func _on_hurtbox_hurt(_hitbox, _damage):
 	Events.add_screenshake.emit(10, 0.1)
 	PlayerStats.health -= 1
 	hurtbox.is_invincible = true
