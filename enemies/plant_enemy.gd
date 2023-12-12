@@ -1,6 +1,7 @@
 class_name PlantEnemy
 extends Node2D
 
+const EnemyDeathEffectScene = preload("res://effects/enemy_death_effect.tscn")
 const EnemyBulletScene = preload("res://enemies/enemy_bullet.tscn")
 
 @export var bullet_speed = 30
@@ -20,6 +21,7 @@ func fire_bullet():
 
 
 func _on_stats_no_health():
+	Utils.instanciate_scene_on_world(EnemyDeathEffectScene, bullet_spawn_point.global_position)
 	queue_free()
 
 
