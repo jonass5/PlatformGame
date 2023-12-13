@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Platform Game"
-config/description="Version 0.9"
+config/description="Version 0.10"
 run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
