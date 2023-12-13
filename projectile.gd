@@ -20,10 +20,10 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
 
 
-func _on_hitbox_body_entered(body):
+func _on_hitbox_body_entered(_body):
 	Utils.instanciate_scene_on_world(ExplosionEffectScene, global_position)
 	queue_free()
 
-func _on_hitbox_area_entered(area):
+func _on_hitbox_area_entered(_area):
 	Utils.instanciate_scene_on_world(ExplosionEffectScene, global_position)
 	queue_free()

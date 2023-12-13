@@ -186,6 +186,7 @@ collision_layer = 4
 collision_mask = 3
 floor_constant_speed = true
 floor_snap_length = 2.0
+safe_margin = 0.1
 script = ExtResource("1_ti4np")
 
 [node name="PlayerBlaster" parent="." instance=ExtResource("2_wq8nx")]

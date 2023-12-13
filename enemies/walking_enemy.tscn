@@ -52,5 +52,8 @@ shape = SubResource("RectangleShape2D_olcer")
 [node name="Stats" parent="." instance=ExtResource("5_b8a2b")]
 max_health = 2
 
+[node name="DeathEffectLocation" type="Marker2D" parent="."]
+position = Vector2(0, -7)
+
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]

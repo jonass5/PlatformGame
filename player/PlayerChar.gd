@@ -3,10 +3,12 @@ extends CharacterBody2D
 
 const DustEffectScene = preload("res://effects/dust_effect.tscn")
 const JumpEffectScene = preload("res://effects/jump_effect.tscn")
+const WallJumpEffectScene = preload("res://effects/wall_jump_effect.tscn")
 
 @export var acceleration = 512
 @export var max_velocity = 64
 @export var friction = 256
+@export var air_friction = 64
 @export var gravity = 200
 @export var jump_force = 128
 @export var max_fall_velocity = 128
@@ -71,6 +73,7 @@ func wall_slide_state(delta: float) -> void:
 	var wall_normal = get_wall_normal()
 	animation_player.play("wall_slide")
 	sprite_2d.scale.x = sign(wall_normal.x)
+	velocity.y = clampf(velocity.y, -max_wall_slide_speed / 2.0, max_wall_slide_speed)
 	wall_jump_check(wall_normal.x)
 	apply_wall_slide_gravity(delta)
 	move_and_slide()
@@ -81,6 +84,7 @@ func wall_check() -> void:
 	if not is_on_floor() and is_on_wall():
 		state = wall_slide_state
 		air_jump = true
+		create_dust_effect()
 
 
 func wall_detach(delta) -> void:
@@ -100,7 +104,10 @@ func wall_jump_check(wall_axis) -> void:
 	if Input.is_action_just_pressed("jump"):
 		velocity.x = wall_axis * max_velocity
 		state = move_state
-		jump(jump_force * 0.75)
+		jump(jump_force * 0.75, false)
+		var wall_jump_effect_position = global_position + Vector2(wall_axis * 3.5, -2)
+		var wall_jump_effect = Utils.instanciate_scene_on_world(WallJumpEffectScene, wall_jump_effect_position)
+		wall_jump_effect.scale.x = wall_axis
 
 
 func apply_wall_slide_gravity(delta) -> void:
@@ -131,7 +138,10 @@ func apply_acceleration(delta: float, input_axis: float) -> void:
 
 
 func apply_friction(delta: float) -> void:
-	velocity.x = move_toward(velocity.x, 0, friction * delta)
+	if is_on_floor():
+		velocity.x = move_toward(velocity.x, 0, friction * delta)
+	else:
+		velocity.x = move_toward(velocity.x, 0, air_friction * delta)
 
 
 func jump_check() -> void:
@@ -150,10 +160,10 @@ func jump_check() -> void:
 			air_jump = false
 
 
-func jump(force) -> void:
+func jump(force: float, create_effect: bool = true) -> void:
 	velocity.y = -force
-	Utils.instanciate_scene_on_world(JumpEffectScene, global_position)
-
+	if create_effect:
+		Utils.instanciate_scene_on_world(JumpEffectScene, global_position)
 
 func update_animation(input_axis: float) -> void:
 	sprite_2d.scale.x = sign(get_local_mouse_position().x)
@@ -180,7 +190,7 @@ func _on_drop_timer_timeout():
 	set_collision_mask_value(2, true)
 
 
-func _on_hurtbox_hurt(hitbox, damage):
+func _on_hurtbox_hurt(_hitbox, _damage):
 	Events.add_screenshake.emit(10, 0.1)
 	PlayerStats.health -= 1
 	hurtbox.is_invincible = true
