@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ch1wvgvuahnit"]
+[gd_scene load_steps=14 format=3 uid="uid://ch1wvgvuahnit"]
 
 [ext_resource type="PackedScene" uid="uid://cr81v0u4ichr" path="res://player/PlayerChar.tscn" id="1_mkr1u"]
 [ext_resource type="Script" path="res://world.gd" id="1_pxeu2"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://hsktkibht8xd" path="res://world/TriangleMovingPlatform.tscn" id="9_r2fe7"]
 [ext_resource type="PackedScene" uid="uid://dddrl1s6kah73" path="res://void.tscn" id="9_sppdf"]
 [ext_resource type="PackedScene" uid="uid://chfgveu0gjwbd" path="res://enemies/plant_enemy.tscn" id="11_s7tfg"]
+[ext_resource type="PackedScene" uid="uid://cm38ky2ure14w" path="res://enemies/crawling_enemy.tscn" id="12_dowp2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwn6n"]
 size = Vector2(731, 444)
@@ -76,5 +77,18 @@ rotation = 3.14159
 [node name="PlantEnemy2" parent="." instance=ExtResource("11_s7tfg")]
 position = Vector2(408, -64)
 rotation = -3.14159
+
+[node name="CrawlingEnemy" parent="." instance=ExtResource("12_dowp2")]
+position = Vector2(138, -81)
+
+[node name="CrawlingEnemy2" parent="." instance=ExtResource("12_dowp2")]
+position = Vector2(532, -115)
+
+[node name="CrawlingEnemy3" parent="." instance=ExtResource("12_dowp2")]
+position = Vector2(17, -50)
+crawling_direction = -1
+
+[node name="CrawlingEnemy4" parent="." instance=ExtResource("12_dowp2")]
+position = Vector2(280, 95)
 
 [editable path="Void"]

@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const EnemyDeathEffectScene = preload("res://effects/enemy_death_effect.tscn")
 
-@export var speed: float = 30.0
+@export var speed: float = 20.0
 @export var turns_on_ledges: bool = true
 
 var gravity: float = 200.0
