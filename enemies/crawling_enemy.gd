@@ -32,7 +32,7 @@ func _physics_process(delta) -> void:
 			rotation_degrees += crawling_direction
 
 
-func _on_hurtbox_hurt(hitbox, damage) -> void:
+func _on_hurtbox_hurt(_hitbox, damage) -> void:
 	stats.health -= damage
 
 

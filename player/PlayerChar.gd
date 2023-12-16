@@ -35,6 +35,10 @@ func _ready():
 	startPosition = global_position
 
 
+func _enter_tree():
+	MainInstances.player = self
+
+
 func _physics_process(delta: float) -> void:
 	state.call(delta)
 	
@@ -42,6 +46,9 @@ func _physics_process(delta: float) -> void:
 		fire_rate_timer.start()
 		player_blaster.fire_bullet()
 
+
+func _exit_tree():
+	MainInstances.player = null
 
 func move_state(delta: float) -> void:
 	apply_gravity(delta)
