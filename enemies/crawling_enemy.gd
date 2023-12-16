@@ -1,5 +1,5 @@
-extends Node2D
 class_name CrawlingEnemy
+extends Node2D
 
 const EnemyDeathEffectScene = preload("res://effects/enemy_death_effect.tscn")
 
@@ -12,10 +12,11 @@ enum DIRECTON { LEFT = -1, RIGHT = 1}
 @onready var wall_cast = $WallCast
 @onready var stats : Stats = $Stats as Stats
 
+
 func _ready() -> void:
 	wall_cast.target_position.x *= crawling_direction
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _physics_process(delta) -> void:
 	if wall_cast.is_colliding():
 		global_position = wall_cast.get_collision_point()
