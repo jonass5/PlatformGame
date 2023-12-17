@@ -66,7 +66,8 @@ radius = 7.0
 radius = 4.0
 
 [node name="FlyingEnemy" type="CharacterBody2D"]
-collision_layer = 0
+collision_layer = 8
+collision_mask = 9
 motion_mode = 1
 script = ExtResource("1_udj75")
 
