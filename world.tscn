@@ -29,10 +29,6 @@ layer_0/tile_data = PackedInt32Array(393223, 0, 0, 393224, 65536, 0, 458760, 655
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
-[node name="VersionGUI" parent="GUI" instance=ExtResource("2_c7vam")]
-offset_top = 173.0
-offset_right = -300.0
-
 [node name="HealthMeter" parent="GUI" instance=ExtResource("5_r4qfi")]
 offset_left = 3.0
 offset_top = 3.0
@@ -41,6 +37,10 @@ offset_bottom = 3.0
 
 [node name="PauseMenu" parent="GUI" instance=ExtResource("6_cs515")]
 visible = false
+
+[node name="VersionGUI" parent="GUI" instance=ExtResource("2_c7vam")]
+offset_top = 173.0
+offset_right = -300.0
 
 [node name="WalkingEnemy" parent="." instance=ExtResource("8_0gfi7")]
 position = Vector2(267, 111)
@@ -58,6 +58,7 @@ position = Vector2(100, 0)
 position = Vector2(254, 16)
 
 [node name="Void" parent="." instance=ExtResource("9_sppdf")]
+visible = false
 position = Vector2(-25, -223)
 metadata/_edit_group_ = true
 
