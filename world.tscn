@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://ch1wvgvuahnit"]
+[gd_scene load_steps=16 format=3 uid="uid://ch1wvgvuahnit"]
 
 [ext_resource type="PackedScene" uid="uid://cr81v0u4ichr" path="res://player/PlayerChar.tscn" id="1_mkr1u"]
 [ext_resource type="Script" path="res://world.gd" id="1_pxeu2"]
 [ext_resource type="PackedScene" uid="uid://dbvi8foqa1c82" path="res://ui/version_gui.tscn" id="2_c7vam"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_qs7xu"]
 [ext_resource type="PackedScene" uid="uid://ciuq1j8jgxaxs" path="res://ui/health_meter.tscn" id="5_r4qfi"]
+[ext_resource type="PackedScene" uid="uid://de63oipctsyad" path="res://menus/pause_menu.tscn" id="6_cs515"]
 [ext_resource type="PackedScene" uid="uid://bqttrppfaytmh" path="res://world/UpDownMovingPlatform.tscn" id="7_8sb3v"]
 [ext_resource type="PackedScene" uid="uid://c77cvrcmrwist" path="res://enemies/walking_enemy.tscn" id="8_0gfi7"]
 [ext_resource type="PackedScene" uid="uid://drusidb24xxab" path="res://world/LeftRightMovingPlatform.tscn" id="8_24a5v"]
@@ -37,6 +38,9 @@ offset_left = 3.0
 offset_top = 3.0
 offset_right = 3.0
 offset_bottom = 3.0
+
+[node name="PauseMenu" parent="GUI" instance=ExtResource("6_cs515")]
+visible = false
 
 [node name="WalkingEnemy" parent="." instance=ExtResource("8_0gfi7")]
 position = Vector2(267, 111)
