@@ -27,12 +27,18 @@ var state : Callable = move_state
 @onready var camera_2d = $Camera2D
 @onready var hurtbox: Hurtbox = $Hurtbox
 @onready var blinking_animation_player = $BlinkingAnimationPlayer
+@onready var center = $Center
 
 var startPosition : Vector2
+
 
 func _ready():
 	PlayerStats.no_health.connect(die)
 	startPosition = global_position
+
+
+func _enter_tree():
+	MainInstances.player = self
 
 
 func _physics_process(delta: float) -> void:
@@ -42,6 +48,9 @@ func _physics_process(delta: float) -> void:
 		fire_rate_timer.start()
 		player_blaster.fire_bullet()
 
+
+func _exit_tree():
+	MainInstances.player = null
 
 func move_state(delta: float) -> void:
 	apply_gravity(delta)
@@ -77,7 +86,7 @@ func wall_slide_state(delta: float) -> void:
 	wall_jump_check(wall_normal.x)
 	apply_wall_slide_gravity(delta)
 	move_and_slide()
-	wall_detach(delta)
+	wall_detach(delta, wall_normal.x)
 	
 
 func wall_check() -> void:
@@ -87,12 +96,12 @@ func wall_check() -> void:
 		create_dust_effect()
 
 
-func wall_detach(delta) -> void:
-	if Input.is_action_just_pressed("move_right"):
+func wall_detach(delta: float, wall_axis: int) -> void:
+	if Input.is_action_just_pressed("move_right") and wall_axis == 1:
 		velocity.y = acceleration * delta
 		state = move_state
 		
-	if Input.is_action_just_pressed("move_left"):
+	if Input.is_action_just_pressed("move_left") and wall_axis == -1:
 		velocity.x = acceleration * delta
 		state = move_state
 		
