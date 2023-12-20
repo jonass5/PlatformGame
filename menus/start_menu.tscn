@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://xy7x20wasjbk"]
+
+[ext_resource type="Script" path="res://menus/start_menu.gd" id="1_lpgsg"]
+
+[node name="StartMenu" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_lpgsg")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="StartGane" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="LoadGame" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Load Game"
+
+[node name="QuitGame" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit Game"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/StartGane" to="." method="_on_start_gane_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/LoadGame" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitGame" to="." method="_on_quit_game_pressed"]
