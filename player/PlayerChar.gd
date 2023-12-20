@@ -209,6 +209,7 @@ func _on_hurtbox_hurt(_hitbox, _damage):
 
 
 func reached_void():
-	Events.add_screenshake.emit(25, 0.1)
+	Events.add_screenshake.emit(10, 0.1)
+	PlayerStats.health -= 1
 	global_transform.origin = startPosition
 
