@@ -35,6 +35,11 @@ window/stretch/mode="canvas_items"
 
 import/blender/enabled=false
 
+[gui]
+
+theme/custom="res://ui/default_theme.tres"
+theme/custom_font="res://ui/pixel_font.ttf"
+
 [input]
 
 ui_left={

@@ -23,16 +23,19 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="StartGane" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(64, 16)
 layout_mode = 2
 text = "Start Game"
 
 [node name="LoadGame" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(64, 16)
 layout_mode = 2
 text = "Load Game"
 
 [node name="QuitGame" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(64, 16)
 layout_mode = 2
-text = "Quit Game"
+text = "Quit"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/StartGane" to="." method="_on_start_gane_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/LoadGame" to="." method="_on_load_game_pressed"]
