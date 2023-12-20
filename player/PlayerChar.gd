@@ -43,7 +43,7 @@ func _enter_tree():
 
 func _physics_process(delta: float) -> void:
 	state.call(delta)
-	
+
 	if Input.is_action_pressed("fire") and fire_rate_timer.time_left == 0:
 		fire_rate_timer.start()
 		player_blaster.fire_bullet()
@@ -87,7 +87,7 @@ func wall_slide_state(delta: float) -> void:
 	apply_wall_slide_gravity(delta)
 	move_and_slide()
 	wall_detach(delta, wall_normal.x)
-	
+
 
 func wall_check() -> void:
 	if not is_on_floor() and is_on_wall():
@@ -100,11 +100,11 @@ func wall_detach(delta: float, wall_axis: int) -> void:
 	if Input.is_action_just_pressed("move_right") and wall_axis == 1:
 		velocity.y = acceleration * delta
 		state = move_state
-		
+
 	if Input.is_action_just_pressed("move_left") and wall_axis == -1:
 		velocity.x = acceleration * delta
 		state = move_state
-		
+
 	if not is_on_wall() or is_on_floor():
 		state = move_state
 
@@ -121,10 +121,10 @@ func wall_jump_check(wall_axis) -> void:
 
 func apply_wall_slide_gravity(delta) -> void:
 	var slide_speed = wall_slide_speed
-	
+
 	if Input.is_action_pressed("crouch"):
 		slide_speed = max_wall_slide_speed
-	
+
 	velocity.y = move_toward(velocity.y, slide_speed, gravity * delta)
 
 
@@ -156,14 +156,14 @@ func apply_friction(delta: float) -> void:
 func jump_check() -> void:
 	if is_on_floor():
 		air_jump = true
-		
+
 	if  is_on_floor() or coyote_jump_timer.time_left > 0.0:
 		if Input.is_action_just_pressed("jump"):
 			jump(jump_force)
 	if not is_on_floor():
 		if Input.is_action_just_released("jump") and velocity.y < -jump_force / 2.0:
 			velocity.y = -jump_force / 2.0
-		
+
 		if Input.is_action_just_pressed("jump") and air_jump:
 			jump(jump_force * 0.75)
 			air_jump = false
@@ -200,16 +200,18 @@ func _on_drop_timer_timeout():
 
 
 func _on_hurtbox_hurt(_hitbox, _damage):
-	Events.add_screenshake.emit(10, 0.1)
-	PlayerStats.health -= 1
+	hurt()
 	hurtbox.is_invincible = true
-	blinking_animation_player.play("blink")	
+	blinking_animation_player.play("blink")
 	await blinking_animation_player.animation_finished
 	hurtbox.is_invincible = false
 
 
 func reached_void():
-	Events.add_screenshake.emit(10, 0.1)
-	PlayerStats.health -= 1
+	hurt()
 	global_transform.origin = startPosition
 
+
+func hurt():
+	Events.add_screenshake.emit(10, 0.1)
+	PlayerStats.health -= 1
