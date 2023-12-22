@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cnl4sauj6u1tx"]
 
 [ext_resource type="Texture2D" uid="uid://dultlpegiuqgq" path="res://ui/player_missile_icon.png" id="1_5vvs4"]
-[ext_resource type="Script" path="res://ui/missle_ui.gd" id="1_iexnp"]
+[ext_resource type="Script" path="res://ui/missile_ui.gd" id="1_iexnp"]
 
 [node name="MissleUI" type="HBoxContainer"]
 offset_right = 13.0

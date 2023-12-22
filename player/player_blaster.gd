@@ -2,7 +2,7 @@ class_name PlayerBlaster
 extends Node2D
 
 const BulletScene = preload("res://player/bullet.tscn")
-const MissleScene = preload("res://player/missile.tscn")
+const MissileScene = preload("res://player/missile.tscn")
 
 @onready var blaster_sprite = $BlasterSprite
 @onready var muzzle = $BlasterSprite/Muzzle
@@ -17,7 +17,7 @@ func fire_bullet():
 	bullet.update_velocity()
 
 
-func fire_missle():
-	var missle = Utils.instanciate_scene_on_world(MissleScene, muzzle.global_position)
-	missle.rotation = blaster_sprite.rotation
-	missle.update_velocity()
+func fire_missile():
+	var missile = Utils.instanciate_scene_on_world(MissileScene, muzzle.global_position)
+	missile.rotation = blaster_sprite.rotation
+	missile.update_velocity()
