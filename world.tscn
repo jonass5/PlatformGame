@@ -113,6 +113,9 @@ position = Vector2(478, -45)
 position = Vector2(144, 16)
 
 [node name="MissilePowerup" parent="." instance=ExtResource("17_kw3rd")]
-position = Vector2(121, 88)
+position = Vector2(121, 85)
+
+[node name="MissilePowerup2" parent="." instance=ExtResource("17_kw3rd")]
+position = Vector2(218, 101)
 
 [editable path="Void"]
