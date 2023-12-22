@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ch1wvgvuahnit"]
+[gd_scene load_steps=18 format=3 uid="uid://ch1wvgvuahnit"]
 
 [ext_resource type="PackedScene" uid="uid://cr81v0u4ichr" path="res://player/PlayerChar.tscn" id="1_mkr1u"]
 [ext_resource type="Script" path="res://world.gd" id="1_pxeu2"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://chfgveu0gjwbd" path="res://enemies/plant_enemy.tscn" id="11_s7tfg"]
 [ext_resource type="PackedScene" uid="uid://cm38ky2ure14w" path="res://enemies/crawling_enemy.tscn" id="12_dowp2"]
 [ext_resource type="PackedScene" uid="uid://cyctgnqsxsnqf" path="res://enemies/flying_enemy.tscn" id="13_mwf4k"]
+[ext_resource type="PackedScene" uid="uid://dm8in4cn5o38p" path="res://world/brick.tscn" id="16_jt4kj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwn6n"]
 size = Vector2(804, 496)
@@ -106,5 +107,8 @@ position = Vector2(276, 112)
 
 [node name="FlyingEnemy" parent="." instance=ExtResource("13_mwf4k")]
 position = Vector2(304, 65)
+
+[node name="Brick" parent="." instance=ExtResource("16_jt4kj")]
+position = Vector2(144, 16)
 
 [editable path="Void"]

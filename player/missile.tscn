@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cj81i5mtt2nty"]
+[gd_scene load_steps=7 format=3 uid="uid://cj81i5mtt2nty"]
 
 [ext_resource type="PackedScene" uid="uid://cv6mum3x7ft5v" path="res://projectile.tscn" id="1_jagoj"]
 [ext_resource type="Texture2D" uid="uid://sm1d2yv5cbke" path="res://player/player_missile.png" id="2_3jdlj"]
+[ext_resource type="Script" path="res://player/missile.gd" id="2_8jubh"]
 [ext_resource type="Texture2D" uid="uid://cw8tofii0xa4r" path="res://effects/particle_effect.png" id="3_5f1gp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nkqm"]
@@ -12,6 +13,7 @@ _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.302649), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="Missile" instance=ExtResource("1_jagoj")]
+script = ExtResource("2_8jubh")
 speed = 150
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
