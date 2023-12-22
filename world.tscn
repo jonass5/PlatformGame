@@ -38,18 +38,18 @@ offset_top = 3.0
 offset_right = 3.0
 offset_bottom = 3.0
 
+[node name="MissleUI" parent="GUI" instance=ExtResource("7_p6sfx")]
+offset_left = 3.0
+offset_top = 17.0
+offset_right = 16.0
+offset_bottom = 27.0
+
 [node name="PauseMenu" parent="GUI" instance=ExtResource("6_cs515")]
 visible = false
 
 [node name="VersionGUI" parent="GUI" instance=ExtResource("2_c7vam")]
 offset_top = 173.0
 offset_right = -300.0
-
-[node name="MissleUI" parent="GUI" instance=ExtResource("7_p6sfx")]
-offset_left = 3.0
-offset_top = 17.0
-offset_right = 16.0
-offset_bottom = 27.0
 
 [node name="WalkingEnemy" parent="." instance=ExtResource("8_0gfi7")]
 position = Vector2(239, 112)
