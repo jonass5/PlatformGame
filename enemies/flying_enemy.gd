@@ -28,7 +28,7 @@ func move_toward_position(target_position: Vector2, delta: float) -> void:
 	move_and_slide()
 
 
-func _on_hurtbox_hurt(_hitbox, damage):
+func _on_hurtbox_hurt(_hitbox, damage: int):
 	stats.health -= damage
 
 
