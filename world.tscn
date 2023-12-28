@@ -67,6 +67,7 @@ position = Vector2(-58, -160)
 position = Vector2(201, 81)
 
 [node name="Void" parent="." instance=ExtResource("9_sppdf")]
+visible = false
 position = Vector2(-161, -292)
 metadata/_edit_group_ = true
 
