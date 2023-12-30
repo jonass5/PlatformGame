@@ -1,34 +1,18 @@
-[gd_scene load_steps=19 format=3 uid="uid://ch1wvgvuahnit"]
+[gd_scene load_steps=8 format=3 uid="uid://ch1wvgvuahnit"]
 
 [ext_resource type="PackedScene" uid="uid://cr81v0u4ichr" path="res://player/PlayerChar.tscn" id="1_mkr1u"]
 [ext_resource type="Script" path="res://world.gd" id="1_pxeu2"]
 [ext_resource type="PackedScene" uid="uid://dbvi8foqa1c82" path="res://ui/version_gui.tscn" id="2_c7vam"]
-[ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_qs7xu"]
 [ext_resource type="PackedScene" uid="uid://ciuq1j8jgxaxs" path="res://ui/health_meter.tscn" id="5_r4qfi"]
 [ext_resource type="PackedScene" uid="uid://de63oipctsyad" path="res://menus/pause_menu.tscn" id="6_cs515"]
-[ext_resource type="PackedScene" uid="uid://bqttrppfaytmh" path="res://world/UpDownMovingPlatform.tscn" id="7_8sb3v"]
+[ext_resource type="PackedScene" uid="uid://bkkptul236bce" path="res://world/level_01.tscn" id="7_im5t5"]
 [ext_resource type="PackedScene" uid="uid://cnl4sauj6u1tx" path="res://ui/missile_ui.tscn" id="7_p6sfx"]
-[ext_resource type="PackedScene" uid="uid://c77cvrcmrwist" path="res://enemies/walking_enemy.tscn" id="8_0gfi7"]
-[ext_resource type="PackedScene" uid="uid://drusidb24xxab" path="res://world/LeftRightMovingPlatform.tscn" id="8_24a5v"]
-[ext_resource type="PackedScene" uid="uid://hsktkibht8xd" path="res://world/TriangleMovingPlatform.tscn" id="9_r2fe7"]
-[ext_resource type="PackedScene" uid="uid://dddrl1s6kah73" path="res://void.tscn" id="9_sppdf"]
-[ext_resource type="PackedScene" uid="uid://chfgveu0gjwbd" path="res://enemies/plant_enemy.tscn" id="11_s7tfg"]
-[ext_resource type="PackedScene" uid="uid://cm38ky2ure14w" path="res://enemies/crawling_enemy.tscn" id="12_dowp2"]
-[ext_resource type="PackedScene" uid="uid://cyctgnqsxsnqf" path="res://enemies/flying_enemy.tscn" id="13_mwf4k"]
-[ext_resource type="PackedScene" uid="uid://dm8in4cn5o38p" path="res://world/brick.tscn" id="16_jt4kj"]
-[ext_resource type="PackedScene" uid="uid://dnvp6bgu1gilo" path="res://player/missile_powerup.tscn" id="17_kw3rd"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwn6n"]
-size = Vector2(1091, 584)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_pxeu2")
 
 [node name="PlayerChar" parent="." instance=ExtResource("1_mkr1u")]
-position = Vector2(-46, 78)
-
-[node name="WorldTileMap" parent="." instance=ExtResource("2_qs7xu")]
-layer_0/tile_data = PackedInt32Array(393240, 327684, 0, 327704, 131072, 0, 393239, 65536, 1, 327703, 65536, 0, 393238, 65536, 1, 327702, 65536, 0, 393237, 393216, 1, 327701, 65536, 0, 393236, 0, 2, 327700, 0, 0, 589849, 65536, 1, 524313, 65536, 1, 458777, 327684, 0, 589848, 393216, 1, 524312, 65536, 1, 458776, 65536, 1, 589847, 0, 2, 524311, 393216, 1, 458775, 65536, 1, 524310, 0, 2, 458774, 393216, 1, 589854, 65536, 0, 589853, 65536, 0, 589852, 65536, 0, 589851, 65540, 0, 589850, 65536, 1, 524314, 327684, 0, 589860, 65536, 0, 589859, 65536, 0, 589858, 65536, 0, 589857, 65536, 0, 589856, 65536, 0, 589855, 65536, 0, 655396, 65536, 2, 655395, 65536, 2, 655394, 65536, 2, 655393, 65536, 2, 655392, 65536, 2, 655391, 65536, 2, 655390, 65536, 2, 655389, 65536, 2, 655388, 65536, 2, 655387, 65536, 2, 655386, 65536, 2, 655385, 65536, 2, 655384, 0, 2, 393241, 393220, 0, 458778, 393220, 0, 524315, 393220, 0, 589861, 65536, 0, 655397, 65536, 2, 65565, 131072, 1, 65564, 0, 1, 28, 0, 1, 29, 131072, 1, 655398, 65536, 2, 589862, 65536, 0, 458773, 0, 2, 393211, 393216, 0, 393212, 65536, 0, 393213, 65536, 0, 393214, 327680, 0, 458750, 131072, 2, 458749, 65536, 2, 458748, 65536, 2, 458747, 0, 2, 393210, 0, 3, 393215, 131072, 3, 327683, 0, 3, 327684, 393216, 0, 327685, 327680, 0, 327686, 131072, 3, 393221, 131072, 2, 393220, 0, 2, 327692, 65536, 0, 327693, 65536, 0, 327694, 327680, 0, 327695, 131072, 3, 393230, 131072, 2, 393229, 65536, 2, 393228, 65536, 2, 393227, 0, 2, 327690, 0, 3, 327691, 393216, 0, 131100, 0, 1, 131101, 131072, 1, 196637, 131072, 1, 262173, 327680, 2, 262172, 0, 1, 196636, 0, 1, 327709, 65536, 2, 327708, 0, 2, 327710, 65536, 2, 327711, 65536, 2, 327712, 65536, 2, 262176, 65536, 0, 262175, 65536, 0, 262174, 65536, 0, 262177, 65536, 0, 327713, 65536, 2, 589863, 65536, 0, 655399, 65536, 2, -262105, 65536, 2, -327641, 65536, 1, -327642, 0, 1, -262106, 0, 2, -65507, 131072, 0, -65508, 0, 0, -65519, 131072, 2, -65520, 65536, 2, -131056, 65536, 0, -131054, 131072, 3, -131055, 327680, 0, -131057, 393216, 0, -65521, 0, 2, -131058, 0, 3, -131064, 65536, 0, -131065, 65536, 0, -131066, 65536, 0, -131067, 65536, 0, -131068, 393216, 0, -65531, 393216, 1, -65530, 65536, 1, -65529, 65536, 1, -131063, 327680, 0, -65528, 327680, 1, -131062, 131072, 3, -65527, 131072, 2, 7, 65536, 2, 6, 65536, 2, -65532, 0, 2, 5, 0, 2, -131069, 0, 3, 8, 131072, 2, -131073, 0, 0, -196608, 131072, 0, -65537, 0, 2, -131072, 131072, 2, -196613, 0, 0, -196612, 131072, 0, -131076, 131072, 2, -131077, 0, 2, -262153, 0, 0, -262152, 131072, 0, -196616, 131072, 2, -196617, 0, 2, -524293, 0, 2, -524292, 524288, 1, -589828, 65536, 0, -589829, 393216, 0, -589827, 327680, 0, -589826, 131072, 3, -524291, 131072, 2, -458756, 196608, 2, -589830, 0, 3, -720895, 0, 0, -720894, 131072, 0, -786427, 0, 0, -786426, 65536, 0, -720891, 0, 2, -720890, 65536, 2, -655358, 131072, 2, -655359, 0, 2, -786425, 131072, 0, -720889, 131072, 2, -786419, 0, 0, -720883, 0, 2, -720882, 65536, 2, -720881, 131072, 2, -786417, 131072, 0, -786418, 65536, 0, -786413, 65536, 0, -720878, 0, 2, -720877, 393216, 1, -720876, 65536, 1, -720875, 65536, 1, -786411, 65536, 0, -786412, 65536, 0, -786414, 0, 0, -786410, 65536, 0, -720874, 65536, 1, -720873, 327680, 1, -786409, 65536, 0, -786408, 131072, 0, -720872, 131072, 2, -655341, 0, 2, -655340, 393216, 1, -655339, 65536, 1, -655338, 327680, 1, -655337, 131072, 2, -589804, 0, 2, -589803, 65536, 2, -589802, 131072, 2, 262182, 65536, 0, 327718, 65536, 2, 262178, 65536, 0, 327714, 65536, 2, 262181, 65536, 0, 262180, 65536, 0, 262179, 65536, 0, 327715, 65536, 2, 327716, 65536, 2, 327717, 65536, 2, 589864, 65536, 0, 655400, 65536, 2, 655401, 65536, 2, 655402, 65536, 2, 589866, 65536, 0, 589865, 65536, 0, -65494, 0, 2, -65493, 393216, 1, 43, 0, 1, 65579, 0, 1, 131115, 0, 1, 196651, 0, 1, 262187, 0, 1, 327723, 0, 1, 589867, 65536, 0, 655403, 65536, 2, -393177, 65536, 1, -458713, 65536, 0, -458714, 65536, 0, -393178, 393216, 1, -458715, 65536, 0, -393179, 65536, 2, -393180, 65536, 2, -458716, 65536, 0, -458717, 65536, 0, -393181, 65536, 2, -458718, 65536, 0, -393182, 65536, 2, -393183, 65536, 2, -458719, 65536, 0, -458720, 65536, 0, -393184, 65536, 2, -458721, 393216, 0, -393185, 0, 2, -458722, 0, 3, -458712, 65536, 0, -458711, 65536, 0, -458710, 65536, 0, -393174, 65536, 1, -393173, 65536, 1, -327637, 65536, 1, -262101, 65536, 1, -196565, 65536, 1, -131029, 65536, 1, -131030, 393216, 1, -131031, 0, 2, -196568, 0, 2, -262104, 393216, 1, -327640, 65536, 1, -327639, 65536, 1, -327638, 65536, 1, -262102, 65536, 1, -196566, 65536, 1, -196567, 393216, 1, -262103, 65536, 1, -393176, 65536, 1, -393175, 65536, 1, -458709, 65536, 0, -458708, 131072, 0, -393172, 131072, 1, -327636, 131072, 1, -262100, 131072, 1, -196564, 131072, 1, -131028, 131072, 1, -65492, 131072, 1, 44, 327680, 2, 65580, 65536, 1, 131116, 65536, 1, 196652, 65536, 1, 262188, 327680, 1, 327724, 131072, 1, 589868, 65536, 0, 655404, 65536, 2, 262183, 131072, 0, 327719, 131072, 2, -917483, 196608, 2, -983019, 196608, 1, -1048555, 262144, 1, -1114091, 0, 0, -1114090, 65536, 0, -1048554, 65536, 2, -1114089, 131072, 0, -1048553, 131072, 2, 393259, 0, 2, 393260, 131072, 2, 589869, 65536, 0, 589870, 65536, 0, 589871, 65536, 0, 589872, 65536, 0, 655407, 65536, 2, 655406, 65536, 2, 655405, 65536, 2, 655408, 65536, 2, 655409, 65536, 2, 655410, 65536, 2, 589874, 393216, 2, 589873, 65536, 0, 589875, 65536, 1, 524339, 65536, 1, 524338, 0, 1, 458802, 0, 1, 393266, 393216, 1, 393265, 0, 2, 327729, 0, 1, 262193, 589824, 0, 262192, 65536, 2, 196656, 65536, 1, 196655, 65536, 1, 196654, 65536, 1, 196653, 65536, 1, 327730, 327680, 2, 458803, 327680, 2, 655411, 65536, 2, 262191, 65536, 2, 262190, 65536, 2, 262189, 65536, 2, 131117, 65536, 1, 131118, 65536, 1, 131119, 327680, 2, 65581, 327680, 2, 393267, 131072, 1, 262194, 131072, 0, 131120, 65536, 0, 655412, 131072, 2, 589876, 131072, 1, 524340, 131072, 1, 458804, 131072, 0, 327731, 131072, 0, 196657, 131072, 1, 131121, 131072, 0, 65583, 131072, 0, 65582, 65536, 0, 45, 131072, 0)
+position = Vector2(67, 96)
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -51,80 +35,4 @@ visible = false
 offset_top = 173.0
 offset_right = -300.0
 
-[node name="WalkingEnemy" parent="." instance=ExtResource("8_0gfi7")]
-position = Vector2(96, -32)
-
-[node name="WalkingEnemy2" parent="." instance=ExtResource("8_0gfi7")]
-position = Vector2(502, 144)
-
-[node name="WalkingEnemy3" parent="." instance=ExtResource("8_0gfi7")]
-position = Vector2(542, 64)
-
-[node name="WalkingEnemy4" parent="." instance=ExtResource("8_0gfi7")]
-position = Vector2(-58, -160)
-
-[node name="WalkingEnemy5" parent="." instance=ExtResource("8_0gfi7")]
-position = Vector2(201, 81)
-
-[node name="Void" parent="." instance=ExtResource("9_sppdf")]
-visible = false
-position = Vector2(-161, -292)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" parent="Void" index="0"]
-position = Vector2(492.5, 240)
-shape = SubResource("RectangleShape2D_dwn6n")
-debug_color = Color(0.858824, 0, 0.160784, 0.419608)
-
-[node name="UpDownMovingPlatform" parent="." instance=ExtResource("7_8sb3v")]
-position = Vector2(512, 15)
-
-[node name="LeftRightMovingPlatform" parent="." instance=ExtResource("8_24a5v")]
-position = Vector2(362, -15)
-
-[node name="TriangleMovingPlatform" parent="." instance=ExtResource("9_r2fe7")]
-position = Vector2(165, -119)
-
-[node name="PlantEnemy" parent="." instance=ExtResource("11_s7tfg")]
-position = Vector2(664, -16)
-rotation = 3.14159
-
-[node name="PlantEnemy2" parent="." instance=ExtResource("11_s7tfg")]
-position = Vector2(345, -128)
-rotation = -3.14159
-
-[node name="CrawlingEnemy" parent="." instance=ExtResource("12_dowp2")]
-position = Vector2(104, -192)
-
-[node name="CrawlingEnemy2" parent="." instance=ExtResource("12_dowp2")]
-position = Vector2(460, -19)
-
-[node name="CrawlingEnemy3" parent="." instance=ExtResource("12_dowp2")]
-position = Vector2(-69, -64)
-crawling_direction = -1
-
-[node name="CrawlingEnemy4" parent="." instance=ExtResource("12_dowp2")]
-position = Vector2(262, -32)
-
-[node name="FlyingEnemy" parent="." instance=ExtResource("13_mwf4k")]
-position = Vector2(563, -21)
-
-[node name="Brick" parent="." instance=ExtResource("16_jt4kj")]
-position = Vector2(689, 128)
-
-[node name="MissilePowerup" parent="." instance=ExtResource("17_kw3rd")]
-position = Vector2(759, 122)
-
-[node name="MissilePowerup2" parent="." instance=ExtResource("17_kw3rd")]
-position = Vector2(80, 67)
-
-[node name="Brick2" parent="." instance=ExtResource("16_jt4kj")]
-position = Vector2(689, 112)
-
-[node name="UpDownMovingPlatform2" parent="." instance=ExtResource("7_8sb3v")]
-position = Vector2(-128, -135)
-
-[node name="UpDownMovingPlatform3" parent="." instance=ExtResource("7_8sb3v")]
-position = Vector2(665, 91)
-
-[editable path="Void"]
+[node name="Level01" parent="." instance=ExtResource("7_im5t5")]
