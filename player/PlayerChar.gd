@@ -29,12 +29,9 @@ var state : Callable = move_state
 @onready var blinking_animation_player = $BlinkingAnimationPlayer
 @onready var center = $Center
 
-var startPosition : Vector2
-
 
 func _ready():
 	PlayerStats.no_health.connect(die)
-	startPosition = global_position
 
 
 func _enter_tree():
@@ -212,11 +209,6 @@ func _on_hurtbox_hurt(_hitbox, _damage):
 	blinking_animation_player.play("blink")
 	await blinking_animation_player.animation_finished
 	hurtbox.is_invincible = false
-
-
-func reached_void():
-	hurt()
-	global_transform.origin = startPosition
 
 
 func hurt():
