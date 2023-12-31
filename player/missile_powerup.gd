@@ -1,4 +1,4 @@
-class_name MisslePowerup
+class_name MissilePowerup
 extends Powerup
 
 
