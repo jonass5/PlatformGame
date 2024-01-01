@@ -19,10 +19,13 @@ jobs:
           lfs: true
       - name: Setup
         run: |
-          mkdir -v -p build/linux build/windows build/mac build/web ~/.local/share/godot/templates
+          mkdir -v -p build/web ~/.local/share/godot/templates
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Web Build
-        run: godot --headless --verbose --export-release "HTML5" ./build/web/index.html
+        run: |
+          ls -a
+          pwd
+          cd $PROJECT_PATHgodot --headless --verbose --export-release "HTML5" ./build/web/index.html
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
