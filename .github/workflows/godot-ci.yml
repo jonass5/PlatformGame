@@ -23,9 +23,9 @@ jobs:
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Web Build
         run: |
-          ls -a
-          pwd
-          cd $PROJECT_PATHgodot --headless --verbose --export-release "HTML5" ./build/web/index.html
+          cd ..
+          ls .. -a
+          godot --headless --verbose --export-release "HTML5" ./build/web/index.html
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
