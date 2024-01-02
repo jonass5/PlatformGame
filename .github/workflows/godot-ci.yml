@@ -3,8 +3,6 @@ on: push
 
 env:
   GODOT_VERSION: 4.2.1
-  EXPORT_NAME: PlatformGame
-  PROJECT_PATH: PlatformGame
 
 jobs:
   export-web:
@@ -23,9 +21,10 @@ jobs:
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Web Build
         run: |
-          cd ..
-          ls .. -a
+          godot --headless --verbose --editor --quit
           godot --headless --verbose --export-release "HTML5" ./build/web/index.html
+          ls -a
+          pwd
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
