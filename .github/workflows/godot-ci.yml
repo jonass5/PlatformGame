@@ -21,14 +21,15 @@ jobs:
         run: |
           mkdir -v -p build/web ~/.local/share/godot/export_templates
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
-          ls ~/.local/share/godot/export_templates/ -R -a
       - name: Web Build
         run: |
           godot --headless --verbose --editor --quit
-          godot --headless --verbose --export-release "Web" ./build/web/index.html
-          ls -a
-          ls ./build/web -a
-          pwd
+          godot --headless --verbose --export-release "Web" ./build/web/index.html          
+      - name: Web Build
+        run: |
+          cd /build/web
+          curl -fsSL https://github.com/gzuidhof/coi-serviceworker/raw/master/coi-serviceworker.js > coi-serviceworker.js
+          sed -i 's#\(		<script src="index.js"></script>\)#		<script src="coi-serviceworker.js"></script>\n\1#g' index.html
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
         with:
