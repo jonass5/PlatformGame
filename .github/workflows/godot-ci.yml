@@ -27,8 +27,7 @@ jobs:
           godot --headless --verbose --export-release "Web" ./build/web/index.html          
       - name: GitHub Pages fix
         run: |
-          sudo apt update
-          sudo apt install curl
+          apt update && apt install curl
           
           cd ./build/web
           
