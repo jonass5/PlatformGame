@@ -19,11 +19,13 @@ jobs:
         run: |
           mkdir -v -p build/web ~/.local/share/godot/templates
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+          ls ~/.local/share/godot/templates/ -a
       - name: Web Build
         run: |
           godot --headless --verbose --editor --quit
           godot --headless --verbose --export-release "HTML5" ./build/web/index.html
           ls -a
+          ls ./build/web -a
           pwd
       - name: Upload Artifact
         uses: actions/upload-artifact@v1
