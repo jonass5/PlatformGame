@@ -1,0 +1,48 @@
+name: "godot-ci export"
+on: push
+permissions:
+  contents: write
+
+env:
+  GODOT_VERSION: 4.2.1
+
+jobs:
+  export-web:
+    name: Web Export
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:4.2.1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p build/web ~/.local/share/godot/export_templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+      - name: Web Build
+        run: |
+          godot --headless --verbose --editor --quit
+          godot --headless --verbose --export-release "Web" ./build/web/index.html          
+      - name: GitHub Pages fix
+        run: |
+          apt -y update && apt -y install curl 
+          
+          cd ./build/web
+          
+          curl -fsSL https://github.com/gzuidhof/coi-serviceworker/raw/master/coi-serviceworker.js > coi-serviceworker.js
+          sed -i 's#\(		<script src="index.js"></script>\)#		<script src="coi-serviceworker.js"></script>\n\1#g' index.html
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: web
+          path: ./build/web/
+      - name: Install rsync 📚
+        run: |
+          apt-get update && apt-get install -y rsync
+      - name: Deploy to GitHub Pages 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v4
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build/web # The folder the action should deploy.
