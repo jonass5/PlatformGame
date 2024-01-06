@@ -278,6 +278,11 @@ wait_time = 0.1
 one_shot = true
 autostart = true
 
+[node name="StateTimer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
 [node name="StingerPivot" type="Marker2D" parent="."]
 position = Vector2(0, 7)
 
@@ -286,3 +291,4 @@ position = Vector2(14, 0)
 
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
+[connection signal="timeout" from="StateTimer" to="." method="_on_state_timer_timeout"]
