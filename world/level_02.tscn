@@ -29,3 +29,19 @@ offset_bottom = 176.0
 
 [node name="BossEnemy" parent="." instance=ExtResource("6_lrvih")]
 position = Vector2(208, 88)
+targets = Array[NodePath]([NodePath("../BossTarget1"), NodePath("../BossTarget2"), NodePath("../BossTarget3"), NodePath("../BossTarget4"), NodePath("../BossTarget5")])
+
+[node name="BossTarget1" type="Marker2D" parent="."]
+position = Vector2(168, 72)
+
+[node name="BossTarget2" type="Marker2D" parent="."]
+position = Vector2(136, 104)
+
+[node name="BossTarget3" type="Marker2D" parent="."]
+position = Vector2(208, 96)
+
+[node name="BossTarget4" type="Marker2D" parent="."]
+position = Vector2(288, 104)
+
+[node name="BossTarget5" type="Marker2D" parent="."]
+position = Vector2(256, 72)
