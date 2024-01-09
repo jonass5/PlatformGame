@@ -291,4 +291,3 @@ position = Vector2(14, 0)
 
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
-[connection signal="timeout" from="StateTimer" to="." method="_on_state_timer_timeout"]
