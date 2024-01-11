@@ -254,7 +254,7 @@ offset = Vector2(8, 8)
 flip_h = true
 
 [node name="Stats" parent="." instance=ExtResource("6_536o4")]
-max_health = 200
+max_health = 100
 
 [node name="Hurtbox" parent="." instance=ExtResource("7_mke8w")]
 collision_layer = 32
