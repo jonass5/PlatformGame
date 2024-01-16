@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b085yn7nfxg2b"]
 
 [ext_resource type="Texture2D" uid="uid://pethvg3h33f5" path="res://effects/explosion_effect.png" id="1_qyfq5"]
-[ext_resource type="Script" path="res://effects/effect.gd" id="2_k1h1c"]
+[ext_resource type="Script" path="res://effects/explosion_effect.gd" id="2_wlpay"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qyjq8"]
 atlas = ExtResource("1_qyfq5")
@@ -52,4 +52,4 @@ autoplay = "default"
 frame = 4
 frame_progress = 1.0
 offset = Vector2(0, -8)
-script = ExtResource("2_k1h1c")
+script = ExtResource("2_wlpay")

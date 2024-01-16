@@ -7,6 +7,7 @@ extends Node2D
 func _ready():
 	RenderingServer.set_default_clear_color(Color.BLACK)
 	Events.door_entered.connect(change_levels)
+	Music.play(Music.main_theme)
 
 
 func change_levels(door: Door):

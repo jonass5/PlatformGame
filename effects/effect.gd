@@ -1,8 +1,6 @@
-class_name ExplosionEffect
+class_name Effect
 extends AnimatedSprite2D
 
 
 func _ready():
 	animation_finished.connect(queue_free)
-	Sound.play(Sound.explosion)
-

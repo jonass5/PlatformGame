@@ -176,7 +176,7 @@ func jump_check() -> void:
 
 
 func jump(force: float, create_effect: bool = true) -> void:
-	Sound.play(Sound.jump, randf_range(0.8, 1.1), -5.0)
+	Sound.play(Sound.jump, randf_range(0.8, 1.1), 5.0)
 	velocity.y = -force
 	if create_effect:
 		Utils.instanciate_scene_on_world(JumpEffectScene, global_position)
