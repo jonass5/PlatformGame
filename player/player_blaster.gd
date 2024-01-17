@@ -8,7 +8,12 @@ const MissileScene = preload("res://player/missile.tscn")
 @onready var muzzle = $BlasterSprite/Muzzle
 
 func _process(_delta):
-	blaster_sprite.rotation = get_local_mouse_position().angle()
+	if not Input.get_connected_joypads().is_empty():
+		var joypad_face_rotation = Input.get_vector("face_left", "face_right", "face_up", "face_down")
+		blaster_sprite.rotation = joypad_face_rotation.angle()
+	else:
+		blaster_sprite.rotation = get_local_mouse_position().angle()
+	
 
 
 func fire_bullet():
