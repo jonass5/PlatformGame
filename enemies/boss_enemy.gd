@@ -2,6 +2,8 @@ class_name BossEnemy
 extends Node2D
 
 const StingerScence = preload("res://enemies/stinger.tscn")
+const MissilePowerupScene = preload("res://player/missile_powerup.tscn")
+const EnemyDeathEffectScene = preload("res://effects/enemy_death_effect.tscn")
 
 @export var acceleration: int = 200
 @export var max_speed: int = 800
@@ -20,6 +22,7 @@ var state_options_left = []
 @onready var firerate_timer = $FirerateTimer
 @onready var state_timer = $StateTimer
 
+
 func set_state(value):
 	state = value
 	state_init = true
@@ -29,6 +32,11 @@ func get_state_init():
 	var was = state_init
 	state_init = false
 	return was
+
+
+func _ready():
+	var freed = WorldStash.retrive("first_boss", "freed")
+	if freed: queue_free()
 
 
 func _process(delta: float):
@@ -91,3 +99,8 @@ func _on_hurtbox_hurt(_hitbox, damage: int):
 
 func _on_stats_no_health():
 	queue_free()
+	WorldStash.stash("first_boss", "freed", true)
+	Utils.instanciate_scene_on_world(MissilePowerupScene, global_position)
+	for i in 6:
+		var offset = Vector2(randf_range(-16, 16), randf_range(-16, 16))
+		Utils.instanciate_scene_on_world(EnemyDeathEffectScene, global_position + offset)

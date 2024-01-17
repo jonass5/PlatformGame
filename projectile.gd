@@ -7,6 +7,11 @@ const ExplosionEffectScene = preload("res://effects/explosion_effect.tscn")
 
 var velocity = Vector2.ZERO
 
+
+func _ready():
+	Sound.play(Sound.bullet, randf_range(0.6, 1.2))
+
+
 func update_velocity():
 	velocity.x = speed
 	velocity = velocity.rotated(rotation)

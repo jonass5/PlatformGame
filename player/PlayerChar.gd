@@ -115,6 +115,7 @@ func wall_detach(delta: float, wall_axis: int) -> void:
 
 func wall_jump_check(wall_axis) -> void:
 	if Input.is_action_just_pressed("jump"):
+		Sound.play(Sound.jump, randf_range(0.8, 1.1), -5.0)
 		velocity.x = wall_axis * max_velocity
 		state = move_state
 		jump(jump_force * 0.75, false)
@@ -133,6 +134,7 @@ func apply_wall_slide_gravity(delta) -> void:
 
 
 func create_dust_effect() -> void:
+	Sound.play(Sound.step, randf_range(0.8, 1.1), -5.0)
 	Utils.instanciate_scene_on_world(DustEffectScene, global_position)
 
 
@@ -174,6 +176,7 @@ func jump_check() -> void:
 
 
 func jump(force: float, create_effect: bool = true) -> void:
+	Sound.play(Sound.jump, randf_range(0.8, 1.1), 5.0)
 	velocity.y = -force
 	if create_effect:
 		Utils.instanciate_scene_on_world(JumpEffectScene, global_position)
@@ -212,5 +215,6 @@ func _on_hurtbox_hurt(_hitbox, _damage):
 
 
 func hurt():
+	Sound.play(Sound.hurt)
 	Events.add_screenshake.emit(10, 0.1)
 	PlayerStats.health -= 1
