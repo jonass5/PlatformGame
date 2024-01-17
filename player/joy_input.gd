@@ -6,9 +6,11 @@ func _ready():
 		print("joypad: ", joypad)
 
 
-func _process(delta):
+func _process(_delta):
 	var joypad_face_rotation = Input.get_vector("face_left", "face_right", "face_up", "face_down")
-	print("joypad_face_rotation: ", joypad_face_rotation)
+	#var joypad_face_rotation = Input.get_vector("move_left", "move_right", "jump", "crouch")
+	if not joypad_face_rotation == Vector2.ZERO:
+		print("joypad_face_rotation: ", joypad_face_rotation)
+		print("angle: ", joypad_face_rotation.angle())
 
-	var joypad_move_rotation = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	print("joypad_move_rotation: ", joypad_move_rotation)
+
