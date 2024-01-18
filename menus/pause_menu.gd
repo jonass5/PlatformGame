@@ -1,6 +1,9 @@
 class_name PauseMenu
 extends ColorRect
 
+@onready var resume_button = $CenterContainer/VBoxContainer/ResumeButton
+
+
 var paused = false :
 	set(value):
 		paused = value
@@ -22,6 +25,7 @@ func _ready():
 func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
 		paused = !paused
+		resume_button.grab_focus()
 
 
 func _on_resume_button_pressed():
