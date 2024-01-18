@@ -182,7 +182,10 @@ func jump(force: float, create_effect: bool = true) -> void:
 		Utils.instanciate_scene_on_world(JumpEffectScene, global_position)
 
 func update_animation(input_axis: float) -> void:
-	sprite_2d.scale.x = sign(get_local_mouse_position().x)
+	if Input.get_connected_joypads().is_empty():
+		sprite_2d.scale.x = sign(get_local_mouse_position().x)
+	else:
+		sprite_2d.scale.x = sign(player_blaster.get_blaster_direction())
 
 	if abs(sprite_2d.scale.x) != 1:
 		sprite_2d.scale.x = 1
