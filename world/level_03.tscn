@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bvcyil22qac2u"]
+[gd_scene load_steps=16 format=3 uid="uid://bvcyil22qac2u"]
 
 [ext_resource type="PackedScene" uid="uid://bqttrppfaytmh" path="res://world/UpDownMovingPlatform.tscn" id="1_2b5xx"]
 [ext_resource type="Script" path="res://world/level.gd" id="1_owf81"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="12_ggm6k"]
 [ext_resource type="Resource" uid="uid://uav15go03b6f" path="res://world/DoorConnection_level_02_and_03.tres" id="13_051rb"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="13_gdjms"]
+[ext_resource type="PackedScene" uid="uid://b8eimfxdhasbx" path="res://world/save_station.tscn" id="15_mchmj"]
 
 [node name="Level03" type="Node2D"]
 script = ExtResource("1_owf81")
@@ -108,3 +109,9 @@ offset_left = -32.0
 offset_top = -128.0
 offset_right = 992.0
 offset_bottom = 448.0
+
+[node name="SaveStation" parent="." instance=ExtResource("15_mchmj")]
+position = Vector2(16, 416)
+
+[node name="SaveStation2" parent="." instance=ExtResource("15_mchmj")]
+position = Vector2(504, 0)

@@ -18,7 +18,8 @@ func _on_start_game_pressed():
 
 func _on_load_game_pressed():
 	Sound.play(Sound.click, 1.0, -10.0)
-	print("load save game")
+	SaveManager.is_loading = true
+	get_tree().change_scene_to_file("res://world.tscn")
 
 
 func _on_quit_game_pressed():

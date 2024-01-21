@@ -1,9 +1,10 @@
 extends Node
 
-const TEST_PATH = "res://save.txt"
-const PROD_PATH = "user://platform_game_save.save"
+const TEST_PATH: String = "res://save.txt"
+const PROD_PATH: String = "user://platform_game_save.save"
 
-var save_path = PROD_PATH
+var save_path: String = PROD_PATH
+var is_loading: bool = false
 
 
 func save_game():
@@ -28,8 +29,8 @@ func load_game():
 	var file_path = WorldStash.retrive("level", "file_path")
 	MainInstances.world.load_level(file_path)
 	
-	var player_x = WorldStash.retrieve("player", "x")
-	var player_y = WorldStash.retrieve("player", "y")
+	var player_x = WorldStash.retrive("player", "x")
+	var player_y = WorldStash.retrive("player", "y")
 	MainInstances.player.global_position = Vector2(player_x, player_y)
 	
 	save_file.close()
