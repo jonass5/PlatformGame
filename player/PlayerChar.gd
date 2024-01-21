@@ -203,6 +203,7 @@ func update_animation(input_axis: float) -> void:
 func die():
 	camera_2d.reparent(get_tree().current_scene)
 	queue_free()
+	Events.player_died.emit()
 
 
 func _on_drop_timer_timeout():

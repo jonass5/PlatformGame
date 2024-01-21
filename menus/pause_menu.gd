@@ -23,6 +23,8 @@ func _ready():
 
 
 func _process(_delta):
+	if not MainInstances.player is PlayerChar:
+		return
 	if Input.is_action_just_pressed("pause"):
 		paused = !paused
 		resume_button.grab_focus()
