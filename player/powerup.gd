@@ -4,7 +4,7 @@ extends Area2D
 
 func _ready():
 	var id = WorldStash.get_id(self)
-	var freed = WorldStash.retrive(id, "freed")
+	var freed = WorldStash.retrieve(id, "freed")
 	if freed: queue_free()
 
 

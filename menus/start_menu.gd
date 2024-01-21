@@ -6,6 +6,7 @@ extends ColorRect
 
 
 func _ready():
+	PlayerStats.reset()
 	start_game.grab_focus()
 	if OS.get_name() == "Web":
 		quit_game.hide()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkkptul236bce"]
+[gd_scene load_steps=8 format=3 uid="uid://bkkptul236bce"]
 
 [ext_resource type="Script" path="res://world/level.gd" id="1_t111h"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="1_tgiig"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://u3mrgkygk2f4" path="res://world/DoorConnection_level_01_and_02.tres" id="3_dqyqa"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="4_m6qto"]
 [ext_resource type="PackedScene" uid="uid://b8eimfxdhasbx" path="res://world/save_station.tscn" id="6_5knab"]
+[ext_resource type="PackedScene" uid="uid://dnvp6bgu1gilo" path="res://player/missile_powerup.tscn" id="7_d8tme"]
 
 [node name="Level01" type="Node2D"]
 script = ExtResource("1_t111h")
@@ -25,3 +26,6 @@ offset_bottom = 176.0
 
 [node name="SaveStation" parent="." instance=ExtResource("6_5knab")]
 position = Vector2(224, 96)
+
+[node name="MissilePowerup" parent="." instance=ExtResource("7_d8tme")]
+position = Vector2(152, 88)

@@ -11,6 +11,7 @@ func save_game():
 	WorldStash.stash("level", "file_path", MainInstances.level.scene_file_path)
 	WorldStash.stash("player", "x", MainInstances.player.global_position.x)
 	WorldStash.stash("player", "y", MainInstances.player.global_position.y)
+	PlayerStats.stash_stats()
 	
 	var save_file = FileAccess.open(save_path, FileAccess.WRITE)
 	var data_string = JSON.stringify(WorldStash.data)
@@ -26,11 +27,12 @@ func load_game():
 	var data =  JSON.parse_string(save_file.get_line())
 	WorldStash.data = data
 	
-	var file_path = WorldStash.retrive("level", "file_path")
+	var file_path = WorldStash.retrieve("level", "file_path")
 	MainInstances.world.load_level(file_path)
 	
-	var player_x = WorldStash.retrive("player", "x")
-	var player_y = WorldStash.retrive("player", "y")
+	var player_x = WorldStash.retrieve("player", "x")
+	var player_y = WorldStash.retrieve("player", "y")
 	MainInstances.player.global_position = Vector2(player_x, player_y)
 	
+	PlayerStats.retrieve_stats()
 	save_file.close()

@@ -35,7 +35,7 @@ func get_state_init():
 
 
 func _ready():
-	var freed = WorldStash.retrive("first_boss", "freed")
+	var freed = WorldStash.retrieve("first_boss", "freed")
 	if freed: queue_free()
 
 

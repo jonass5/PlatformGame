@@ -14,7 +14,7 @@ func stash(id, key, value) -> void:
 	data[id][key] = value
 
 
-func retrive(id, key):
+func retrieve(id, key):
 	if not data.has(id): return
 	if not data[id].has(key): return
 	return data[id][key]

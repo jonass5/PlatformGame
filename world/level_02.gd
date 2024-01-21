@@ -11,7 +11,7 @@ func _ready():
 
 
 func _on_trigger_trigger_entered():
-	var boss_freed = WorldStash.retrive("first_boss", "freed")
+	var boss_freed = WorldStash.retrieve("first_boss", "freed")
 	if not boss_freed:
 		bricks.show()
 		trigger.is_active = false
