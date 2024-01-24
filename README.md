@@ -13,3 +13,5 @@ Playable under https://jonass5.github.io/PlatformGame/
 ![Screenshot of level 03](level_03.png)
 ## Pause menu
 ![Screenshot of pause menu](pause_menu.png)
+## Game Over menu
+![Screenshot of pause menu](game_over_menu.png)

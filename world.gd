@@ -4,10 +4,31 @@ extends Node2D
 @onready var level = $Level01
 
 
+func _enter_tree():
+	MainInstances.world = self
+
+
 func _ready():
 	RenderingServer.set_default_clear_color(Color.BLACK)
 	Events.door_entered.connect(change_levels)
+	Events.player_died.connect(game_over)
 	Music.play(Music.main_theme)
+	if SaveManager.is_loading:
+		SaveManager.load_game()
+		SaveManager.is_loading = false
+
+
+func _exit_tree():
+	MainInstances.world = null
+
+
+func load_level(file_path: String):
+	level.queue_free()
+	level.name = level.name + "OLD"
+	var LevelScene = load(file_path)
+	var new_level = LevelScene.instantiate()
+	add_child(new_level)
+	level = new_level
 
 
 func change_levels(door: Door):
@@ -25,4 +46,6 @@ func change_levels(door: Door):
 		player.global_position = found_door.global_position + Vector2(0, yoffset)
 
 
-
+func game_over():
+	await get_tree().create_timer(1.0).timeout
+	get_tree().change_scene_to_file("res://menus/game_over_menu.tscn")

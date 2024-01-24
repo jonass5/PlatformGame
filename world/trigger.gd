@@ -1,7 +1,7 @@
 class_name Trigger
 extends Area2D
 
-var is_active = true
+var is_active: bool = true
 
 signal trigger_entered
 
