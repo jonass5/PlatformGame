@@ -1,3 +1,4 @@
+class_name Stash
 extends Node
 
 var data = {}
