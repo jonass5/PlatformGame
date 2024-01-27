@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cm38ky2ure14w"]
+[gd_scene load_steps=15 format=3 uid="uid://cm38ky2ure14w"]
 
 [ext_resource type="Texture2D" uid="uid://doith5mhfk7ju" path="res://enemies/crawling_enemy.png" id="1_cpv5o"]
 [ext_resource type="Script" path="res://enemies/crawling_enemy.gd" id="1_kh8e2"]
 [ext_resource type="PackedScene" uid="uid://5uy3efkbsge6" path="res://collisions/hurtbox.tscn" id="2_7ai0q"]
 [ext_resource type="PackedScene" uid="uid://dsyg0t3624o83" path="res://collisions/hitbox.tscn" id="3_utb2a"]
 [ext_resource type="Script" path="res://stats.gd" id="5_4lvfk"]
+[ext_resource type="PackedScene" uid="uid://bwdq65xhu11si" path="res://enemies/enemy_health_bar.tscn" id="6_45q5d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kp5i0"]
 atlas = ExtResource("1_cpv5o")
@@ -97,6 +98,12 @@ collision_mask = 3
 [node name="Stats" type="Node" parent="."]
 script = ExtResource("5_4lvfk")
 max_health = 2
+
+[node name="EnemyHealthBar" parent="." instance=ExtResource("6_45q5d")]
+offset_left = -11.0
+offset_top = -13.0
+offset_right = 11.0
+offset_bottom = -9.0
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]

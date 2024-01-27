@@ -10,6 +10,11 @@ const EnemyBulletScene = preload("res://enemies/enemy_bullet.tscn")
 @onready var stats = $Stats
 @onready var bullet_spawn_point = $BulletSpawnPoint
 @onready var fire_direction = $FireDirection
+@onready var enemy_health_bar = $EnemyHealthBar
+
+func _ready():
+	enemy_health_bar.max_value = stats.max_health
+	enemy_health_bar.value = stats.health
 
 
 func fire_bullet():
@@ -27,3 +32,4 @@ func _on_stats_no_health():
 
 func _on_hurtbox_hurt(_hitbox, damage: int):
 	stats.health -= damage
+	enemy_health_bar.value = stats.health

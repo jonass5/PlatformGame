@@ -16,10 +16,13 @@ var gravity = 100
 @onready var wall_cast = $WallCast
 @onready var stats : Stats = $Stats as Stats
 @onready var animated_sprite_2d = $AnimatedSprite2D
+@onready var enemy_health_bar = $EnemyHealthBar
 
 
 func _ready() -> void:
 	wall_cast.target_position.x *= crawling_direction
+	enemy_health_bar.max_value = stats.max_health
+	enemy_health_bar.value = stats.health
 
 
 func _physics_process(delta) -> void:
@@ -61,6 +64,7 @@ func falling_state(delta):
 
 func _on_hurtbox_hurt(_hitbox, damage: int) -> void:
 	stats.health -= damage
+	enemy_health_bar.value = stats.health
 
 
 func _on_stats_no_health() -> void:

@@ -21,6 +21,7 @@ var state_options_left = []
 @onready var muzzle = $StingerPivot/Muzzle
 @onready var firerate_timer = $FirerateTimer
 @onready var state_timer = $StateTimer
+@onready var enemy_health_bar = $EnemyHealthBar
 
 
 func set_state(value):
@@ -35,6 +36,8 @@ func get_state_init():
 
 
 func _ready():
+	enemy_health_bar.max_value = stats.max_health
+	enemy_health_bar.value = stats.health
 	var freed = WorldStash.retrieve("first_boss", "freed")
 	if freed: queue_free()
 
@@ -95,6 +98,7 @@ func move(delta: float):
 
 func _on_hurtbox_hurt(_hitbox, damage: int):
 	stats.health -= damage
+	enemy_health_bar.value = stats.health
 
 
 func _on_stats_no_health():
