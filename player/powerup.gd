@@ -3,15 +3,13 @@ extends Area2D
 
 
 func _ready():
-	var id = WorldStash.get_id(self)
-	var freed = WorldStash.retrieve(id, "freed")
-	if freed: queue_free()
+	if WorldStash.is_freed(self):
+		queue_free()
 
 
 func pickup():
 	Sound.play(Sound.powerup)
-	var id = WorldStash.get_id(self)
-	WorldStash.stash(id, "freed", true)
+	WorldStash.freed(self)
 	queue_free()
 
 
