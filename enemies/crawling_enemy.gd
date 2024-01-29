@@ -17,9 +17,11 @@ var gravity = 100
 @onready var stats : Stats = $Stats as Stats
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var enemy_health_bar = $EnemyHealthBar
+@onready var enemy: Enemy = $Enemy
 
 
 func _ready() -> void:
+	enemy.check_freed(self)
 	wall_cast.target_position.x *= crawling_direction
 	enemy_health_bar.max_value = stats.max_health
 	enemy_health_bar.value = stats.health
@@ -68,5 +70,5 @@ func _on_hurtbox_hurt(_hitbox, damage: int) -> void:
 
 
 func _on_stats_no_health() -> void:
-	queue_free()
+	enemy.killed(self)
 	Utils.instanciate_scene_on_world(EnemyDeathEffectScene, global_position)
