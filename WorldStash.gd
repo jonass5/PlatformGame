@@ -19,3 +19,10 @@ func retrieve(id: String, key: String):
 	if not data.has(id): return
 	if not data[id].has(key): return
 	return data[id][key]
+
+
+func freed(node: Node) -> void:
+	var id = str(node.get_path())
+	if not data.has(id):
+		data[id] = {}
+	data[id]["freed"] = true

@@ -65,3 +65,21 @@ func test_should_update_value_when_value_already_exists():
 	
 	# assert
 	assert_eq(stash.data.myId.myKey, 20)
+	
+	
+func test_should_store_key_free_with_node_path_as_id_when_node_is_given():
+	# arrange
+	var node = Node2D.new()
+	node.name = "myNode"
+	add_child(node)
+	
+	# act
+	stash.freed(node)
+	
+	# assert
+	assert_true(stash.data[str(node.get_path())]["freed"])
+	
+	# tear down
+	node.free()
+	
+
