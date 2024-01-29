@@ -45,3 +45,23 @@ func test_should_retrieve_value_when_value_exists():
 
 	# assert
 	assert_eq(result, 3)
+
+
+func test_should_store_new_value_when_value_not_exists():
+	# act
+	stash.stash("myId", "myKey", 10)
+	
+	# assert
+	assert_eq(stash.data.myId.myKey, 10)
+
+
+func test_should_update_value_when_value_already_exists():
+	# arrange
+	stash.data.myId = {}
+	stash.data.myId.myKey = 10
+	
+	# act
+	stash.stash("myId", "myKey", 20)
+	
+	# assert
+	assert_eq(stash.data.myId.myKey, 20)
