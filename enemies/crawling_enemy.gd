@@ -21,7 +21,6 @@ var gravity = 100
 
 
 func _ready() -> void:
-	enemy.check_freed(self)
 	wall_cast.target_position.x *= crawling_direction
 	enemy_health_bar.max_value = stats.max_health
 	enemy_health_bar.value = stats.health
@@ -70,5 +69,5 @@ func _on_hurtbox_hurt(_hitbox, damage: int) -> void:
 
 
 func _on_stats_no_health() -> void:
-	enemy.killed(self)
+	enemy.killed()
 	Utils.instanciate_scene_on_world(EnemyDeathEffectScene, global_position)

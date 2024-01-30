@@ -1,13 +1,16 @@
 class_name Enemy
 extends Node
 
-func check_freed(root):
-	if WorldStash.is_freed(root):
-		root.queue_free()
+@onready var parent = get_parent()
 
 
-func killed(root):
-	WorldStash.freed(root)
-	root.queue_free()
+func _ready():
+	if WorldStash.is_freed(parent):
+		parent.queue_free()
+
+
+func killed():
+	WorldStash.freed(parent)
+	parent.queue_free()
 
 
