@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bpl8o5wof2i0i"]
+[gd_scene load_steps=16 format=3 uid="uid://bpl8o5wof2i0i"]
 
 [ext_resource type="Script" path="res://enemies/boss_enemy.gd" id="1_3lger"]
 [ext_resource type="Texture2D" uid="uid://cb014twvmikp1" path="res://enemies/boss_enemy_body.png" id="2_btovj"]
+[ext_resource type="PackedScene" uid="uid://c1br858hwlc05" path="res://enemies/enemy.tscn" id="2_g3thj"]
 [ext_resource type="Texture2D" uid="uid://c6aovodkudm2l" path="res://enemies/boss_enemy_wing.png" id="3_gevtm"]
 [ext_resource type="Texture2D" uid="uid://c8h6fycojdh2o" path="res://enemies/boss_enemy_head.png" id="4_ykqbm"]
 [ext_resource type="Texture2D" uid="uid://ci8ghf6ncfqeb" path="res://enemies/boss_enemy_leg.png" id="5_yow68"]
@@ -200,6 +201,8 @@ radius = 17.0
 
 [node name="BossEnemy" type="Node2D"]
 script = ExtResource("1_3lger")
+
+[node name="Enemy" parent="." instance=ExtResource("2_g3thj")]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

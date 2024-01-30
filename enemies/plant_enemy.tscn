@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://chfgveu0gjwbd"]
+[gd_scene load_steps=13 format=3 uid="uid://chfgveu0gjwbd"]
 
 [ext_resource type="Script" path="res://enemies/plant_enemy.gd" id="1_46wei"]
 [ext_resource type="Texture2D" uid="uid://8amknpvd47t0" path="res://enemies/plant_enemy.png" id="1_d85q6"]
+[ext_resource type="PackedScene" uid="uid://c1br858hwlc05" path="res://enemies/enemy.tscn" id="2_i7avb"]
 [ext_resource type="PackedScene" uid="uid://5uy3efkbsge6" path="res://collisions/hurtbox.tscn" id="2_kf55f"]
 [ext_resource type="PackedScene" uid="uid://dsyg0t3624o83" path="res://collisions/hitbox.tscn" id="3_7jpk2"]
 [ext_resource type="PackedScene" uid="uid://vc3sirmfvbpe" path="res://stats.tscn" id="5_e6px6"]
@@ -67,6 +68,8 @@ radius = 5.0
 
 [node name="PlantEnemy" type="Node2D"]
 script = ExtResource("1_46wei")
+
+[node name="Enemy" parent="." instance=ExtResource("2_i7avb")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)

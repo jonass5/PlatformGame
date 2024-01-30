@@ -22,6 +22,12 @@ var state_options_left = []
 @onready var firerate_timer = $FirerateTimer
 @onready var state_timer = $StateTimer
 @onready var enemy_health_bar = $EnemyHealthBar
+@onready var enemy = $Enemy
+
+
+func _ready():
+	enemy_health_bar.max_value = stats.max_health
+	enemy_health_bar.value = stats.health
 
 
 func set_state(value):
@@ -33,13 +39,6 @@ func get_state_init():
 	var was = state_init
 	state_init = false
 	return was
-
-
-func _ready():
-	enemy_health_bar.max_value = stats.max_health
-	enemy_health_bar.value = stats.health
-	var freed = WorldStash.retrieve("first_boss", "freed")
-	if freed: queue_free()
 
 
 func _process(delta: float):
@@ -102,8 +101,7 @@ func _on_hurtbox_hurt(_hitbox, damage: int):
 
 
 func _on_stats_no_health():
-	queue_free()
-	WorldStash.stash("first_boss", "freed", true)
+	enemy.killed()
 	Utils.instanciate_scene_on_world(MissilePowerupScene, global_position)
 	for i in 6:
 		var offset = Vector2(randf_range(-16, 16), randf_range(-16, 16))
