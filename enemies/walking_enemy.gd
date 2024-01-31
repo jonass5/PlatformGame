@@ -13,6 +13,13 @@ var direction: float = 1.0
 @onready var floor_cast = $FloorCast
 @onready var stats = $Stats
 @onready var death_effect_location = $DeathEffectLocation
+@onready var enemy_health_bar = $EnemyHealthBar
+@onready var enemy = $Enemy
+
+
+func _ready() -> void:
+	enemy.init(self)
+	
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -40,8 +47,9 @@ func turn_around() -> void:
 	
 func _on_hurtbox_hurt(_hitbox, damage):
 	stats.health -= damage
+	enemy.hurt(self)
 
 
 func _on_stats_no_health():
+	enemy.no_health(self)
 	Utils.instanciate_scene_on_world(EnemyDeathEffectScene, death_effect_location.global_position)
-	queue_free()

@@ -4,6 +4,7 @@ extends Level
 @onready var trigger = $Trigger
 @onready var brick_3 = $Bricks/Brick3
 @onready var brick_4 = $Bricks/Brick4
+@onready var boss_enemy_path = $BossEnemy.get_path()
 
 
 func _ready():
@@ -11,7 +12,7 @@ func _ready():
 
 
 func _on_trigger_trigger_entered():
-	var boss_freed = WorldStash.retrieve("first_boss", "freed")
+	var boss_freed = WorldStash.retrieve(boss_enemy_path, "freed")
 	if not boss_freed:
 		bricks.show()
 		trigger.is_active = false

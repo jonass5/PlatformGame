@@ -1,3 +1,4 @@
+class_name HealthMeter
 extends Control
 
 @onready var empty = $Empty

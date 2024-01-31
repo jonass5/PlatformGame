@@ -1,20 +1,26 @@
+class_name Stash
 extends Node
 
 var data = {}
 
 
-func get_id(node: Node2D):
-	var level = MainInstances.level
-	return level.name + "_" + node.name + "_" + str(node.global_position)
-
-
-func stash(id, key, value) -> void:
+func stash(id: String, key: String, value) -> void:
 	if not data.has(id):
 		data[id] = {}
 	data[id][key] = value
 
 
-func retrieve(id, key):
-	if not data.has(id): return
-	if not data[id].has(key): return
+func retrieve(id: String, key: String):
+	if not data.has(id):
+		return
+	if not data[id].has(key):
+		return
 	return data[id][key]
+
+
+func freed(node: Node) -> void:
+	stash(node.get_path(), "freed", true)
+
+
+func is_freed(node: Node) -> bool:
+	return retrieve(node.get_path(), "freed") == true

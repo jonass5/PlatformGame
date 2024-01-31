@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://c77cvrcmrwist"]
+[gd_scene load_steps=11 format=3 uid="uid://c77cvrcmrwist"]
 
 [ext_resource type="Texture2D" uid="uid://c6jkhgb11mu2c" path="res://enemies/walking_enemy.png" id="1_cjplw"]
 [ext_resource type="Script" path="res://enemies/walking_enemy.gd" id="1_mnclh"]
 [ext_resource type="PackedScene" uid="uid://5uy3efkbsge6" path="res://collisions/hurtbox.tscn" id="3_3ppk1"]
 [ext_resource type="PackedScene" uid="uid://dsyg0t3624o83" path="res://collisions/hitbox.tscn" id="4_4fdfs"]
 [ext_resource type="PackedScene" uid="uid://vc3sirmfvbpe" path="res://stats.tscn" id="5_b8a2b"]
+[ext_resource type="PackedScene" uid="uid://bwdq65xhu11si" path="res://enemies/enemy_health_bar.tscn" id="6_yumjq"]
+[ext_resource type="PackedScene" uid="uid://c1br858hwlc05" path="res://enemies/enemy.tscn" id="7_nqtno"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wr4c"]
 size = Vector2(8, 10)
@@ -20,6 +22,8 @@ collision_layer = 8
 floor_constant_speed = true
 floor_snap_length = 2.0
 script = ExtResource("1_mnclh")
+
+[node name="Enemy" parent="." instance=ExtResource("7_nqtno")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -9)
@@ -54,6 +58,12 @@ max_health = 2
 
 [node name="DeathEffectLocation" type="Marker2D" parent="."]
 position = Vector2(0, -7)
+
+[node name="EnemyHealthBar" parent="." instance=ExtResource("6_yumjq")]
+offset_left = -12.0
+offset_top = -21.0
+offset_right = 12.0
+offset_bottom = -17.0
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]

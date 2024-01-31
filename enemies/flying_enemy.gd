@@ -9,10 +9,13 @@ const EnemyDeathEffectScene = preload("res://effects/enemy_death_effect.tscn")
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var stats = $Stats
 @onready var waypoint_pathfinding = $WaypointPathfinding
+@onready var enemy_health_bar = $EnemyHealthBar
+@onready var enemy = $Enemy
 
 
 func _ready():
 	set_physics_process(false)
+	enemy.init(self)
 
 
 func _physics_process(delta: float) -> void:
@@ -30,10 +33,12 @@ func move_toward_position(target_position: Vector2, delta: float) -> void:
 
 func _on_hurtbox_hurt(_hitbox, damage: int):
 	stats.health -= damage
+	enemy.hurt(self)
+
 
 
 func _on_stats_no_health():
-	queue_free()
+	enemy.no_health(self)
 	Utils.instanciate_scene_on_world(EnemyDeathEffectScene, global_position)
 
 
