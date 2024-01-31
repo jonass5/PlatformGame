@@ -18,8 +18,7 @@ var direction: float = 1.0
 
 
 func _ready() -> void:
-	enemy_health_bar.max_value = stats.max_health
-	enemy_health_bar.value = stats.health
+	enemy.init(self)
 	
 
 func _physics_process(delta: float) -> void:
@@ -48,9 +47,9 @@ func turn_around() -> void:
 	
 func _on_hurtbox_hurt(_hitbox, damage):
 	stats.health -= damage
-	enemy_health_bar.value = stats.health
+	enemy.hurt(self)
 
 
 func _on_stats_no_health():
-	enemy.killed()
+	enemy.no_health(self)
 	Utils.instanciate_scene_on_world(EnemyDeathEffectScene, death_effect_location.global_position)

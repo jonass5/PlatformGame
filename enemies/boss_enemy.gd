@@ -24,10 +24,8 @@ var state_options_left = []
 @onready var enemy_health_bar = $EnemyHealthBar
 @onready var enemy = $Enemy
 
-
 func _ready():
-	enemy_health_bar.max_value = stats.max_health
-	enemy_health_bar.value = stats.health
+	enemy.init(self)
 
 
 func set_state(value):
@@ -97,11 +95,11 @@ func move(delta: float):
 
 func _on_hurtbox_hurt(_hitbox, damage: int):
 	stats.health -= damage
-	enemy_health_bar.value = stats.health
+	enemy.hurt(self)
 
 
 func _on_stats_no_health():
-	enemy.killed()
+	enemy.no_health(self)
 	Utils.instanciate_scene_on_world(MissilePowerupScene, global_position)
 	for i in 6:
 		var offset = Vector2(randf_range(-16, 16), randf_range(-16, 16))
