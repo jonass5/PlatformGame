@@ -16,6 +16,10 @@ run/main_scene="res://menus/start_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://music_and_sounds/default_bus_layout.tres"
+
 [autoload]
 
 Utils="*res://autoloads/utils.gd"
