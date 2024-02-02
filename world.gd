@@ -13,9 +13,9 @@ func _ready():
 	Events.door_entered.connect(change_levels)
 	Events.player_died.connect(game_over)
 	Music.play(Music.main_theme)
-	if SaveManager.is_loading:
+	if SaveManager.loading:
 		SaveManager.load_game()
-		SaveManager.is_loading = false
+		SaveManager.loading = false
 
 
 func _exit_tree():

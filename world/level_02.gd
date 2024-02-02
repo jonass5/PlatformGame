@@ -15,7 +15,7 @@ func _on_trigger_trigger_entered():
 	var boss_freed = WorldStash.retrieve(boss_enemy_path, "freed")
 	if not boss_freed:
 		bricks.show()
-		trigger.is_active = false
+		trigger.active = false
 
 
 func _on_boss_enemy_tree_exited():

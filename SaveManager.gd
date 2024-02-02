@@ -4,7 +4,7 @@ const TEST_PATH: String = "res://save.txt"
 const PROD_PATH: String = "user://platform_game_save.save"
 
 var save_path: String = PROD_PATH
-var is_loading: bool = false
+var loading: bool = false
 
 
 func save_game():
@@ -20,11 +20,11 @@ func save_game():
 
 
 func load_game():
-	var save_file = FileAccess.open(save_path, FileAccess.READ)
-	if not save_file is FileAccess:
+	var load_file = FileAccess.open(save_path, FileAccess.READ)
+	if not load_file is FileAccess:
 		return null
 	
-	var data =  JSON.parse_string(save_file.get_line())
+	var data =  JSON.parse_string(load_file.get_line())
 	WorldStash.data = data
 	
 	var file_path = WorldStash.retrieve("level", "file_path")
@@ -35,4 +35,4 @@ func load_game():
 	MainInstances.player.global_position = Vector2(player_x, player_y)
 	
 	PlayerStats.retrieve_stats()
-	save_file.close()
+	load_file.close()

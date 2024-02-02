@@ -13,7 +13,7 @@ func _ready():
 
 func _on_load_button_pressed():
 	Sound.play(Sound.click, 1.0, -10.0)
-	SaveManager.is_loading = true
+	SaveManager.loading = true
 	get_tree().change_scene_to_file("res://world.tscn")
 
 

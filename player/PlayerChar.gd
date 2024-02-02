@@ -212,10 +212,10 @@ func _on_drop_timer_timeout():
 
 func _on_hurtbox_hurt(_hitbox, _damage):
 	hurt()
-	hurtbox.is_invincible = true
+	hurtbox.invincible = true
 	blinking_animation_player.play("blink")
 	await blinking_animation_player.animation_finished
-	hurtbox.is_invincible = false
+	hurtbox.invincible = false
 
 
 func hurt():
