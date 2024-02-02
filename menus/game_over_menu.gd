@@ -2,9 +2,12 @@ class_name GameOverMenu
 extends ColorRect
 
 @onready var load_button = $CenterContainer/VBoxContainer/LoadButton
+@onready var quit_button = $CenterContainer/VBoxContainer/QuitButton
 
 
 func _ready():
+	if OS.get_name() == "Web":
+		quit_button.hide()
 	load_button.grab_focus()
 
 
