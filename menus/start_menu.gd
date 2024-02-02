@@ -14,13 +14,13 @@ func _ready():
 
 func _on_start_button_pressed():
 	Sound.play(Sound.click, 1.0, -10.0)
-	get_tree().change_scene_to_file("res://world.tscn")
+	get_tree().change_scene_to_file("res://world/world.tscn")
 
 
 func _on_load_button_pressed():
 	Sound.play(Sound.click, 1.0, -10.0)
 	SaveManager.loading = true
-	get_tree().change_scene_to_file("res://world.tscn")
+	get_tree().change_scene_to_file("res://world/world.tscn")
 
 
 func _on_quit_button_pressed():
