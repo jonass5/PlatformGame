@@ -18,14 +18,14 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Utils="*res://Utils.gd"
-Events="*res://Events.gd"
+Utils="*res://utils.gd"
+Events="*res://events.gd"
 PlayerStats="*res://player/player_stats.tscn"
-MainInstances="*res://MainInstances.gd"
-WorldStash="*res://WorldStash.gd"
+MainInstances="*res://main_instances.gd"
+WorldStash="*res://world_stash.gd"
 Sound="*res://music_and_sounds/sound.tscn"
 Music="*res://music_and_sounds/music.tscn"
-SaveManager="*res://SaveManager.gd"
+SaveManager="*res://save_manager.gd"
 
 [display]
 
