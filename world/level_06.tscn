@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_1pg5n"]
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_5ddi4"]
 [ext_resource type="Resource" uid="uid://bqvyn7moybyk2" path="res://world/door_connection_level_05_and_06.tres" id="4_qo14t"]
-[ext_resource type="Resource" uid="uid://cj1opaj5uh3q2" path="res://world/door_connection_level_04_and_05.tres" id="5_nu7an"]
+[ext_resource type="Resource" uid="uid://b7qs2r6m0pkbr" path="res://world/door_connection_level_06_and_07.tres" id="5_dthlm"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="6_0kl1e"]
 [ext_resource type="PackedScene" uid="uid://chfgveu0gjwbd" path="res://enemies/plant_enemy.tscn" id="7_g23ur"]
 
@@ -21,8 +21,8 @@ connection = ExtResource("4_qo14t")
 
 [node name="DoorToLevel07" parent="." instance=ExtResource("3_5ddi4")]
 position = Vector2(344, 96)
-new_level_path = "res://world/level_05.tscn"
-connection = ExtResource("5_nu7an")
+new_level_path = "res://world/level_07.tscn"
+connection = ExtResource("5_dthlm")
 
 [node name="CameraLimits" parent="." instance=ExtResource("6_0kl1e")]
 offset_left = 16.0
