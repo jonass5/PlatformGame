@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqaql84s4i2du"]
+[gd_scene load_steps=3 format=3 uid="uid://cur4l5l6mf0m6"]
 
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="1_bocch"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="2_1bs05"]
