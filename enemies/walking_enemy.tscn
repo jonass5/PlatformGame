@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://enemies/walking_enemy.gd" id="1_mnclh"]
 [ext_resource type="PackedScene" uid="uid://5uy3efkbsge6" path="res://collisions/hurtbox.tscn" id="3_3ppk1"]
 [ext_resource type="PackedScene" uid="uid://dsyg0t3624o83" path="res://collisions/hitbox.tscn" id="4_4fdfs"]
-[ext_resource type="PackedScene" uid="uid://vc3sirmfvbpe" path="res://stats.tscn" id="5_b8a2b"]
+[ext_resource type="PackedScene" uid="uid://vc3sirmfvbpe" path="res://enemies/stats.tscn" id="5_b8a2b"]
 [ext_resource type="PackedScene" uid="uid://bwdq65xhu11si" path="res://enemies/enemy_health_bar.tscn" id="6_yumjq"]
 [ext_resource type="PackedScene" uid="uid://c1br858hwlc05" path="res://enemies/enemy.tscn" id="7_nqtno"]
 

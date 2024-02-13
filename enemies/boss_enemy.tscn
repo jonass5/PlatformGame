@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c6aovodkudm2l" path="res://enemies/boss_enemy_wing.png" id="3_gevtm"]
 [ext_resource type="Texture2D" uid="uid://c8h6fycojdh2o" path="res://enemies/boss_enemy_head.png" id="4_ykqbm"]
 [ext_resource type="Texture2D" uid="uid://ci8ghf6ncfqeb" path="res://enemies/boss_enemy_leg.png" id="5_yow68"]
-[ext_resource type="PackedScene" uid="uid://vc3sirmfvbpe" path="res://stats.tscn" id="6_536o4"]
+[ext_resource type="PackedScene" uid="uid://vc3sirmfvbpe" path="res://enemies/stats.tscn" id="6_536o4"]
 [ext_resource type="PackedScene" uid="uid://5uy3efkbsge6" path="res://collisions/hurtbox.tscn" id="7_mke8w"]
 [ext_resource type="PackedScene" uid="uid://dsyg0t3624o83" path="res://collisions/hitbox.tscn" id="8_aigsl"]
 [ext_resource type="PackedScene" uid="uid://bwdq65xhu11si" path="res://enemies/enemy_health_bar.tscn" id="9_y7hm0"]

@@ -11,21 +11,25 @@ config_version=5
 [application]
 
 config/name="Platform Game"
-config/description="Version 0.16"
+config/description="Version 0.17"
 run/main_scene="res://menus/start_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://music_and_sounds/default_bus_layout.tres"
+
 [autoload]
 
-Utils="*res://Utils.gd"
-Events="*res://Events.gd"
-PlayerStats="*res://player/player_stats.tscn"
-MainInstances="*res://MainInstances.gd"
-WorldStash="*res://WorldStash.gd"
-Sound="*res://music_and_sounds/sound.tscn"
-Music="*res://music_and_sounds/music.tscn"
-SaveManager="*res://SaveManager.gd"
+Utils="*res://autoloads/utils.gd"
+Events="*res://autoloads/events.gd"
+PlayerStats="*res://autoloads/player_stats.tscn"
+MainInstances="*res://autoloads/main_instances.gd"
+WorldStash="*res://autoloads/world_stash.gd"
+Sound="*res://autoloads/sound.tscn"
+Music="*res://autoloads/music.tscn"
+SaveManager="*res://autoloads/save_manager.gd"
 
 [display]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://5jp48r7bgc43"]
 
-[ext_resource type="PackedScene" uid="uid://cv6mum3x7ft5v" path="res://projectile.tscn" id="1_2s1ja"]
+[ext_resource type="PackedScene" uid="uid://cv6mum3x7ft5v" path="res://player/projectile.tscn" id="1_2s1ja"]
 [ext_resource type="Texture2D" uid="uid://c24lf566dm3et" path="res://enemies/boss_stinger.png" id="2_7u518"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xm74b"]

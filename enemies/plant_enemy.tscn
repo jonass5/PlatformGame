@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c1br858hwlc05" path="res://enemies/enemy.tscn" id="2_i7avb"]
 [ext_resource type="PackedScene" uid="uid://5uy3efkbsge6" path="res://collisions/hurtbox.tscn" id="2_kf55f"]
 [ext_resource type="PackedScene" uid="uid://dsyg0t3624o83" path="res://collisions/hitbox.tscn" id="3_7jpk2"]
-[ext_resource type="PackedScene" uid="uid://vc3sirmfvbpe" path="res://stats.tscn" id="5_e6px6"]
+[ext_resource type="PackedScene" uid="uid://vc3sirmfvbpe" path="res://enemies/stats.tscn" id="5_e6px6"]
 [ext_resource type="PackedScene" uid="uid://bwdq65xhu11si" path="res://enemies/enemy_health_bar.tscn" id="6_n2kiq"]
 
 [sub_resource type="Animation" id="Animation_5yrng"]

@@ -3,14 +3,14 @@ extends Area2D
 
 signal hurt(hitbox, damage)
 
-var is_invincible: bool = false:
+var invincible: bool = false:
 	set(value):
-		is_invincible = value
+		invincible = value
 		disable.call_deferred(value)
 
 
 func take_hit(hitbox: Hitbox, damage: int) -> void:
-	if is_invincible:
+	if invincible:
 		return
 	hurt.emit(hitbox, damage)
 
