@@ -135,7 +135,7 @@ func apply_wall_slide_gravity(delta) -> void:
 
 func create_dust_effect() -> void:
 	Sound.play(Sound.step, randf_range(0.8, 1.1), -5.0)
-	Utils.instanciate_scene_on_world(DustEffectScene, global_position)
+	Utils.instanciate_scene_on_level(DustEffectScene, global_position)
 
 
 func is_moving(input_axis: float) -> bool:
