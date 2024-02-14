@@ -3,6 +3,8 @@ extends StaticBody2D
 
 
 func _ready():
+	if WorldStash.is_freed(self):
+		queue_free()
 	update_collision_layer()
 
 
@@ -12,3 +14,8 @@ func update_collision_layer():
 
 func _on_visibility_changed():
 	update_collision_layer()
+
+
+func destroy():
+	WorldStash.freed(self)
+	queue_free()
