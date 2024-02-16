@@ -70,4 +70,4 @@ func _on_hurtbox_hurt(_hitbox, damage: int) -> void:
 
 func _on_stats_no_health() -> void:
 	enemy.no_health(self)
-	Utils.instanciate_scene_on_world(EnemyDeathEffectScene, global_position)
+	Utils.instanciate_scene_on_level(EnemyDeathEffectScene, global_position)

@@ -120,7 +120,7 @@ func wall_jump_check(wall_axis) -> void:
 		state = move_state
 		jump(jump_force * 0.75, false)
 		var wall_jump_effect_position = global_position + Vector2(wall_axis * 3.5, -2)
-		var wall_jump_effect = Utils.instanciate_scene_on_world(WallJumpEffectScene, wall_jump_effect_position)
+		var wall_jump_effect = Utils.instanciate_scene_on_level(WallJumpEffectScene, wall_jump_effect_position)
 		wall_jump_effect.scale.x = wall_axis
 
 
@@ -179,7 +179,7 @@ func jump(force: float, create_effect: bool = true) -> void:
 	Sound.play(Sound.jump, randf_range(0.8, 1.1), 5.0)
 	velocity.y = -force
 	if create_effect:
-		Utils.instanciate_scene_on_world(JumpEffectScene, global_position)
+		Utils.instanciate_scene_on_level(JumpEffectScene, global_position)
 
 func update_animation(input_axis: float) -> void:
 	if Input.get_connected_joypads().is_empty():

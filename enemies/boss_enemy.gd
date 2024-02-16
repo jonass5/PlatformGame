@@ -63,7 +63,7 @@ func fire_state(_delta: float):
 	if firerate_timer.time_left == 0:
 		stinger_pivot.rotation_degrees += 17
 		firerate_timer.start()
-		var stinger = Utils.instanciate_scene_on_world(StingerScence, muzzle.global_position)
+		var stinger = Utils.instanciate_scene_on_level(StingerScence, muzzle.global_position)
 		stinger.rotation = stinger_pivot.rotation
 		stinger.update_velocity()
 
@@ -101,7 +101,7 @@ func _on_hurtbox_hurt(_hitbox, damage: int):
 
 func _on_stats_no_health():
 	enemy.no_health(self)
-	Utils.instanciate_scene_on_world(MissilePowerupScene, global_position)
+	Utils.instanciate_scene_on_level(MissilePowerupScene, global_position)
 	for i in 6:
 		var offset = Vector2(randf_range(-16, 16), randf_range(-16, 16))
-		Utils.instanciate_scene_on_world(EnemyDeathEffectScene, global_position + offset)
+		Utils.instanciate_scene_on_level(EnemyDeathEffectScene, global_position + offset)

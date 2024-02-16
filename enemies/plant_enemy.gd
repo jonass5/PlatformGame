@@ -28,7 +28,7 @@ func fire_bullet():
 
 func _on_stats_no_health():
 	enemy.no_health(self)
-	Utils.instanciate_scene_on_world(EnemyDeathEffectScene, bullet_spawn_point.global_position)
+	Utils.instanciate_scene_on_level(EnemyDeathEffectScene, bullet_spawn_point.global_position)
 
 
 func _on_hurtbox_hurt(_hitbox, damage: int):
