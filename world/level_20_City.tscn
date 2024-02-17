@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://world/level.gd" id="1_metyx"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_dvo5o"]
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_0r3xc"]
-[ext_resource type="Resource" uid="uid://kkx2wael5gpp" path="res://world/door_connection_level_10_and_20.tres" id="4_xhe31"]
+[ext_resource type="Resource" uid="uid://kkx2wael5gpp" path="res://world/door_connections/door_connection_level_10_and_20.tres" id="4_xhe31"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="5_mogmr"]
 
 [node name="Level20City" type="Node2D"]

@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://world/level.gd" id="1_lku8k"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_ngn8t"]
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_luch0"]
-[ext_resource type="Resource" uid="uid://cpchstsrf66el" path="res://world/door_connection_level_07_and_10.tres" id="4_vtgft"]
+[ext_resource type="Resource" uid="uid://cpchstsrf66el" path="res://world/door_connections/door_connection_level_07_and_10.tres" id="4_vtgft"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="5_ql2c3"]
-[ext_resource type="Resource" uid="uid://bvljg6w5s71pe" path="res://world/door_connection_level_10_and_30.tres" id="6_4pput"]
-[ext_resource type="Resource" uid="uid://kkx2wael5gpp" path="res://world/door_connection_level_10_and_20.tres" id="6_gdmxw"]
+[ext_resource type="Resource" uid="uid://bvljg6w5s71pe" path="res://world/door_connections/door_connection_level_10_and_30.tres" id="6_4pput"]
+[ext_resource type="Resource" uid="uid://kkx2wael5gpp" path="res://world/door_connections/door_connection_level_10_and_20.tres" id="6_gdmxw"]
 [ext_resource type="PackedScene" uid="uid://b8eimfxdhasbx" path="res://world/save_station.tscn" id="8_e1wbh"]
-[ext_resource type="Resource" uid="uid://l7psn0tnl34d" path="res://world/door_connection_level_10_and_40.tres" id="8_fd3ow"]
+[ext_resource type="Resource" uid="uid://l7psn0tnl34d" path="res://world/door_connections/door_connection_level_10_and_40.tres" id="8_fd3ow"]
 
 [node name="Level10EntranceHall" type="Node2D"]
 script = ExtResource("1_lku8k")

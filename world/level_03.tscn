@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://world/level.gd" id="1_ogfbt"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_op1ws"]
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_wahjl"]
-[ext_resource type="Resource" uid="uid://uav15go03b6f" path="res://world/door_connection_level_02_and_03.tres" id="4_m5vdt"]
+[ext_resource type="Resource" uid="uid://uav15go03b6f" path="res://world/door_connections/door_connection_level_02_and_03.tres" id="4_m5vdt"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="5_k0up8"]
-[ext_resource type="Resource" uid="uid://bylwmvcc1txwv" path="res://world/door_connection_level_03_and_04.tres" id="5_m55qb"]
+[ext_resource type="Resource" uid="uid://bylwmvcc1txwv" path="res://world/door_connections/door_connection_level_03_and_04.tres" id="5_m55qb"]
 [ext_resource type="PackedScene" uid="uid://dnvp6bgu1gilo" path="res://player/missile_powerup.tscn" id="6_fq02c"]
 [ext_resource type="PackedScene" uid="uid://dm8in4cn5o38p" path="res://world/brick.tscn" id="7_bk6qf"]
 

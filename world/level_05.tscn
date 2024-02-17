@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://world/level.gd" id="1_pm1qu"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_p0vts"]
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_moaoi"]
-[ext_resource type="Resource" uid="uid://cj1opaj5uh3q2" path="res://world/door_connection_level_04_and_05.tres" id="4_amurf"]
+[ext_resource type="Resource" uid="uid://cj1opaj5uh3q2" path="res://world/door_connections/door_connection_level_04_and_05.tres" id="4_amurf"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="5_io4or"]
-[ext_resource type="Resource" uid="uid://bqvyn7moybyk2" path="res://world/door_connection_level_05_and_06.tres" id="5_rp2na"]
+[ext_resource type="Resource" uid="uid://bqvyn7moybyk2" path="res://world/door_connections/door_connection_level_05_and_06.tres" id="5_rp2na"]
 [ext_resource type="PackedScene" uid="uid://cm38ky2ure14w" path="res://enemies/crawling_enemy.tscn" id="6_cvmjm"]
 [ext_resource type="PackedScene" uid="uid://drusidb24xxab" path="res://world/left_right_moving_platform.tscn" id="7_maejd"]
 

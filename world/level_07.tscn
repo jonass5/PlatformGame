@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://world/level.gd" id="1_2r6xx"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_imhan"]
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_vt470"]
-[ext_resource type="Resource" uid="uid://b7qs2r6m0pkbr" path="res://world/door_connection_level_06_and_07.tres" id="4_cyirn"]
-[ext_resource type="Resource" uid="uid://cpchstsrf66el" path="res://world/door_connection_level_07_and_10.tres" id="5_do1d4"]
+[ext_resource type="Resource" uid="uid://b7qs2r6m0pkbr" path="res://world/door_connections/door_connection_level_06_and_07.tres" id="4_cyirn"]
+[ext_resource type="Resource" uid="uid://cpchstsrf66el" path="res://world/door_connections/door_connection_level_07_and_10.tres" id="5_do1d4"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="6_eu8vs"]
 [ext_resource type="PackedScene" uid="uid://cyctgnqsxsnqf" path="res://enemies/flying_enemy.tscn" id="6_pr463"]
 

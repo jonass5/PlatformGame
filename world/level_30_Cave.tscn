@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://world/level.gd" id="1_c16j6"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_swsya"]
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_8t1tj"]
-[ext_resource type="Resource" uid="uid://bvljg6w5s71pe" path="res://world/door_connection_level_10_and_30.tres" id="4_afjf1"]
+[ext_resource type="Resource" uid="uid://bvljg6w5s71pe" path="res://world/door_connections/door_connection_level_10_and_30.tres" id="4_afjf1"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="5_a63mq"]
 
 [node name="Level30Cave" type="Node2D"]
