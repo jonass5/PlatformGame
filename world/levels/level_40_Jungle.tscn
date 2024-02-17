@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bvcyil22qac2u"]
 
-[ext_resource type="Script" path="res://world/level.gd" id="1_naadr"]
+[ext_resource type="Script" path="res://world/levels/level.gd" id="1_naadr"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_lyev5"]
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_qyt81"]
 [ext_resource type="Resource" uid="uid://l7psn0tnl34d" path="res://world/door_connections/door_connection_level_10_and_40.tres" id="4_qv2y7"]
@@ -25,12 +25,12 @@ layer_0/tile_data = PackedInt32Array(393227, 131072, 0, 327694, 0, 0, 393230, 0,
 
 [node name="DoorToLevel10" parent="Doors" instance=ExtResource("3_qyt81")]
 position = Vector2(-40, 416)
-new_level_path = "res://world/level_10_Entrance_Hall.tscn"
+new_level_path = "res://world/levels/level_10_Entrance_Hall.tscn"
 connection = ExtResource("4_qv2y7")
 
 [node name="DoorToLevel41" parent="Doors" instance=ExtResource("3_qyt81")]
 position = Vector2(488, 80)
-new_level_path = "res://world/level_41_Jungle.tscn"
+new_level_path = "res://world/levels/level_41_Jungle.tscn"
 connection = ExtResource("5_rm0j6")
 
 [node name="Enemies" type="Node2D" parent="."]

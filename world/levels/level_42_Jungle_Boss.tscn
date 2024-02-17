@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://xdxy33creuwc"]
 
-[ext_resource type="Script" path="res://world/level_42_Jungle_Boss.gd" id="1_mps17"]
+[ext_resource type="Script" path="res://world/levels/level_42_Jungle_Boss.gd" id="1_mps17"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_hgd4y"]
 [ext_resource type="PackedScene" uid="uid://bpl8o5wof2i0i" path="res://enemies/boss_enemy.tscn" id="3_jw35s"]
 [ext_resource type="PackedScene" uid="uid://dm8in4cn5o38p" path="res://world/brick.tscn" id="4_6f3n3"]
@@ -53,7 +53,7 @@ position = Vector2(48, 80)
 
 [node name="DoorToLevel41" parent="Doors" instance=ExtResource("5_ydjhn")]
 position = Vector2(40, 96)
-new_level_path = "res://world/level_41_Jungle.tscn"
+new_level_path = "res://world/levels/level_41_Jungle.tscn"
 connection = ExtResource("6_gpx4r")
 
 [node name="CameraLimits" parent="." instance=ExtResource("8_515cr")]

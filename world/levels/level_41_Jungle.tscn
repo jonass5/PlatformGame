@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bfvm4764mjwup"]
 
-[ext_resource type="Script" path="res://world/level.gd" id="1_76w84"]
+[ext_resource type="Script" path="res://world/levels/level.gd" id="1_76w84"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_p6hsh"]
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_jubsk"]
 [ext_resource type="Resource" uid="uid://cm5bxo0y8ml3" path="res://world/door_connections/door_connection_level_40_and_41.tres" id="4_00ral"]
@@ -35,12 +35,12 @@ position = Vector2(512, -128)
 
 [node name="DoorToLevel40" parent="Doors" instance=ExtResource("3_jubsk")]
 position = Vector2(-8, 544)
-new_level_path = "res://world/level_40_Jungle.tscn"
+new_level_path = "res://world/levels/level_40_Jungle.tscn"
 connection = ExtResource("4_00ral")
 
 [node name="DoorToLevel42" parent="Doors" instance=ExtResource("3_jubsk")]
 position = Vector2(472, 128)
-new_level_path = "res://world/level_42_Jungle_Boss.tscn"
+new_level_path = "res://world/levels/level_42_Jungle_Boss.tscn"
 connection = ExtResource("6_u1bt2")
 
 [node name="Enemies" type="Node2D" parent="."]

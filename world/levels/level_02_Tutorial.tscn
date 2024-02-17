@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://m7drw43nopo4"]
 
-[ext_resource type="Script" path="res://world/level.gd" id="1_12ggl"]
+[ext_resource type="Script" path="res://world/levels/level.gd" id="1_12ggl"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_i3c0s"]
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_ed5a0"]
 [ext_resource type="Resource" uid="uid://u3mrgkygk2f4" path="res://world/door_connections/door_connection_level_01_and_02.tres" id="4_jji6j"]
@@ -17,12 +17,12 @@ layer_0/tile_data = PackedInt32Array(65550, 65536, 2, 65549, 65536, 2, 65548, 65
 
 [node name="DoorToLevel01" parent="Doors" instance=ExtResource("3_ed5a0")]
 position = Vector2(8, 96)
-new_level_path = "res://world/level_01_Tutorial.tscn"
+new_level_path = "res://world/levels/level_01_Tutorial.tscn"
 connection = ExtResource("4_jji6j")
 
 [node name="DoorToLevel03" parent="Doors" instance=ExtResource("3_ed5a0")]
 position = Vector2(344, 96)
-new_level_path = "res://world/level_03_Tutorial.tscn"
+new_level_path = "res://world/levels/level_03_Tutorial.tscn"
 connection = ExtResource("5_0s630")
 
 [node name="CameraLimits" parent="." instance=ExtResource("5_a43il")]
