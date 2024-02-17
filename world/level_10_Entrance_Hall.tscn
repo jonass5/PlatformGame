@@ -24,7 +24,7 @@ offset_bottom = 176.0
 
 [node name="DoorToLevel07" parent="." instance=ExtResource("3_luch0")]
 position = Vector2(8, 160)
-new_level_path = "res://world/level_07.tscn"
+new_level_path = "res://world/level_07_Tutorial.tscn"
 connection = ExtResource("4_vtgft")
 
 [node name="DoorToLevel20City" parent="." instance=ExtResource("3_luch0")]

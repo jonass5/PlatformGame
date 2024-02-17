@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c77cvrcmrwist" path="res://enemies/walking_enemy.tscn" id="6_h6wy3"]
 [ext_resource type="PackedScene" uid="uid://cm38ky2ure14w" path="res://enemies/crawling_enemy.tscn" id="8_chyuj"]
 
-[node name="Level04" type="Node2D"]
+[node name="Level04Tutorial" type="Node2D"]
 script = ExtResource("1_aw73y")
 
 [node name="WorldTileMap" parent="." instance=ExtResource("2_bwtjm")]
@@ -17,12 +17,12 @@ layer_0/tile_data = PackedInt32Array(65550, 65536, 2, 65549, 65536, 2, 65548, 65
 
 [node name="DoorToLevel03" parent="." instance=ExtResource("3_jtejw")]
 position = Vector2(8, 96)
-new_level_path = "res://world/level_03.tscn"
+new_level_path = "res://world/level_03_Tutorial.tscn"
 connection = ExtResource("4_dg0h3")
 
 [node name="DoorToLevel05" parent="." instance=ExtResource("3_jtejw")]
 position = Vector2(344, 96)
-new_level_path = "res://world/level_05.tscn"
+new_level_path = "res://world/level_05_Tutorial.tscn"
 connection = ExtResource("5_jo8vl")
 
 [node name="CameraLimits" parent="." instance=ExtResource("5_8i2dp")]

@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://u3mrgkygk2f4" path="res://world/door_connections/door_connection_level_01_and_02.tres" id="3_dqyqa"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="4_m6qto"]
 
-[node name="Level01" type="Node2D"]
+[node name="Level01Tutorial" type="Node2D"]
 script = ExtResource("1_t111h")
 
 [node name="WorldTileMap" parent="." instance=ExtResource("1_tgiig")]
@@ -14,7 +14,7 @@ layer_0/tile_data = PackedInt32Array(65550, 65536, 2, 65549, 65536, 2, 65548, 65
 
 [node name="DoorToLevel02" parent="." instance=ExtResource("2_yi7f2")]
 position = Vector2(328, 96)
-new_level_path = "res://world/level_02.tscn"
+new_level_path = "res://world/level_02_Tutorial.tscn"
 connection = ExtResource("3_dqyqa")
 
 [node name="CameraLimits" parent="." instance=ExtResource("4_m6qto")]

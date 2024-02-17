@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dbvi8foqa1c82" path="res://ui/version_gui.tscn" id="2_c7vam"]
 [ext_resource type="PackedScene" uid="uid://ciuq1j8jgxaxs" path="res://ui/health_meter.tscn" id="5_r4qfi"]
 [ext_resource type="PackedScene" uid="uid://de63oipctsyad" path="res://menus/pause_menu.tscn" id="6_cs515"]
-[ext_resource type="PackedScene" uid="uid://bkkptul236bce" path="res://world/level_01.tscn" id="7_im5t5"]
+[ext_resource type="PackedScene" uid="uid://bkkptul236bce" path="res://world/level_01_Tutorial.tscn" id="7_im5t5"]
 [ext_resource type="PackedScene" uid="uid://cnl4sauj6u1tx" path="res://ui/missile_ui.tscn" id="7_p6sfx"]
 
 [node name="World" type="Node2D"]
