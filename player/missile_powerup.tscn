@@ -9,6 +9,7 @@ size = Vector2(6, 15)
 
 [node name="MissilePowerup" instance=ExtResource("1_27y5f")]
 script = ExtResource("2_sxued")
+number_of_missiles = 3
 
 [node name="Sprite2D" parent="." index="0"]
 rotation = -1.57079
