@@ -1,7 +1,7 @@
 class_name MissilePowerup
 extends Powerup
 
-@export var number_of_missiles: int = 3
+var number_of_missiles: int = 3
 
 
 func pickup():
