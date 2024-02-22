@@ -1,5 +1,5 @@
 extends Node
 
-var player: PlayerChar = null
+var player: Player = null
 var world: World = null
 var level: Level = null

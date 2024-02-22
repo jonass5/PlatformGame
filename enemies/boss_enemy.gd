@@ -49,7 +49,7 @@ func rush_state(delta: float):
 		state_timer.timeout.connect(set_state.bind(decelertate_state), CONNECT_ONE_SHOT)
 		state_init = false
 	var player = MainInstances.player
-	if not player is PlayerChar:
+	if not player is Player:
 		return
 	var direction: Vector2 = global_position.direction_to(player.global_position)
 	velocity = velocity.move_toward(direction * max_speed, acceleration * delta)

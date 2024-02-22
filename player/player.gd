@@ -1,4 +1,4 @@
-class_name PlayerChar
+class_name Player
 extends CharacterBody2D
 
 const LAZER_COOL_DOWN_TIME: float = 0.25

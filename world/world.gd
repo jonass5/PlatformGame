@@ -32,8 +32,8 @@ func load_level(file_path: String):
 
 
 func change_levels(door: Door):
-	var player = MainInstances.player as PlayerChar
-	if not player is PlayerChar:
+	var player = MainInstances.player as Player
+	if not player is Player:
 		return
 	level.queue_free()
 	var new_level = load(door.new_level_path).instantiate()

@@ -23,7 +23,7 @@ func _ready():
 
 
 func _process(_delta):
-	if not MainInstances.player is PlayerChar:
+	if not MainInstances.player is Player:
 		return
 	if Input.is_action_just_pressed("pause"):
 		paused = !paused

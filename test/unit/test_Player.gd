@@ -1,10 +1,10 @@
 extends GutTest
 
-var player: PlayerChar = null
+var player: Player = null
 
 
 func before_each():
-	player = PlayerChar.new()
+	player = Player.new()
 
 
 func after_each():
