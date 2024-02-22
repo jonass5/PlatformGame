@@ -226,15 +226,19 @@ func cool_down(delta: float):
 
 
 func fire_laser():
-	if Input.is_action_pressed("fire") and cool_down_time <= 0:
+	if Input.is_action_pressed("fire") and is_weapon_cold():
 		cool_down_time = LAZER_COOL_DOWN_TIME
 		player_blaster.fire_bullet()
 
 
 func fire_missile():
 	if (Input.is_action_pressed("fire_missile")
-	and cool_down_time <= 0
+	and is_weapon_cold()
 	and PlayerStats.missiles > 0):
 		cool_down_time = MISSILE_COOL_DOWN_TIME
 		player_blaster.fire_missile()
 		PlayerStats.missiles -= 1
+
+
+func is_weapon_cold():
+	return cool_down_time <= 0.0
