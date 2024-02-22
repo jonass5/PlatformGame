@@ -234,7 +234,7 @@ func fire_laser():
 func fire_missile():
 	if (Input.is_action_pressed("fire_missile")
 	and is_weapon_cold()
-	and PlayerStats.missiles > 0):
+	and PlayerStats.has_missiles()):
 		cool_down_time = MISSILE_COOL_DOWN_TIME
 		player_blaster.fire_missile()
 		PlayerStats.missiles -= 1
