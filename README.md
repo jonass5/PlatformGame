@@ -5,12 +5,16 @@ Playable under https://jonass5.github.io/PlatformGame/
 
 ## Start menu
 ![Screenshot of start menu](./screenshots/start_menu.png)
-## Level 1
-![Screenshot of level 01](./screenshots/level_01.png)
-## Level 2
-![Screenshot of level 02](./screenshots/level_02.png)
-## Level 3
-![Screenshot of level 03](./screenshots/level_03.png)
+## Tutorial levels allow to learn the controls
+![Tutorial level 01](./screenshots/level_01.png)
+![Tutorial level 02](./screenshots/level_02.png)
+![Tutorial level 03](./screenshots/level_03.png)
+## Entrance Hall allow to choose different areas
+![Entrance Hall](./screenshots/entrance_hall.png)
+## The Jungle
+![Jungle level](./screenshots/level_jungle.png)
+## Boss fight in the jungle
+![Jungle boss level](./screenshots/level_boss.png)
 ## Pause menu
 ![Screenshot of pause menu](./screenshots/pause_menu.png)
 ## Game Over menu

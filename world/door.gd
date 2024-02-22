@@ -12,8 +12,10 @@ var active = false
 
 func _physics_process(_delta: float):
 	var player = MainInstances.player as PlayerChar
-	if not player is PlayerChar: return
-	if not active: return
+	if not player is PlayerChar:
+		return
+	if not active:
+		return
 	if overlaps_body(player) and new_level_path:
 		var player_direction = sign(player.velocity.x)
 		var door_direction = get_direction()

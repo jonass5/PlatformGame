@@ -19,7 +19,7 @@ func _ready():
 
 
 func fire_bullet():
-	var bullet = Utils.instanciate_scene_on_world(EnemyBulletScene, bullet_spawn_point.global_position) as Projectile
+	var bullet = Utils.instanciate_scene_on_level(EnemyBulletScene, bullet_spawn_point.global_position) as Projectile
 	var direction = global_position.direction_to(fire_direction.global_position)
 	var velocity = direction.normalized() * bullet_speed
 	velocity = velocity.rotated(randf_range(-deg_to_rad(spread / 2.0), deg_to_rad(spread / 2.0)))
@@ -28,7 +28,7 @@ func fire_bullet():
 
 func _on_stats_no_health():
 	enemy.no_health(self)
-	Utils.instanciate_scene_on_world(EnemyDeathEffectScene, bullet_spawn_point.global_position)
+	Utils.instanciate_scene_on_level(EnemyDeathEffectScene, bullet_spawn_point.global_position)
 
 
 func _on_hurtbox_hurt(_hitbox, damage: int):

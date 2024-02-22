@@ -11,7 +11,8 @@ var pathfinding_next_position: Vector2
 
 
 func _physics_process(_delta: float):
-	if not MainInstances.player is Node2D: return
+	if not MainInstances.player is Node2D:
+		return
 	target = MainInstances.player.center
 
 	if (can_see_target(global_position)):
