@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg8r5hdcf8vyh"
-path="res://.godot/imported/level_03.png-1540c85b468bbf7daea57bf6f2aa3e61.ctex"
+uid="uid://cgjjecsp0haua"
+path="res://.godot/imported/entrance_hall.png-63e5e0f04a1a7b18cb1f6f82d618bc89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screenshots/level_03.png"
-dest_files=["res://.godot/imported/level_03.png-1540c85b468bbf7daea57bf6f2aa3e61.ctex"]
+source_file="res://screenshots/entrance_hall.png"
+dest_files=["res://.godot/imported/entrance_hall.png-63e5e0f04a1a7b18cb1f6f82d618bc89.ctex"]
 
 [params]
 
