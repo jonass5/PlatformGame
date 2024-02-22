@@ -1,6 +1,9 @@
 class_name PlayerChar
 extends CharacterBody2D
 
+const LAZER_COOL_DOWN_TIME: float = 0.25
+const MISSILE_COOL_DOWN_TIME: float = 0.5
+
 const DustEffectScene = preload("res://effects/dust_effect.tscn")
 const JumpEffectScene = preload("res://effects/jump_effect.tscn")
 const WallJumpEffectScene = preload("res://effects/wall_jump_effect.tscn")
@@ -17,12 +20,12 @@ const WallJumpEffectScene = preload("res://effects/wall_jump_effect.tscn")
 
 var air_jump : bool = false
 var state : Callable = move_state
+var cool_down_time: float = 0.0
 
 @onready var animation_player = $AnimationPlayer
 @onready var sprite_2d = $Sprite2D
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var player_blaster = $PlayerBlaster
-@onready var fire_rate_timer = $FireRateTimer
 @onready var drop_timer = $DropTimer
 @onready var camera_2d = $Camera2D
 @onready var hurtbox: Hurtbox = $Hurtbox
@@ -41,16 +44,9 @@ func _enter_tree():
 func _physics_process(delta: float) -> void:
 	state.call(delta)
 
-	if Input.is_action_pressed("fire") and fire_rate_timer.time_left == 0:
-		fire_rate_timer.start()
-		player_blaster.fire_bullet()
-
-	if (Input.is_action_pressed("fire_missile")
-	and fire_rate_timer.time_left == 0
-	and PlayerStats.missiles > 0):
-		fire_rate_timer.start()
-		player_blaster.fire_missile()
-		PlayerStats.missiles -= 1
+	cool_down(delta)
+	fire_laser()
+	fire_missile()
 
 
 func _exit_tree():
@@ -222,3 +218,23 @@ func hurt():
 	Sound.play(Sound.hurt)
 	Events.add_screenshake.emit(10, 0.1)
 	PlayerStats.health -= 1
+
+
+func cool_down(delta: float):
+	if cool_down_time > 0.0:
+		cool_down_time -= delta
+
+
+func fire_laser():
+	if Input.is_action_pressed("fire") and cool_down_time <= 0:
+		cool_down_time = LAZER_COOL_DOWN_TIME
+		player_blaster.fire_bullet()
+
+
+func fire_missile():
+	if (Input.is_action_pressed("fire_missile")
+	and cool_down_time <= 0
+	and PlayerStats.missiles > 0):
+		cool_down_time = MISSILE_COOL_DOWN_TIME
+		player_blaster.fire_missile()
+		PlayerStats.missiles -= 1
