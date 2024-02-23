@@ -81,7 +81,7 @@ func move_state(delta: float) -> void:
 func wall_slide_state(delta: float) -> void:
 	var wall_normal = get_wall_normal()
 	animation_player.play("wall_slide")
-	sprite_2d.scale.x = sign(wall_normal.x)
+	sprite_2d.flip_h = sign(wall_normal.x) == -1
 	velocity.y = clampf(velocity.y, -max_wall_slide_speed / 2.0, max_wall_slide_speed)
 	wall_jump_check(wall_normal.x)
 	apply_wall_slide_gravity(delta)
@@ -117,7 +117,7 @@ func wall_jump_check(wall_axis) -> void:
 		jump(jump_force * 0.75, false)
 		var wall_jump_effect_position = global_position + Vector2(wall_axis * 3.5, -2)
 		var wall_jump_effect = Utils.instanciate_scene_on_level(WallJumpEffectScene, wall_jump_effect_position)
-		wall_jump_effect.scale.x = wall_axis
+		wall_jump_effect.flip_h = wall_axis == -1
 
 
 func apply_wall_slide_gravity(delta) -> void:
@@ -179,16 +179,16 @@ func jump(force: float, create_effect: bool = true) -> void:
 
 func update_animation(input_axis: float) -> void:
 	if Input.get_connected_joypads().is_empty():
-		sprite_2d.scale.x = sign(get_local_mouse_position().x)
+		sprite_2d.flip_h = sign(get_local_mouse_position().x) == -1
 	else:
-		sprite_2d.scale.x = sign(player_blaster.get_blaster_direction())
-
-	if abs(sprite_2d.scale.x) != 1:
-		sprite_2d.scale.x = 1
+		sprite_2d.flip_h = sign(player_blaster.get_blaster_direction()) == -1
 
 	if is_moving(input_axis):
 		animation_player.play("run")
-		animation_player.speed_scale = input_axis * sprite_2d.scale.x
+		if sprite_2d.flip_h:
+			animation_player.speed_scale = input_axis * -1
+		else:
+			animation_player.speed_scale = input_axis * 1
 	else:
 		animation_player.play("idle")
 
