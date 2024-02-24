@@ -9,6 +9,11 @@ const DustEffectScene = preload("res://effects/dust_effect.tscn")
 const JumpEffectScene = preload("res://effects/jump_effect.tscn")
 const WallJumpEffectScene = preload("res://effects/wall_jump_effect.tscn")
 
+enum FACING {
+	RIGHT = 1,
+	LEFT = -1
+}
+
 @export var acceleration = 512
 @export var max_velocity = 64
 @export var friction = 256
@@ -83,7 +88,7 @@ func move_state(delta: float) -> void:
 func wall_slide_state(delta: float) -> void:
 	var wall_normal = get_wall_normal()
 	animation_player.play("wall_slide")
-	sprite_2d.flip_h = sign(wall_normal.x) == -1
+	sprite_2d.flip_h = sign(wall_normal.x) == FACING.LEFT
 	velocity.y = clampf(velocity.y, -max_wall_slide_speed / 2.0, max_wall_slide_speed)
 	wall_jump_check(wall_normal.x)
 	apply_wall_slide_gravity(delta)
@@ -99,11 +104,11 @@ func wall_check() -> void:
 
 
 func wall_detach(delta: float, wall_axis: int) -> void:
-	if Input.is_action_just_pressed("move_right") and wall_axis == 1:
+	if Input.is_action_just_pressed("move_right") and wall_axis == FACING.RIGHT:
 		velocity.y = acceleration * delta
 		state = move_state
 
-	if Input.is_action_just_pressed("move_left") and wall_axis == -1:
+	if Input.is_action_just_pressed("move_left") and wall_axis == FACING.LEFT:
 		velocity.x = acceleration * delta
 		state = move_state
 
@@ -119,7 +124,7 @@ func wall_jump_check(wall_axis) -> void:
 		jump(jump_force * 0.75, false)
 		var wall_jump_effect_position = global_position + Vector2(wall_axis * 3.5, -2)
 		var wall_jump_effect = Utils.instanciate_scene_on_level(WallJumpEffectScene, wall_jump_effect_position)
-		wall_jump_effect.flip_h = wall_axis == -1
+		wall_jump_effect.flip_h = wall_axis == FACING.LEFT
 
 
 func apply_wall_slide_gravity(delta) -> void:
@@ -182,18 +187,12 @@ func jump(force: float, create_effect: bool = true) -> void:
 
 func update_animation(input_axis: float) -> void:
 	var facing_direction = get_facing_direction()
-	sprite_2d.flip_h = facing_direction == -1
-	if facing_direction == 1:
-		remote_transform_2d.position.x = BLASTER_OFFSET
-	else:
-		remote_transform_2d.position.x = -BLASTER_OFFSET
+	sprite_2d.flip_h = facing_direction == FACING.LEFT
+	remote_transform_2d.position.x = BLASTER_OFFSET * facing_direction
 
 	if is_moving(input_axis):
 		animation_player.play("run")
-		if sprite_2d.flip_h:
-			animation_player.speed_scale = input_axis * -1
-		else:
-			animation_player.speed_scale = input_axis * 1
+		animation_player.speed_scale = input_axis * facing_direction
 	else:
 		animation_player.play("idle")
 
