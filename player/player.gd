@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const LAZER_COOL_DOWN_TIME: float = 0.25
 const MISSILE_COOL_DOWN_TIME: float = 0.5
+const BLASTER_OFFSET = 2
 
 const DustEffectScene = preload("res://effects/dust_effect.tscn")
 const JumpEffectScene = preload("res://effects/jump_effect.tscn")
@@ -24,6 +25,7 @@ var cool_down_time: float = 0.0
 
 @onready var animation_player = $AnimationPlayer
 @onready var sprite_2d = $Sprite2D
+@onready var remote_transform_2d = $Sprite2D/RemoteTransform2D
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var player_blaster = $PlayerBlaster
 @onready var drop_timer = $DropTimer
@@ -177,11 +179,14 @@ func jump(force: float, create_effect: bool = true) -> void:
 	if create_effect:
 		Utils.instanciate_scene_on_level(JumpEffectScene, global_position)
 
+
 func update_animation(input_axis: float) -> void:
-	if Input.get_connected_joypads().is_empty():
-		sprite_2d.flip_h = sign(get_local_mouse_position().x) == -1
+	var facing_direction = get_facing_direction()
+	sprite_2d.flip_h = facing_direction == -1
+	if facing_direction == 1:
+		remote_transform_2d.position.x = BLASTER_OFFSET
 	else:
-		sprite_2d.flip_h = sign(player_blaster.get_blaster_direction()) == -1
+		remote_transform_2d.position.x = -BLASTER_OFFSET
 
 	if is_moving(input_axis):
 		animation_player.play("run")
@@ -240,5 +245,11 @@ func fire_missile():
 		PlayerStats.missiles -= 1
 
 
-func is_weapon_cold():
+func is_weapon_cold() -> bool:
 	return cool_down_time <= 0.0
+
+
+func get_facing_direction() -> int:
+	if Input.get_connected_joypads().is_empty():
+		return sign(get_local_mouse_position().x)
+	return sign(player_blaster.get_blaster_direction())
