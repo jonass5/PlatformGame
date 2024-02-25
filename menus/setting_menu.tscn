@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs3kyspr0gkui"]
+
+[ext_resource type="PackedScene" uid="uid://dbvi8foqa1c82" path="res://ui/version_gui.tscn" id="1_ob5uv"]
+[ext_resource type="Script" path="res://menus/setting_menu.gd" id="1_tat8a"]
+[ext_resource type="PackedScene" uid="uid://daeqvns614qkb" path="res://menus/volume_slider.tscn" id="2_wqbk7"]
+[ext_resource type="Theme" uid="uid://v155lwusxhu2" path="res://ui/default_theme.tres" id="3_6l0no"]
+
+[node name="SettingMenu" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_tat8a")
+
+[node name="VersionGUI" parent="." instance=ExtResource("1_ob5uv")]
+layout_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MasterSliderLabel" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="MasterVolumeSlider" parent="CenterContainer/VBoxContainer/VBoxContainer" instance=ExtResource("2_wqbk7")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="MusicSliderLabel" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="MusicVolumeSlider" parent="CenterContainer/VBoxContainer/VBoxContainer" instance=ExtResource("2_wqbk7")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="SoundSliderLabel" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sound Volume"
+
+[node name="SoundVolumeSlider" parent="CenterContainer/VBoxContainer/VBoxContainer" instance=ExtResource("2_wqbk7")]
+layout_mode = 2
+bus_name = "Sounds"
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(64, 16)
+layout_mode = 2
+theme = ExtResource("3_6l0no")
+text = "Back"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
