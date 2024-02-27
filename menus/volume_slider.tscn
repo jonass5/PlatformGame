@@ -12,3 +12,5 @@ max_value = 1.0
 step = 0.001
 value = 0.5
 script = ExtResource("2_a7sja")
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

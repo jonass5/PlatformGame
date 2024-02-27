@@ -23,7 +23,7 @@ func _on_load_button_pressed():
 	get_tree().change_scene_to_file("res://world/world.tscn")
 
 
-func _on_settingst_button_pressed():
+func _on_settings_button_pressed():
 	Sound.play(Sound.click, 1.0, -10.0)
 	get_tree().change_scene_to_file("res://menus/setting_menu.tscn")
 
