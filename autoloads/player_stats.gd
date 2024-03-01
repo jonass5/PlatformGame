@@ -40,3 +40,7 @@ func retrieve_stats():
 	max_health = WorldStash.retrieve("player", "max_health")
 	max_missiles = WorldStash.retrieve("player", "max_missiles")
 	refill()
+
+
+func has_missiles():
+	return missiles > 0

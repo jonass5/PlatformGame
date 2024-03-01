@@ -11,8 +11,8 @@ var active = false
 
 
 func _physics_process(_delta: float):
-	var player = MainInstances.player as PlayerChar
-	if not player is PlayerChar:
+	var player = MainInstances.player as Player
+	if not player is Player:
 		return
 	if not active:
 		return

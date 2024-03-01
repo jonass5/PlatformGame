@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c165sgf7tgyiu"]
+
+[ext_resource type="Script" path="res://menus/volume_checkbox.gd" id="1_t1akh"]
+
+[node name="VolumeCheckbox" type="CheckBox"]
+offset_right = 20.0
+offset_bottom = 20.0
+script = ExtResource("1_t1akh")
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

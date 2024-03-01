@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://daeqvns614qkb"]
+
+[ext_resource type="Theme" uid="uid://v155lwusxhu2" path="res://ui/default_theme.tres" id="1_x8253"]
+[ext_resource type="Script" path="res://menus/volume_slider.gd" id="2_a7sja"]
+
+[node name="VolumeSlider" type="HSlider"]
+custom_minimum_size = Vector2(100, 0)
+offset_right = 8.0
+offset_bottom = 16.0
+theme = ExtResource("1_x8253")
+max_value = 1.0
+step = 0.001
+value = 0.5
+script = ExtResource("2_a7sja")
+
+[connection signal="value_changed" from="." to="." method="_on_value_changed"]

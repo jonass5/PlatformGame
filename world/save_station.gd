@@ -5,7 +5,7 @@ extends StaticBody2D
 
 
 func _on_area_2d_body_entered(body):
-	if not body is PlayerChar:
+	if not body is Player:
 		return
 	PlayerStats.refill()
 	Sound.play(Sound.powerup, 0.6, -10.0)

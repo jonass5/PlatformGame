@@ -32,7 +32,7 @@ func _physics_process(delta: float) -> void:
 		turn_around()
 
 	velocity.x = direction * speed
-	sprite_2d.scale.x = direction
+	sprite_2d.flip_h = direction == 1
 
 	move_and_slide()
 

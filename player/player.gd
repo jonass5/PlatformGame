@@ -1,9 +1,18 @@
-class_name PlayerChar
+class_name Player
 extends CharacterBody2D
+
+const LAZER_COOL_DOWN_TIME: float = 0.25
+const MISSILE_COOL_DOWN_TIME: float = 0.5
+const BLASTER_OFFSET = 2
 
 const DustEffectScene = preload("res://effects/dust_effect.tscn")
 const JumpEffectScene = preload("res://effects/jump_effect.tscn")
 const WallJumpEffectScene = preload("res://effects/wall_jump_effect.tscn")
+
+enum FACING {
+	RIGHT = 1,
+	LEFT = -1
+}
 
 @export var acceleration = 512
 @export var max_velocity = 64
@@ -17,12 +26,13 @@ const WallJumpEffectScene = preload("res://effects/wall_jump_effect.tscn")
 
 var air_jump : bool = false
 var state : Callable = move_state
+var cool_down_time: float = 0.0
 
 @onready var animation_player = $AnimationPlayer
 @onready var sprite_2d = $Sprite2D
+@onready var remote_transform_2d = $Sprite2D/RemoteTransform2D
 @onready var coyote_jump_timer = $CoyoteJumpTimer
 @onready var player_blaster = $PlayerBlaster
-@onready var fire_rate_timer = $FireRateTimer
 @onready var drop_timer = $DropTimer
 @onready var camera_2d = $Camera2D
 @onready var hurtbox: Hurtbox = $Hurtbox
@@ -41,16 +51,9 @@ func _enter_tree():
 func _physics_process(delta: float) -> void:
 	state.call(delta)
 
-	if Input.is_action_pressed("fire") and fire_rate_timer.time_left == 0:
-		fire_rate_timer.start()
-		player_blaster.fire_bullet()
-
-	if (Input.is_action_pressed("fire_missile")
-	and fire_rate_timer.time_left == 0
-	and PlayerStats.missiles > 0):
-		fire_rate_timer.start()
-		player_blaster.fire_missile()
-		PlayerStats.missiles -= 1
+	cool_down(delta)
+	fire_laser()
+	fire_missile()
 
 
 func _exit_tree():
@@ -85,7 +88,7 @@ func move_state(delta: float) -> void:
 func wall_slide_state(delta: float) -> void:
 	var wall_normal = get_wall_normal()
 	animation_player.play("wall_slide")
-	sprite_2d.scale.x = sign(wall_normal.x)
+	sprite_2d.flip_h = sign(wall_normal.x) == FACING.LEFT
 	velocity.y = clampf(velocity.y, -max_wall_slide_speed / 2.0, max_wall_slide_speed)
 	wall_jump_check(wall_normal.x)
 	apply_wall_slide_gravity(delta)
@@ -101,11 +104,11 @@ func wall_check() -> void:
 
 
 func wall_detach(delta: float, wall_axis: int) -> void:
-	if Input.is_action_just_pressed("move_right") and wall_axis == 1:
+	if Input.is_action_just_pressed("move_right") and wall_axis == FACING.RIGHT:
 		velocity.y = acceleration * delta
 		state = move_state
 
-	if Input.is_action_just_pressed("move_left") and wall_axis == -1:
+	if Input.is_action_just_pressed("move_left") and wall_axis == FACING.LEFT:
 		velocity.x = acceleration * delta
 		state = move_state
 
@@ -121,7 +124,7 @@ func wall_jump_check(wall_axis) -> void:
 		jump(jump_force * 0.75, false)
 		var wall_jump_effect_position = global_position + Vector2(wall_axis * 3.5, -2)
 		var wall_jump_effect = Utils.instanciate_scene_on_level(WallJumpEffectScene, wall_jump_effect_position)
-		wall_jump_effect.scale.x = wall_axis
+		wall_jump_effect.flip_h = wall_axis == FACING.LEFT
 
 
 func apply_wall_slide_gravity(delta) -> void:
@@ -181,18 +184,15 @@ func jump(force: float, create_effect: bool = true) -> void:
 	if create_effect:
 		Utils.instanciate_scene_on_level(JumpEffectScene, global_position)
 
-func update_animation(input_axis: float) -> void:
-	if Input.get_connected_joypads().is_empty():
-		sprite_2d.scale.x = sign(get_local_mouse_position().x)
-	else:
-		sprite_2d.scale.x = sign(player_blaster.get_blaster_direction())
 
-	if abs(sprite_2d.scale.x) != 1:
-		sprite_2d.scale.x = 1
+func update_animation(input_axis: float) -> void:
+	var facing_direction = get_facing_direction()
+	sprite_2d.flip_h = facing_direction == FACING.LEFT
+	remote_transform_2d.position.x = BLASTER_OFFSET * facing_direction
 
 	if is_moving(input_axis):
 		animation_player.play("run")
-		animation_player.speed_scale = input_axis * sprite_2d.scale.x
+		animation_player.speed_scale = input_axis * facing_direction
 	else:
 		animation_player.play("idle")
 
@@ -222,3 +222,33 @@ func hurt():
 	Sound.play(Sound.hurt)
 	Events.add_screenshake.emit(10, 0.1)
 	PlayerStats.health -= 1
+
+
+func cool_down(delta: float):
+	if cool_down_time > 0.0:
+		cool_down_time -= delta
+
+
+func fire_laser():
+	if Input.is_action_pressed("fire") and is_weapon_cold():
+		cool_down_time = LAZER_COOL_DOWN_TIME
+		player_blaster.fire_bullet()
+
+
+func fire_missile():
+	if (Input.is_action_pressed("fire_missile")
+	and is_weapon_cold()
+	and PlayerStats.has_missiles()):
+		cool_down_time = MISSILE_COOL_DOWN_TIME
+		player_blaster.fire_missile()
+		PlayerStats.missiles -= 1
+
+
+func is_weapon_cold() -> bool:
+	return cool_down_time <= 0.0
+
+
+func get_facing_direction() -> int:
+	if Input.get_connected_joypads().is_empty():
+		return sign(get_local_mouse_position().x)
+	return sign(player_blaster.get_blaster_direction())

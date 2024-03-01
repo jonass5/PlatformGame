@@ -9,4 +9,4 @@ main_theme = ExtResource("2_agjft")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_agjft")
-bus = &"Musik"
+bus = &"Music"
