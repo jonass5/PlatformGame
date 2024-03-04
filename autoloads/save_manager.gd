@@ -22,6 +22,7 @@ func save_game():
 func load_game():
 	var load_file = FileAccess.open(save_path, FileAccess.READ)
 	if not load_file is FileAccess:
+		PlayerStats.refill()
 		return null
 	
 	var data =  JSON.parse_string(load_file.get_line())
