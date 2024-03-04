@@ -8,9 +8,7 @@ var loading: bool = false
 
 
 func save_game():
-	WorldStash.stash("level", "file_path", MainInstances.level.scene_file_path)
-	WorldStash.stash("player", "x", MainInstances.player.global_position.x)
-	WorldStash.stash("player", "y", MainInstances.player.global_position.y)
+	MainInstances.stash_stats()
 	PlayerStats.stash_stats()
 	
 	var save_file = FileAccess.open(save_path, FileAccess.WRITE)
