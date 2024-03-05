@@ -50,30 +50,37 @@ size_flags_horizontal = 3
 [node name="InputButtonRight" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
 layout_mode = 2
 action_name = "move_right"
+action_name_alias = "Move right"
 
 [node name="InputButtonLeft" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
 layout_mode = 2
 action_name = "move_left"
+action_name_alias = "Move left"
 
 [node name="InputButtonJump" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
 layout_mode = 2
 action_name = "jump"
+action_name_alias = "Jump"
 
 [node name="InputButtonCrouch" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
 layout_mode = 2
 action_name = "crouch"
+action_name_alias = "Crouch"
 
 [node name="InputButtonFire" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
 layout_mode = 2
 action_name = "fire"
+action_name_alias = "Fire (normal)"
 
 [node name="InputButtonFire_missile" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
 layout_mode = 2
 action_name = "fire_missile"
+action_name_alias = "Fire (Missiles)"
 
 [node name="InputButtonPause" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
 layout_mode = 2
 action_name = "pause"
+action_name_alias = "Pause game"
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer"]
 custom_minimum_size = Vector2(64, 16)
