@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://cov7bffo55ix6"]
+
+[ext_resource type="Script" path="res://menus/input_map_button.gd" id="1_6r08w"]
+
+[node name="InputMapButton" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 10.0
+grow_horizontal = 2
+script = ExtResource("1_6r08w")
+
+[node name="InputLabel" type="Label" parent="."]
+layout_mode = 2
+text = "INPUT ACTION"
+
+[node name="SpacerControl" type="Control" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="InputButton" type="Button" parent="."]
+layout_mode = 2
+disabled = true
+text = "ACTION KEY"
