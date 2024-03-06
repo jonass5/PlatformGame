@@ -10,5 +10,8 @@ func stash_stats():
 	WorldStash.stash("player", "y", player.global_position.y)
 	WorldStash.stash("level", "file_path", level.scene_file_path)
 
+
 func retrieve_stats():
-	pass
+	var player_x = WorldStash.retrieve("player", "x")
+	var player_y = WorldStash.retrieve("player", "y")
+	player.global_position = Vector2(player_x, player_y)
