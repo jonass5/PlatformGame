@@ -28,7 +28,10 @@ func _on_settings_button_pressed():
 	get_tree().change_scene_to_file("res://menus/setting_menu.tscn")
 
 
+func _on_input_button_pressed():
+	Sound.play(Sound.click, 1.0, -10.0)
+	get_tree().change_scene_to_file("res://menus/controls_menu.tscn")
+	
+
 func _on_quit_button_pressed():
 	get_tree().quit()
-
-

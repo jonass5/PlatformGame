@@ -1,0 +1,91 @@
+[gd_scene load_steps=4 format=3 uid="uid://g72de712su2d"]
+
+[ext_resource type="PackedScene" uid="uid://cov7bffo55ix6" path="res://menus/input_map_button.tscn" id="1_bciuu"]
+[ext_resource type="Script" path="res://menus/controls_menu.gd" id="1_keuih"]
+[ext_resource type="Theme" uid="uid://v155lwusxhu2" path="res://ui/default_theme.tres" id="2_ebe2j"]
+
+[node name="ControlsMenu" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_keuih")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+text = "Controls"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="BoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InputButtonRight" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
+layout_mode = 2
+action_name = "move_right"
+action_name_alias = "Move right"
+
+[node name="InputButtonLeft" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
+layout_mode = 2
+action_name = "move_left"
+action_name_alias = "Move left"
+
+[node name="InputButtonJump" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
+layout_mode = 2
+action_name = "jump"
+action_name_alias = "Jump"
+
+[node name="InputButtonCrouch" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
+layout_mode = 2
+action_name = "crouch"
+action_name_alias = "Crouch"
+
+[node name="InputButtonFire" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
+layout_mode = 2
+action_name = "fire"
+action_name_alias = "Fire (normal)"
+
+[node name="InputButtonFire_missile" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
+layout_mode = 2
+action_name = "fire_missile"
+action_name_alias = "Fire (Missiles)"
+
+[node name="InputButtonPause" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
+layout_mode = 2
+action_name = "pause"
+action_name_alias = "Pause game"
+
+[node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer"]
+custom_minimum_size = Vector2(64, 16)
+layout_mode = 2
+theme = ExtResource("2_ebe2j")
+text = "Back"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/BackButton" to="." method="_on_back_button_pressed"]

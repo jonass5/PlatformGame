@@ -16,6 +16,6 @@ func _on_visibility_changed():
 	update_collision_layer()
 
 
-func destroy():
+func _on_missile_hit():
 	WorldStash.freed(self)
 	queue_free()
