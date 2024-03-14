@@ -1,11 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0u51htmojpn"]
+[gd_scene load_steps=12 format=3 uid="uid://b0u51htmojpn"]
 
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_d2bsp"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_66ncp"]
 [ext_resource type="PackedScene" uid="uid://dm8in4cn5o38p" path="res://world/brick.tscn" id="3_0esfe"]
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_56owy"]
-[ext_resource type="Resource" uid="uid://kkx2wael5gpp" path="res://world/door_connections/door_connection_level_10_and_20.tres" id="4_u51h4"]
+[ext_resource type="Resource" uid="uid://chen30xamueti" path="res://world/door_connections/dc_max_03_to_max_04.tres" id="5_deuw6"]
 [ext_resource type="PackedScene" uid="uid://chfgveu0gjwbd" path="res://enemies/plant_enemy.tscn" id="6_2x48h"]
+[ext_resource type="Resource" uid="uid://b6u6808qxdlvy" path="res://world/door_connections/dc_max_04_to_max_05.tres" id="6_k6yqh"]
 [ext_resource type="PackedScene" uid="uid://drusidb24xxab" path="res://world/left_right_moving_platform.tscn" id="7_wsofd"]
 [ext_resource type="PackedScene" uid="uid://b8eimfxdhasbx" path="res://world/save_station.tscn" id="9_ux0qw"]
 [ext_resource type="PackedScene" uid="uid://dnvp6bgu1gilo" path="res://player/missile_powerup.tscn" id="10_xlswm"]
@@ -41,12 +42,13 @@ position = Vector2(96, 288)
 
 [node name="Door" parent="Doors" instance=ExtResource("3_56owy")]
 position = Vector2(-8, 288)
-new_level_path = "res://world/levels/level_10_Entrance_Hall.tscn"
-connection = ExtResource("4_u51h4")
+new_level_path = "res://world/levels/level_max_03.tscn"
+connection = ExtResource("5_deuw6")
 
 [node name="Door2" parent="Doors" instance=ExtResource("3_56owy")]
 position = Vector2(312, 1792)
-new_level_path = "res://world/levels/level_max_02.tscn"
+new_level_path = "res://world/levels/level_max_05.tscn"
+connection = ExtResource("6_k6yqh")
 
 [node name="Enemies" type="Node2D" parent="."]
 
