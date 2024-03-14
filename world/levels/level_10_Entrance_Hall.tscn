@@ -25,7 +25,7 @@ connection = ExtResource("4_vtgft")
 
 [node name="DoorToLevel20City" parent="Doors" instance=ExtResource("3_luch0")]
 position = Vector2(344, 160)
-new_level_path = "res://world/levels/level_max_1.tscn"
+new_level_path = "res://world/levels/level_max_01.tscn"
 connection = ExtResource("6_gdmxw")
 
 [node name="DoorToLevel30Cave" parent="Doors" instance=ExtResource("3_luch0")]

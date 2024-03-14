@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dp1w2klcnlqs1"]
+[gd_scene load_steps=13 format=3 uid="uid://dp1w2klcnlqs1"]
 
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_do6ma"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_mp061"]
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_lut6g"]
-[ext_resource type="Script" path="res://world/door_connections/door_connection.gd" id="4_xawq8"]
+[ext_resource type="Resource" uid="uid://hpcb7kg27cn0" path="res://world/door_connections/dc_max_01_to_max_02.tres" id="4_1ute6"]
 [ext_resource type="PackedScene" uid="uid://cm38ky2ure14w" path="res://enemies/crawling_enemy.tscn" id="5_5afqs"]
 [ext_resource type="PackedScene" uid="uid://cyctgnqsxsnqf" path="res://enemies/flying_enemy.tscn" id="6_wbqax"]
 [ext_resource type="PackedScene" uid="uid://c77cvrcmrwist" path="res://enemies/walking_enemy.tscn" id="7_bv87f"]
@@ -12,10 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://dnvp6bgu1gilo" path="res://player/missile_powerup.tscn" id="10_bab4s"]
 [ext_resource type="PackedScene" uid="uid://b8eimfxdhasbx" path="res://world/save_station.tscn" id="10_qf82o"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="11_is4c6"]
-
-[sub_resource type="Resource" id="Resource_5xhjr"]
-resource_name = "door_connection_level_20_and_21.tres"
-script = ExtResource("4_xawq8")
 
 [node name="level_max_02" type="Node2D"]
 script = ExtResource("1_do6ma")
@@ -28,7 +24,7 @@ layer_0/tile_data = PackedInt32Array(1048575, 65536, 2, 1310719, 65536, 1, 12451
 [node name="Door" parent="Doors" instance=ExtResource("3_lut6g")]
 position = Vector2(-8, 288)
 new_level_path = "res://world/levels/level_max_01.tscn"
-connection = SubResource("Resource_5xhjr")
+connection = ExtResource("4_1ute6")
 
 [node name="Door2" parent="Doors" instance=ExtResource("3_lut6g")]
 position = Vector2(1480, 288)
