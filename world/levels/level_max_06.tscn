@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_dwyqa"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_r5cx2"]
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_1qf3t"]
-[ext_resource type="Resource" uid="uid://kkx2wael5gpp" path="res://world/door_connections/door_connection_level_10_and_20.tres" id="4_5sa21"]
+[ext_resource type="Resource" uid="uid://xtuunc5plyin" path="res://world/door_connections/dc_max_05_to_max_06.tres" id="4_6rw70"]
 [ext_resource type="PackedScene" uid="uid://cm38ky2ure14w" path="res://enemies/crawling_enemy.tscn" id="5_rytfb"]
 [ext_resource type="PackedScene" uid="uid://cyctgnqsxsnqf" path="res://enemies/flying_enemy.tscn" id="6_n7hne"]
 [ext_resource type="PackedScene" uid="uid://c77cvrcmrwist" path="res://enemies/walking_enemy.tscn" id="7_dlbxw"]
@@ -24,8 +24,8 @@ layer_0/tile_data = PackedInt32Array(2949191, 131072, 2, 2883655, 131072, 1, 281
 
 [node name="Door" parent="Doors" instance=ExtResource("3_1qf3t")]
 position = Vector2(24, 113)
-new_level_path = "res://world/levels/level_10_Entrance_Hall.tscn"
-connection = ExtResource("4_5sa21")
+new_level_path = "res://world/levels/level_max_05.tscn"
+connection = ExtResource("4_6rw70")
 
 [node name="Door2" parent="Doors" instance=ExtResource("3_1qf3t")]
 position = Vector2(216, 16)
@@ -78,6 +78,9 @@ position = Vector2(80, 239)
 
 [node name="UpDownMovingPlatform3" parent="Platforms" instance=ExtResource("8_jgexs")]
 position = Vector2(216, 59)
+
+[node name="UpDownMovingPlatform4" parent="Platforms" instance=ExtResource("8_jgexs")]
+position = Vector2(80, 199)
 
 [node name="SaveStations" type="Node2D" parent="."]
 position = Vector2(1, 0)
@@ -155,8 +158,7 @@ position = Vector2(384, 560)
 position = Vector2(384, 576)
 
 [node name="CameraLimits" parent="." instance=ExtResource("11_eli1j")]
-visible = false
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 496.0
-offset_bottom = 304.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1136.0
+offset_bottom = 720.0
