@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dp1w2klcnlqs1"]
+[gd_scene load_steps=14 format=3 uid="uid://dp1w2klcnlqs1"]
 
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_do6ma"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_mp061"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bqttrppfaytmh" path="res://world/up_down_moving_platform.tscn" id="8_x0ndy"]
 [ext_resource type="PackedScene" uid="uid://drusidb24xxab" path="res://world/left_right_moving_platform.tscn" id="9_v6xni"]
 [ext_resource type="PackedScene" uid="uid://dnvp6bgu1gilo" path="res://player/missile_powerup.tscn" id="10_bab4s"]
+[ext_resource type="PackedScene" uid="uid://b8eimfxdhasbx" path="res://world/save_station.tscn" id="10_qf82o"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="11_is4c6"]
 
 [sub_resource type="Resource" id="Resource_5xhjr"]
@@ -64,11 +65,14 @@ position = Vector2(1168, 248)
 [node name="SaveStations" type="Node2D" parent="."]
 position = Vector2(1, 0)
 
+[node name="SaveStation" parent="SaveStations" instance=ExtResource("10_qf82o")]
+position = Vector2(159, 288)
+
 [node name="Powerups" type="Node2D" parent="."]
 position = Vector2(0, 3)
 
-[node name="MissilePowerup" parent="." instance=ExtResource("10_bab4s")]
-position = Vector2(960, 200)
+[node name="MissilePowerup" parent="Powerups" instance=ExtResource("10_bab4s")]
+position = Vector2(960, 197)
 
 [node name="CameraLimits" parent="." instance=ExtResource("11_is4c6")]
 visible = false
