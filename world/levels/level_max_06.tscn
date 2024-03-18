@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://0qqdo5dywty3"]
+[gd_scene load_steps=15 format=3 uid="uid://0qqdo5dywty3"]
 
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_dwyqa"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_r5cx2"]
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_1qf3t"]
 [ext_resource type="Resource" uid="uid://xtuunc5plyin" path="res://world/door_connections/dc_max_05_to_max_06.tres" id="4_6rw70"]
 [ext_resource type="PackedScene" uid="uid://cm38ky2ure14w" path="res://enemies/crawling_enemy.tscn" id="5_rytfb"]
+[ext_resource type="Resource" uid="uid://cfn84jbl4pp6e" path="res://world/door_connections/dc_max_06_to_max_07.tres" id="5_xfxvc"]
 [ext_resource type="PackedScene" uid="uid://cyctgnqsxsnqf" path="res://enemies/flying_enemy.tscn" id="6_n7hne"]
 [ext_resource type="PackedScene" uid="uid://c77cvrcmrwist" path="res://enemies/walking_enemy.tscn" id="7_dlbxw"]
 [ext_resource type="PackedScene" uid="uid://bqttrppfaytmh" path="res://world/up_down_moving_platform.tscn" id="8_jgexs"]
@@ -28,8 +29,9 @@ new_level_path = "res://world/levels/level_max_05.tscn"
 connection = ExtResource("4_6rw70")
 
 [node name="Door2" parent="Doors" instance=ExtResource("3_1qf3t")]
-position = Vector2(216, 16)
-new_level_path = "res://world/levels/level_max_02.tscn"
+position = Vector2(336, 96)
+new_level_path = "res://world/levels/level_max_07.tscn"
+connection = ExtResource("5_xfxvc")
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -158,6 +160,7 @@ position = Vector2(384, 560)
 position = Vector2(384, 576)
 
 [node name="CameraLimits" parent="." instance=ExtResource("11_eli1j")]
+visible = false
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 1136.0
