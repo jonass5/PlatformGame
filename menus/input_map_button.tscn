@@ -17,8 +17,3 @@ text = "INPUT ACTION"
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
-
-[node name="InputButton" type="Button" parent="."]
-layout_mode = 2
-disabled = true
-text = "ACTION KEY"
