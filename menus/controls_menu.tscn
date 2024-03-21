@@ -33,7 +33,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/CenterContainer"]
 layout_mode = 2
-text = "Controls"
+text = "Controls (Keyboard)"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
