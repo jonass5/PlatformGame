@@ -49,38 +49,38 @@ size_flags_horizontal = 3
 
 [node name="InputButtonRight" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
 layout_mode = 2
-action_name = "move_right"
-action_name_alias = "Move right"
+action_key = "move_right"
+action_name = "Move Right"
 
 [node name="InputButtonLeft" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
 layout_mode = 2
-action_name = "move_left"
-action_name_alias = "Move left"
+action_key = "move_left"
+action_name = "Move Left"
 
 [node name="InputButtonJump" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
 layout_mode = 2
-action_name = "jump"
-action_name_alias = "Jump"
+action_key = "jump"
+action_name = "Jump"
 
 [node name="InputButtonCrouch" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
 layout_mode = 2
-action_name = "crouch"
-action_name_alias = "Crouch"
+action_key = "crouch"
+action_name = "Crouch"
 
 [node name="InputButtonFire" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
 layout_mode = 2
-action_name = "fire"
-action_name_alias = "Fire (normal)"
+action_key = "fire"
+action_name = "Fire laser"
 
 [node name="InputButtonFire_missile" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
 layout_mode = 2
-action_name = "fire_missile"
-action_name_alias = "Fire (Missiles)"
+action_key = "fire_missile"
+action_name = "Fire Missile"
 
 [node name="InputButtonPause" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/VBoxContainer" instance=ExtResource("1_bciuu")]
 layout_mode = 2
-action_name = "pause"
-action_name_alias = "Pause game"
+action_key = "pause"
+action_name = "Pause Game"
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer"]
 custom_minimum_size = Vector2(64, 16)
