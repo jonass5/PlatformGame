@@ -22,7 +22,7 @@ func set_label():
 func create_buttons():
 	var current_events = InputMap.action_get_events(action_key)
 	for action_event in current_events:
-		if is_key_or_mouse_button_input_event(action_event):
+		if is_input_to_display_on_screen(action_event):
 			#TODO: add action to add and remove input
 			create_button(action_event)
 
@@ -33,6 +33,6 @@ func create_button(action_event: InputEvent):
 	add_child(button)
 
 
-func is_key_or_mouse_button_input_event(action_event: InputEvent) -> bool:
+func is_input_to_display_on_screen(action_event: InputEvent) -> bool:
 	return action_event.get_class() == "InputEventKey" || action_event.get_class() == "InputEventMouseButton"
 
