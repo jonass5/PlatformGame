@@ -2,10 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="1_7n3u7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vr175"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fe7lf"]
 size = Vector2(16, 32)
 
 [node name="CaveDoor" instance=ExtResource("1_7n3u7")]
 
-[node name="CollisionShape2D" parent="." index="0"]
-shape = SubResource("RectangleShape2D_vr175")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_fe7lf")

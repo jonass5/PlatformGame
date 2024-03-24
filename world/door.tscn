@@ -7,9 +7,6 @@ collision_layer = 0
 collision_mask = 4
 script = ExtResource("1_dmtt6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -16)
-
 [node name="RightCast" type="RayCast2D" parent="."]
 position = Vector2(0, -16)
 target_position = Vector2(16, 0)
