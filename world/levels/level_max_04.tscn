@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_d2bsp"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_66ncp"]
 [ext_resource type="PackedScene" uid="uid://dm8in4cn5o38p" path="res://world/brick.tscn" id="3_0esfe"]
-[ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_56owy"]
+[ext_resource type="PackedScene" uid="uid://y1hme37i72wj" path="res://world/cave_door.tscn" id="4_7ttda"]
 [ext_resource type="Resource" uid="uid://chen30xamueti" path="res://world/door_connections/dc_max_03_to_max_04.tres" id="5_deuw6"]
 [ext_resource type="PackedScene" uid="uid://chfgveu0gjwbd" path="res://enemies/plant_enemy.tscn" id="6_2x48h"]
 [ext_resource type="Resource" uid="uid://b6u6808qxdlvy" path="res://world/door_connections/dc_max_04_to_max_05.tres" id="6_k6yqh"]
@@ -40,12 +40,12 @@ position = Vector2(96, 288)
 
 [node name="Doors" type="Node2D" parent="."]
 
-[node name="Door" parent="Doors" instance=ExtResource("3_56owy")]
+[node name="CaveDoor" parent="Doors" instance=ExtResource("4_7ttda")]
 position = Vector2(-8, 288)
 new_level_path = "res://world/levels/level_max_03.tscn"
 connection = ExtResource("5_deuw6")
 
-[node name="Door2" parent="Doors" instance=ExtResource("3_56owy")]
+[node name="CaveDoor2" parent="Doors" instance=ExtResource("4_7ttda")]
 position = Vector2(312, 1792)
 new_level_path = "res://world/levels/level_max_05.tscn"
 connection = ExtResource("6_k6yqh")
