@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b37t61xuvj3c"]
+[gd_scene load_steps=9 format=3 uid="uid://b37t61xuvj3c"]
 
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_2r6xx"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_imhan"]
+[ext_resource type="PackedScene" uid="uid://y1hme37i72wj" path="res://world/cave_door.tscn" id="3_cl8u2"]
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_vt470"]
 [ext_resource type="Resource" uid="uid://b7qs2r6m0pkbr" path="res://world/door_connections/door_connection_level_06_and_07.tres" id="4_cyirn"]
 [ext_resource type="Resource" uid="uid://cpchstsrf66el" path="res://world/door_connections/door_connection_level_07_and_10.tres" id="5_do1d4"]
@@ -16,10 +17,20 @@ layer_0/tile_data = PackedInt32Array(65550, 65536, 2, 65549, 65536, 2, 65548, 65
 
 [node name="Doors" type="Node2D" parent="."]
 
+[node name="CaveDoorToLevel06" parent="Doors" instance=ExtResource("3_cl8u2")]
+position = Vector2(8, 96)
+new_level_path = "res://world/levels/level_06_Tutorial.tscn"
+connection = ExtResource("4_cyirn")
+
 [node name="DoorToLevel06" parent="Doors" instance=ExtResource("3_vt470")]
 position = Vector2(8, 96)
 new_level_path = "res://world/levels/level_06_Tutorial.tscn"
 connection = ExtResource("4_cyirn")
+
+[node name="CaveDoorToLevel10" parent="Doors" instance=ExtResource("3_cl8u2")]
+position = Vector2(344, 96)
+new_level_path = "res://world/levels/level_10_Entrance_Hall.tscn"
+connection = ExtResource("5_do1d4")
 
 [node name="DoorToLevel08" parent="Doors" instance=ExtResource("3_vt470")]
 position = Vector2(344, 96)
