@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_naadr"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_lyev5"]
 [ext_resource type="Texture2D" uid="uid://dyv10frxc556s" path="res://world/backgrounds/Jungle.png" id="2_wdxji"]
-[ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_qyt81"]
+[ext_resource type="PackedScene" uid="uid://y1hme37i72wj" path="res://world/cave_door.tscn" id="4_m3w7u"]
 [ext_resource type="PackedScene" uid="uid://bqttrppfaytmh" path="res://world/up_down_moving_platform.tscn" id="5_4gbj8"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="5_4re6r"]
 [ext_resource type="Resource" uid="uid://cm5bxo0y8ml3" path="res://world/door_connections/door_connection_level_40_and_41.tres" id="5_rm0j6"]
@@ -30,12 +30,12 @@ layer_0/tile_data = PackedInt32Array(393227, 131072, 0, 327694, 0, 0, 393230, 0,
 
 [node name="Doors" type="Node2D" parent="."]
 
-[node name="DoorToLevel40" parent="Doors" instance=ExtResource("3_qyt81")]
+[node name="CaveDoorToLevel40" parent="Doors" instance=ExtResource("4_m3w7u")]
 position = Vector2(-40, 416)
 new_level_path = "res://world/levels/level_40_Jungle.tscn"
 connection = ExtResource("5_rm0j6")
 
-[node name="DoorToLevel42" parent="Doors" instance=ExtResource("3_qyt81")]
+[node name="CaveDoorToLevel42" parent="Doors" instance=ExtResource("4_m3w7u")]
 position = Vector2(488, 80)
 new_level_path = "res://world/levels/level_42_Jungle.tscn"
 connection = ExtResource("6_w0sii")
@@ -77,12 +77,13 @@ position = Vector2(224, 339)
 [node name="SaveStations" type="Node2D" parent="."]
 
 [node name="SaveStationBegin" parent="SaveStations" instance=ExtResource("15_7he6v")]
-position = Vector2(16, 416)
+position = Vector2(104, 368)
 
 [node name="SaveStationEnd" parent="SaveStations" instance=ExtResource("15_7he6v")]
 position = Vector2(376, 80)
 
 [node name="CameraLimits" parent="." instance=ExtResource("5_4re6r")]
+visible = false
 offset_left = -32.0
 offset_top = -128.0
 offset_right = 480.0
