@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://lgt5o6qelkwv"]
+[gd_scene load_steps=2 format=3 uid="uid://lgt5o6qelkwv"]
 
 [ext_resource type="Script" path="res://world/door.gd" id="1_dmtt6"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vkbx6"]
-size = Vector2(16, 32)
 
 [node name="Door" type="Area2D" groups=["doors"]]
 collision_layer = 0
@@ -12,7 +9,6 @@ script = ExtResource("1_dmtt6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -16)
-shape = SubResource("RectangleShape2D_vkbx6")
 
 [node name="RightCast" type="RayCast2D" parent="."]
 position = Vector2(0, -16)
