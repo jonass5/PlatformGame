@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bpl8o5wof2i0i" path="res://enemies/boss_enemy.tscn" id="4_mh4pc"]
 [ext_resource type="PackedScene" uid="uid://x2wpndf26tqo" path="res://world/trigger.tscn" id="5_4md0g"]
 [ext_resource type="PackedScene" uid="uid://dm8in4cn5o38p" path="res://world/brick.tscn" id="6_vgdth"]
-[ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="7_16y8p"]
+[ext_resource type="PackedScene" uid="uid://y1hme37i72wj" path="res://world/cave_door.tscn" id="7_j55fh"]
 [ext_resource type="Resource" uid="uid://j2f4cjp82584" path="res://world/door_connections/door_connection_level_42_and_43.tres" id="8_xk2o7"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="9_rndt5"]
 
@@ -58,7 +58,7 @@ position = Vector2(48, 80)
 
 [node name="Doors" type="Node2D" parent="."]
 
-[node name="DoorToLevel42" parent="Doors" instance=ExtResource("7_16y8p")]
+[node name="CaveDoorToLevel42" parent="Doors" instance=ExtResource("7_j55fh")]
 position = Vector2(40, 96)
 new_level_path = "res://world/levels/level_42_Jungle.tscn"
 connection = ExtResource("8_xk2o7")
