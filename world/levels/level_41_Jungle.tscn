@@ -23,7 +23,7 @@ collision_mask = 0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border"]
 position = Vector2(-64, -144)
 scale = Vector2(0.562963, 0.562963)
-polygon = PackedVector2Array(28.4211, 42.6316, 28.4211, 909.474, 0, 909.474, 0, 0, 1023.16, 0, 1023.16, 1080, 966.316, 1080, 966.316, 42.6316)
+polygon = PackedVector2Array(56.8421, 85.2632, 56.8421, 682.105, 28.4211, 682.105, 28.4211, 909.474, 0, 909.474, 0, 0, 1023.16, 0, 1023.16, 1080, 966.316, 1080, 966.316, 397.895, 994.737, 397.895, 994.737, 85.2632)
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(-64, -144)
@@ -91,7 +91,6 @@ position = Vector2(104, 368)
 position = Vector2(376, 80)
 
 [node name="CameraLimits" parent="." instance=ExtResource("5_4re6r")]
-visible = false
 offset_left = -32.0
 offset_top = -128.0
 offset_right = 480.0
