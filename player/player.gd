@@ -97,14 +97,18 @@ func wall_slide_state(delta: float) -> void:
 
 
 func wall_check() -> void:
-	if not is_on_floor() and is_on_wall():
-		var collision = get_last_slide_collision()
-		if not collision == null and collision.get_collider() is StaticBody2D:
-			return
+	if not is_on_floor() and is_on_wall() and not is_border():
 		state = wall_slide_state
 		air_jump = true
 		create_dust_effect()
 
+
+func is_border() -> bool:
+	var collision = get_last_slide_collision()
+	if not collision == null and collision.get_collider() is StaticBody2D:
+		return true
+	return false
+	
 
 func wall_detach(delta: float, wall_axis: int) -> void:
 	if Input.is_action_just_pressed("move_right") and wall_axis == FACING.RIGHT:
