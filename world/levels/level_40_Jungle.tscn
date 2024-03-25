@@ -61,7 +61,7 @@ position = Vector2(737, 176)
 [node name="SaveStations" type="Node2D" parent="."]
 
 [node name="SaveStationEnd" parent="SaveStations" instance=ExtResource("6_dumvq")]
-position = Vector2(154, 110)
+position = Vector2(154, 111)
 
 [node name="CameraLimits" parent="." instance=ExtResource("7_k5pov")]
 visible = false
