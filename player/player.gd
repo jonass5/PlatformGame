@@ -98,6 +98,9 @@ func wall_slide_state(delta: float) -> void:
 
 func wall_check() -> void:
 	if not is_on_floor() and is_on_wall():
+		var collision = get_last_slide_collision()
+		if not collision == null and collision.get_collider() is StaticBody2D:
+			return
 		state = wall_slide_state
 		air_jump = true
 		create_dust_effect()
