@@ -54,12 +54,20 @@ connection = ExtResource("6_k6yqh")
 
 [node name="PlantEnemy" parent="Enemies" instance=ExtResource("6_2x48h")]
 position = Vector2(112, 1792)
+spread = 1
+shoot_when_on_screen = false
 
 [node name="PlantEnemy2" parent="Enemies" instance=ExtResource("6_2x48h")]
 position = Vector2(146, 1792)
+bullet_speed = 50
+spread = 1
+shoot_when_on_screen = false
 
 [node name="PlantEnemy3" parent="Enemies" instance=ExtResource("6_2x48h")]
 position = Vector2(176, 1792)
+bullet_speed = 20
+spread = 1
+shoot_when_on_screen = false
 
 [node name="Platforms" type="Node2D" parent="."]
 

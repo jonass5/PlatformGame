@@ -6,16 +6,21 @@ const EnemyBulletScene = preload("res://enemies/enemy_bullet.tscn")
 
 @export var bullet_speed = 30
 @export var spread = 45
+@export var shoot_when_on_screen = true
 
 @onready var stats = $Stats
 @onready var bullet_spawn_point = $BulletSpawnPoint
 @onready var fire_direction = $FireDirection
 @onready var enemy_health_bar = $EnemyHealthBar
 @onready var enemy = $Enemy
+@onready var visible_on_screen_enabler_2d = $VisibleOnScreenEnabler2D
 
 
 func _ready():
 	enemy.init(self)
+	if not shoot_when_on_screen:
+		visible_on_screen_enabler_2d.queue_free()
+		process_mode = Node.PROCESS_MODE_INHERIT
 
 
 func fire_bullet():
