@@ -17,6 +17,10 @@ func save_game():
 	save_file.close()
 
 
+func is_save_game_available():
+	return FileAccess.file_exists(save_path)
+
+
 func load_game():
 	var load_file = FileAccess.open(save_path, FileAccess.READ)
 	if not load_file is FileAccess:

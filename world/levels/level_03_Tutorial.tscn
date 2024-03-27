@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_ogfbt"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_op1ws"]
-[ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="3_wahjl"]
 [ext_resource type="Resource" uid="uid://uav15go03b6f" path="res://world/door_connections/door_connection_level_02_and_03.tres" id="4_m5vdt"]
+[ext_resource type="PackedScene" uid="uid://y1hme37i72wj" path="res://world/cave_door.tscn" id="5_bo04o"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="5_k0up8"]
 [ext_resource type="Resource" uid="uid://bylwmvcc1txwv" path="res://world/door_connections/door_connection_level_03_and_04.tres" id="5_m55qb"]
 [ext_resource type="PackedScene" uid="uid://dnvp6bgu1gilo" path="res://player/missile_powerup.tscn" id="6_fq02c"]
@@ -33,12 +33,12 @@ position = Vector2(200, 48)
 
 [node name="Doors" type="Node2D" parent="."]
 
-[node name="DoorToLevel02" parent="Doors" instance=ExtResource("3_wahjl")]
+[node name="CaveDoorToLevel02" parent="Doors" instance=ExtResource("5_bo04o")]
 position = Vector2(8, 96)
 new_level_path = "res://world/levels/level_02_Tutorial.tscn"
 connection = ExtResource("4_m5vdt")
 
-[node name="DoorToLevel04" parent="Doors" instance=ExtResource("3_wahjl")]
+[node name="CaveDoorToLevel04" parent="Doors" instance=ExtResource("5_bo04o")]
 position = Vector2(344, 96)
 new_level_path = "res://world/levels/level_04_Tutorial.tscn"
 connection = ExtResource("5_m55qb")

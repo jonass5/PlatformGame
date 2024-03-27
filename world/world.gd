@@ -1,6 +1,8 @@
 class_name World
 extends Node2D
 
+const MAX_DOOR_HEIGHT = 16
+
 @onready var level = $Level01
 
 
@@ -43,7 +45,8 @@ func change_levels(door: Door):
 	for found_door in doors:
 		if found_door == door: continue
 		if found_door.connection != door.connection: continue
-		var yoffset = player.global_position.y - door.global_position.y
+		var yoffset = max(player.global_position.y - door.global_position.y, -MAX_DOOR_HEIGHT)
+		print(yoffset)
 		player.global_position = found_door.global_position + Vector2(0, yoffset)
 
 
