@@ -3,11 +3,16 @@ extends ColorRect
 
 @onready var start_button = $CenterContainer/VBoxContainer/StartButton
 @onready var quit_button = $CenterContainer/VBoxContainer/QuitButton
+@onready var load_button = $CenterContainer/VBoxContainer/LoadButton
 
 
 func _ready():
+	if not SaveManager.is_save_game_available():
+		load_button.set_disabled(true)
+		
 	PlayerStats.reset()
 	start_button.grab_focus()
+		
 	if OS.get_name() == "Web":
 		quit_button.hide()
 
