@@ -7,7 +7,6 @@ const MAX_DOOR_HEIGHT = 16
 
 @export_file("*.tscn") var new_level_path
 @export var connection: DoorConnection
-@export var door_type: DoorType = DoorType.VERTICAL
 
 var active = false
 
