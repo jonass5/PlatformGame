@@ -33,6 +33,7 @@ connection = ExtResource("4_6rw70")
 position = Vector2(224, 24)
 new_level_path = "res://world/levels/level_max_07.tscn"
 connection = ExtResource("5_xfxvc")
+door_type = 1
 
 [node name="Enemies" type="Node2D" parent="."]
 
