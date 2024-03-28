@@ -11,11 +11,11 @@ func after_each():
 	world.free()
 
 
-func test_should_find_door_when_door_points_to_old_level():
+func test_should_find_door_when_level_contains_only_one_door_from_old_level():
 	# arrange
-	var src_door = Door.new()
-	var dest_door = Door.new()
-	dest_door.new_level_path = "level1"
+	var src_door = create_door("level0")
+	var dest_door = create_door("level1")
+	
 	var doors: Array[Node] = [ src_door, dest_door ]
 	var old_level_path = "level1"
 	
@@ -33,16 +33,9 @@ func test_should_find_door_when_door_points_to_old_level():
 func test_should_find_door_when_door_points_to_old_level_and_door_connection_fits():
 	# arrange
 	var door_connection = DoorConnection.new()
-	var src_door = Door.new()
-	src_door.connection = door_connection
-	
-	var dest_door = Door.new()
-	dest_door.new_level_path = "level1"
-	dest_door.connection = door_connection
-	
-	var wrong_door = Door.new()
-	wrong_door.new_level_path = "level1"
-	wrong_door.connection = DoorConnection.new()
+	var src_door = create_door("level1", door_connection)
+	var dest_door = create_door("level1", door_connection)	
+	var wrong_door = create_door("level1", DoorConnection.new())
 	
 	var doors: Array[Node] = [ src_door, wrong_door, dest_door ]
 	var old_level_path = "level1"
@@ -56,4 +49,11 @@ func test_should_find_door_when_door_points_to_old_level_and_door_connection_fit
 	# tear down
 	src_door.free()
 	dest_door.free()
+	wrong_door.free()
 
+
+func create_door(new_level_path: String, doorConnection: DoorConnection = null) -> Door:
+	var door = Door.new()
+	door.new_level_path = new_level_path
+	door.connection = doorConnection
+	return door
