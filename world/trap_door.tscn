@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://v2g3mjl7xhfb"]
+
+[ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="1_e4hnk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2jo1"]
+size = Vector2(32, 16)
+
+[node name="TrapDoor" instance=ExtResource("1_e4hnk")]
+door_type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_g2jo1")

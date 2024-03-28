@@ -46,7 +46,6 @@ func change_levels(door: Door):
 		if found_door == door: continue
 		if found_door.connection != door.connection: continue
 		var yoffset = max(player.global_position.y - door.global_position.y, -MAX_DOOR_HEIGHT)
-		print(yoffset)
 		player.global_position = found_door.global_position + Vector2(0, yoffset)
 
 
