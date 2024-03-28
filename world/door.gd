@@ -1,13 +1,15 @@
 class_name Door
 extends Area2D
 
+enum DoorType { VERTICAL, HORIZONTAL }
+
+const MAX_DOOR_HEIGHT = 16
+
 @export_file("*.tscn") var new_level_path
 @export var connection: DoorConnection
 @export var door_type: DoorType = DoorType.VERTICAL
 
 var active = false
-
-enum DoorType { VERTICAL, HORIZONTAL }
 
 @onready var right_cast = $RightCast
 @onready var left_cast = $LeftCast
@@ -48,3 +50,12 @@ func get_direction():
 
 func _on_timer_timeout():
 	active = true
+
+
+func get_yoffset(player_global_position_y: float) -> float:
+	var yoffset = 0
+	if door_type == Door.DoorType.VERTICAL:
+		yoffset = max(player_global_position_y - global_position.y, -MAX_DOOR_HEIGHT)
+	else:
+		yoffset = -max(player_global_position_y - global_position.y, -MAX_DOOR_HEIGHT)
+	return yoffset
