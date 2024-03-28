@@ -28,6 +28,7 @@ layer_0/tile_data = PackedInt32Array(2949191, 131072, 2, 2883655, 131072, 1, 281
 position = Vector2(24, 112)
 new_level_path = "res://world/levels/level_max_05.tscn"
 connection = ExtResource("4_6rw70")
+door_type = null
 
 [node name="TrapDoor" parent="Doors" instance=ExtResource("5_06d66")]
 position = Vector2(224, 24)

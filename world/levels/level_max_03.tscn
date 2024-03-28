@@ -65,11 +65,13 @@ position = Vector2(240, 319)
 position = Vector2(-8, 288)
 new_level_path = "res://world/levels/level_max_02.tscn"
 connection = ExtResource("5_xsqn6")
+door_type = null
 
 [node name="CaveDoor2" parent="Doors" instance=ExtResource("4_l4t60")]
 position = Vector2(872, 816)
 new_level_path = "res://world/levels/level_max_04.tscn"
 connection = ExtResource("6_wqv1k")
+door_type = null
 
 [node name="Enemies" type="Node2D" parent="."]
 

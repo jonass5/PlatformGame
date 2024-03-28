@@ -42,11 +42,13 @@ layer_0/tile_data = PackedInt32Array(327694, 0, 0, 393230, 0, 2, 327695, 65536, 
 position = Vector2(-40, 416)
 new_level_path = "res://world/levels/level_40_Jungle.tscn"
 connection = ExtResource("5_rm0j6")
+door_type = null
 
 [node name="JungleDoorToLevel42" parent="Doors" instance=ExtResource("4_kpb10")]
 position = Vector2(488, 80)
 new_level_path = "res://world/levels/level_42_Jungle.tscn"
 connection = ExtResource("6_w0sii")
+door_type = null
 
 [node name="Enemies" type="Node2D" parent="."]
 

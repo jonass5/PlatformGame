@@ -8,6 +8,7 @@ size = Vector2(32, 16)
 
 [node name="TrapDoor" instance=ExtResource("1_e4hnk")]
 script = ExtResource("2_1pviv")
+door_type = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, -16)

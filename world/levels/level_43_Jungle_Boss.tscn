@@ -67,6 +67,7 @@ position = Vector2(48, 80)
 position = Vector2(40, 96)
 new_level_path = "res://world/levels/level_42_Jungle.tscn"
 connection = ExtResource("8_xk2o7")
+door_type = null
 
 [node name="CameraLimits" parent="." instance=ExtResource("9_rndt5")]
 offset_left = 48.0

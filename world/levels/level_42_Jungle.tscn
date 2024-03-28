@@ -49,11 +49,13 @@ position = Vector2(512, -128)
 position = Vector2(-8, 544)
 new_level_path = "res://world/levels/level_41_Jungle.tscn"
 connection = ExtResource("6_u1bt2")
+door_type = null
 
 [node name="JungleDoorToLevel43" parent="Doors" instance=ExtResource("5_nwkwp")]
 position = Vector2(472, 128)
 new_level_path = "res://world/levels/level_43_Jungle_Boss.tscn"
 connection = ExtResource("7_4nt3n")
+door_type = null
 
 [node name="Enemies" type="Node2D" parent="."]
 

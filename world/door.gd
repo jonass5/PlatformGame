@@ -30,7 +30,7 @@ func _physics_process(_delta: float):
 			Events.door_entered.emit(self)
 
 
-func get_player_direction(player):
+func get_player_direction(player: Player) -> int:
 	var player_direction
 	if door_type == DoorType.VERTICAL:
 		player_direction = sign(player.velocity.x)
@@ -39,7 +39,7 @@ func get_player_direction(player):
 	return player_direction
 	
 
-func get_direction():
+func get_direction() -> int:
 	if door_type == DoorType.VERTICAL:
 		if left_cast.is_colliding():
 			return -1
@@ -53,11 +53,12 @@ func get_direction():
 	return 0
 
 
-func _on_timer_timeout():
-	active = true
-
-
-func get_yoffset(player_global_position_y: float, door_global_position_y) -> float:
+func get_yoffset(player_global_position_y: float, door_global_position_y: float) -> float:
 	if door_type == Door.DoorType.VERTICAL:
 		return max(player_global_position_y - door_global_position_y, -MAX_DOOR_HEIGHT)
 	return -max(player_global_position_y - door_global_position_y, -MAX_DOOR_HEIGHT)
+
+
+func _on_timer_timeout():
+	active = true
+
