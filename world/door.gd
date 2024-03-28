@@ -31,32 +31,19 @@ func _physics_process(_delta: float):
 
 
 func get_player_direction(player: Player) -> int:
-	var player_direction
-	if door_type == DoorType.VERTICAL:
-		player_direction = sign(player.velocity.x)
-	else:
-		player_direction = sign(player.velocity.y)
-	return player_direction
+	return sign(player.velocity.x)
 	
 
 func get_direction() -> int:
-	if door_type == DoorType.VERTICAL:
-		if left_cast.is_colliding():
-			return -1
-		if right_cast.is_colliding():
-			return 1
-	else:
-		if up_cast.is_colliding():
-			return -1
-		if down_cast.is_colliding():
-			return 1
+	if left_cast.is_colliding():
+		return -1
+	if right_cast.is_colliding():
+		return 1
 	return 0
 
 
 func get_yoffset(player_global_position_y: float, door_global_position_y: float) -> float:
-	if door_type == Door.DoorType.VERTICAL:
-		return max(player_global_position_y - door_global_position_y, -MAX_DOOR_HEIGHT)
-	return -max(player_global_position_y - door_global_position_y, -MAX_DOOR_HEIGHT)
+	return max(player_global_position_y - door_global_position_y, -MAX_DOOR_HEIGHT)
 
 
 func _on_timer_timeout():
