@@ -40,13 +40,21 @@ func change_levels(door: Door):
 	var new_level = load(door.new_level_path).instantiate()
 	add_child(new_level)
 	level = new_level
+	var found_door = find_door(door, old_level_path)
+	var yoffset = found_door.get_yoffset(player.global_position.y, door.global_position.y)
+	player.global_position = found_door.global_position + Vector2(0, yoffset)
+	
+	
+func find_door(door: Door, old_level_path: String) -> Door:
 	var doors = get_tree().get_nodes_in_group("doors")
+
 	for found_door in doors:
 		if found_door == door: continue
 		if found_door.new_level_path != old_level_path: continue
-		if found_door.connection != null && found_door.connection != door.connection: continue
-		var yoffset = found_door.get_yoffset(player.global_position.y, door.global_position.y)
-		player.global_position = found_door.global_position + Vector2(0, yoffset)
+		if door.connection != null and found_door.connection != null && found_door.connection != door.connection: continue
+		return found_door
+		
+	return door
 
 
 func game_over():

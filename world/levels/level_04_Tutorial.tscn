@@ -1,11 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cei8k8v1djmqy"]
+[gd_scene load_steps=7 format=3 uid="uid://cei8k8v1djmqy"]
 
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_aw73y"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_bwtjm"]
 [ext_resource type="PackedScene" uid="uid://y1hme37i72wj" path="res://world/cave_door.tscn" id="3_pr7ss"]
-[ext_resource type="Resource" uid="uid://bylwmvcc1txwv" path="res://world/door_connections/door_connection_level_03_and_04.tres" id="4_dg0h3"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="5_8i2dp"]
-[ext_resource type="Resource" uid="uid://cj1opaj5uh3q2" path="res://world/door_connections/door_connection_level_04_and_05.tres" id="5_jo8vl"]
 [ext_resource type="PackedScene" uid="uid://c77cvrcmrwist" path="res://enemies/walking_enemy.tscn" id="6_h6wy3"]
 [ext_resource type="PackedScene" uid="uid://cm38ky2ure14w" path="res://enemies/crawling_enemy.tscn" id="8_chyuj"]
 
@@ -20,12 +18,10 @@ layer_0/tile_data = PackedInt32Array(65550, 65536, 2, 65549, 65536, 2, 65548, 65
 [node name="CaveDoorToLevel03" parent="Doors" instance=ExtResource("3_pr7ss")]
 position = Vector2(8, 96)
 new_level_path = "res://world/levels/level_03_Tutorial.tscn"
-connection = ExtResource("4_dg0h3")
 
 [node name="CaveDoorToLevel05" parent="Doors" instance=ExtResource("3_pr7ss")]
 position = Vector2(344, 96)
 new_level_path = "res://world/levels/level_05_Tutorial.tscn"
-connection = ExtResource("5_jo8vl")
 
 [node name="Enemies" type="Node2D" parent="."]
 
