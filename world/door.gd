@@ -24,15 +24,20 @@ func _physics_process(_delta: float):
 	if not active:
 		return
 	if overlaps_body(player) and new_level_path:
-		var player_direction
-		if door_type == DoorType.VERTICAL:
-			player_direction = sign(player.velocity.x)
-		else:
-			player_direction = sign(player.velocity.y)
+		var player_direction = get_player_direction(player)
 		var door_direction = get_direction()
 		if (player_direction == door_direction):
 			Events.door_entered.emit(self)
 
+
+func get_player_direction(player):
+	var player_direction
+	if door_type == DoorType.VERTICAL:
+		player_direction = sign(player.velocity.x)
+	else:
+		player_direction = sign(player.velocity.y)
+	return player_direction
+	
 
 func get_direction():
 	if door_type == DoorType.VERTICAL:
