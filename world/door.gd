@@ -57,10 +57,7 @@ func _on_timer_timeout():
 	active = true
 
 
-func get_yoffset(player_global_position_y: float) -> float:
-	var yoffset = 0
+func get_yoffset(player_global_position_y: float, door_global_position_y) -> float:
 	if door_type == Door.DoorType.VERTICAL:
-		yoffset = max(player_global_position_y - global_position.y, -MAX_DOOR_HEIGHT)
-	else:
-		yoffset = -max(player_global_position_y - global_position.y, -MAX_DOOR_HEIGHT)
-	return yoffset
+		return max(player_global_position_y - door_global_position_y, -MAX_DOOR_HEIGHT)
+	return -max(player_global_position_y - door_global_position_y, -MAX_DOOR_HEIGHT)

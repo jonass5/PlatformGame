@@ -43,15 +43,7 @@ func change_levels(door: Door):
 	for found_door in doors:
 		if found_door == door: continue
 		if found_door.connection != door.connection: continue
-
-		var MAX_DOOR_HEIGHT = 16
-		var yoffset = 0
-		if door.door_type == Door.DoorType.VERTICAL:
-			yoffset = max(player.global_position.y - door.global_position.y, -MAX_DOOR_HEIGHT)
-		else:
-			yoffset = -max(player.global_position.y - door.global_position.y, -MAX_DOOR_HEIGHT)
-		#var yoffset = found_door.get_yoffset(player.global_position.y)
-		
+		var yoffset = found_door.get_yoffset(player.global_position.y, door.global_position.y)
 		player.global_position = found_door.global_position + Vector2(0, yoffset)
 
 
