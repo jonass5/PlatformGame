@@ -37,12 +37,20 @@ func change_levels(door: Door):
 		return
 	var old_level_path = level.scene_file_path
 	level.queue_free()
+	level = load_new_level(door)
+	player.global_position = player_position(door, old_level_path, player.global_position)
+
+
+func load_new_level(door: Door) -> Level:
 	var new_level = load(door.new_level_path).instantiate()
 	add_child(new_level)
-	level = new_level
+	return new_level
+
+
+func player_position(door: Door, old_level_path: String, player_global_position: Vector2) -> Vector2:
 	var found_door = find_door(door, old_level_path)
-	var yoffset = found_door.get_yoffset(player.global_position.y, door.global_position.y)
-	player.global_position = found_door.global_position + Vector2(0, yoffset)
+	var yoffset = found_door.get_yoffset(player_global_position.y, door.global_position.y)
+	return found_door.global_position + Vector2(0, yoffset)
 	
 	
 func find_door(door: Door, old_level_path: String) -> Door:
