@@ -1,13 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://bfvm4764mjwup"]
+[gd_scene load_steps=15 format=3 uid="uid://bfvm4764mjwup"]
 
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_76w84"]
 [ext_resource type="Texture2D" uid="uid://dyv10frxc556s" path="res://world/backgrounds/Jungle.png" id="2_o42cy"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_p6hsh"]
 [ext_resource type="PackedScene" uid="uid://bqttrppfaytmh" path="res://world/up_down_moving_platform.tscn" id="5_6ikfk"]
 [ext_resource type="PackedScene" uid="uid://bulau0fhkxjqh" path="res://world/jungle_door.tscn" id="5_nwkwp"]
-[ext_resource type="Resource" uid="uid://bhtve087vd1u0" path="res://world/door_connections/door_connection_level_41_and_42.tres" id="6_u1bt2"]
 [ext_resource type="PackedScene" uid="uid://drusidb24xxab" path="res://world/left_right_moving_platform.tscn" id="6_xcako"]
-[ext_resource type="Resource" uid="uid://j2f4cjp82584" path="res://world/door_connections/door_connection_level_42_and_43.tres" id="7_4nt3n"]
 [ext_resource type="PackedScene" uid="uid://hsktkibht8xd" path="res://world/triangle_moving_platform.tscn" id="7_oxr1f"]
 [ext_resource type="PackedScene" uid="uid://dnvp6bgu1gilo" path="res://player/missile_powerup.tscn" id="8_lpe6n"]
 [ext_resource type="PackedScene" uid="uid://dm8in4cn5o38p" path="res://world/brick.tscn" id="9_xkr0o"]
@@ -48,14 +46,10 @@ position = Vector2(512, -128)
 [node name="JungleDoorToLevel41" parent="Doors" instance=ExtResource("5_nwkwp")]
 position = Vector2(-8, 544)
 new_level_path = "res://world/levels/level_41_Jungle.tscn"
-connection = ExtResource("6_u1bt2")
-door_type = null
 
 [node name="JungleDoorToLevel43" parent="Doors" instance=ExtResource("5_nwkwp")]
 position = Vector2(472, 128)
 new_level_path = "res://world/levels/level_43_Jungle_Boss.tscn"
-connection = ExtResource("7_4nt3n")
-door_type = null
 
 [node name="Enemies" type="Node2D" parent="."]
 

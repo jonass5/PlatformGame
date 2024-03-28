@@ -1,11 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dp1w2klcnlqs1"]
+[gd_scene load_steps=12 format=3 uid="uid://dp1w2klcnlqs1"]
 
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_do6ma"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_mp061"]
 [ext_resource type="PackedScene" uid="uid://y1hme37i72wj" path="res://world/cave_door.tscn" id="3_ygimp"]
-[ext_resource type="Resource" uid="uid://hpcb7kg27cn0" path="res://world/door_connections/dc_max_01_to_max_02.tres" id="4_1ute6"]
 [ext_resource type="PackedScene" uid="uid://cm38ky2ure14w" path="res://enemies/crawling_enemy.tscn" id="5_5afqs"]
-[ext_resource type="Resource" uid="uid://fa436man311e" path="res://world/door_connections/dc_max_02_to_max_03.tres" id="5_fhjvy"]
 [ext_resource type="PackedScene" uid="uid://cyctgnqsxsnqf" path="res://enemies/flying_enemy.tscn" id="6_wbqax"]
 [ext_resource type="PackedScene" uid="uid://c77cvrcmrwist" path="res://enemies/walking_enemy.tscn" id="7_bv87f"]
 [ext_resource type="PackedScene" uid="uid://bqttrppfaytmh" path="res://world/up_down_moving_platform.tscn" id="8_x0ndy"]
@@ -25,12 +23,10 @@ layer_0/tile_data = PackedInt32Array(1048575, 65536, 2, 1310719, 65536, 1, 12451
 [node name="CaveDoor" parent="Doors" instance=ExtResource("3_ygimp")]
 position = Vector2(-8, 288)
 new_level_path = "res://world/levels/level_max_01.tscn"
-connection = ExtResource("4_1ute6")
 
 [node name="CaveDoor2" parent="Doors" instance=ExtResource("3_ygimp")]
 position = Vector2(1480, 288)
 new_level_path = "res://world/levels/level_max_03.tscn"
-connection = ExtResource("5_fhjvy")
 
 [node name="Enemies" type="Node2D" parent="."]
 

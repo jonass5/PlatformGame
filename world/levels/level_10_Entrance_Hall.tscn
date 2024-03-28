@@ -1,13 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxw0c6cek6th2"]
+[gd_scene load_steps=6 format=3 uid="uid://bxw0c6cek6th2"]
 
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_lku8k"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_ngn8t"]
 [ext_resource type="PackedScene" uid="uid://y1hme37i72wj" path="res://world/cave_door.tscn" id="3_wossg"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="5_ql2c3"]
-[ext_resource type="Resource" uid="uid://bvljg6w5s71pe" path="res://world/door_connections/door_connection_level_10_and_30.tres" id="6_4pput"]
-[ext_resource type="Resource" uid="uid://kkx2wael5gpp" path="res://world/door_connections/door_connection_level_10_and_20.tres" id="6_gdmxw"]
 [ext_resource type="PackedScene" uid="uid://b8eimfxdhasbx" path="res://world/save_station.tscn" id="8_e1wbh"]
-[ext_resource type="Resource" uid="uid://l7psn0tnl34d" path="res://world/door_connections/door_connection_level_10_and_40.tres" id="8_fd3ow"]
 
 [node name="Level10EntranceHall" type="Node2D"]
 script = ExtResource("1_lku8k")
@@ -24,17 +21,14 @@ new_level_path = "res://world/levels/level_07_Tutorial.tscn"
 [node name="CaveDoorToLevel01Max" parent="Doors" instance=ExtResource("3_wossg")]
 position = Vector2(344, 160)
 new_level_path = "res://world/levels/level_max_01.tscn"
-connection = ExtResource("6_gdmxw")
 
 [node name="CaveDoorToLevel30Cave" parent="Doors" instance=ExtResource("3_wossg")]
 position = Vector2(8, 64)
 new_level_path = "res://world/levels/level_30_Cave.tscn"
-connection = ExtResource("6_4pput")
 
 [node name="CaveDoorToLevel40Jungel" parent="Doors" instance=ExtResource("3_wossg")]
 position = Vector2(344, 64)
 new_level_path = "res://world/levels/level_40_Jungle.tscn"
-connection = ExtResource("8_fd3ow")
 
 [node name="SaveStations" type="Node2D" parent="."]
 
