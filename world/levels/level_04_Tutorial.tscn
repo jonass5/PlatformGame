@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cei8k8v1djmqy"]
+[gd_scene load_steps=8 format=3 uid="uid://cei8k8v1djmqy"]
 
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_aw73y"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_bwtjm"]
 [ext_resource type="PackedScene" uid="uid://y1hme37i72wj" path="res://world/cave_door.tscn" id="3_pr7ss"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="5_8i2dp"]
+[ext_resource type="PackedScene" uid="uid://dnn0ph5t0vrj2" path="res://enemies/spike_enemy.tscn" id="6_0agnu"]
 [ext_resource type="PackedScene" uid="uid://c77cvrcmrwist" path="res://enemies/walking_enemy.tscn" id="6_h6wy3"]
 [ext_resource type="PackedScene" uid="uid://cm38ky2ure14w" path="res://enemies/crawling_enemy.tscn" id="8_chyuj"]
 
@@ -31,7 +32,52 @@ position = Vector2(208, 96)
 [node name="CrawlingEnemy" parent="Enemies" instance=ExtResource("8_chyuj")]
 position = Vector2(112, 96)
 
+[node name="Spikes" type="Node2D" parent="."]
+
+[node name="Spikes2" parent="Spikes" instance=ExtResource("6_0agnu")]
+position = Vector2(48, 128)
+
+[node name="Spikes3" parent="Spikes" instance=ExtResource("6_0agnu")]
+position = Vector2(64, 128)
+
+[node name="Spikes4" parent="Spikes" instance=ExtResource("6_0agnu")]
+position = Vector2(80, 128)
+
+[node name="Spikes5" parent="Spikes" instance=ExtResource("6_0agnu")]
+position = Vector2(96, 128)
+
+[node name="Spikes6" parent="Spikes" instance=ExtResource("6_0agnu")]
+position = Vector2(112, 128)
+
+[node name="Spikes7" parent="Spikes" instance=ExtResource("6_0agnu")]
+position = Vector2(128, 128)
+
+[node name="Spikes8" parent="Spikes" instance=ExtResource("6_0agnu")]
+position = Vector2(144, 128)
+
+[node name="Spikes9" parent="Spikes" instance=ExtResource("6_0agnu")]
+position = Vector2(160, 128)
+
+[node name="Spikes10" parent="Spikes" instance=ExtResource("6_0agnu")]
+position = Vector2(176, 128)
+
+[node name="Spikes11" parent="Spikes" instance=ExtResource("6_0agnu")]
+position = Vector2(192, 128)
+
+[node name="Spikes12" parent="Spikes" instance=ExtResource("6_0agnu")]
+position = Vector2(208, 128)
+
+[node name="Spikes13" parent="Spikes" instance=ExtResource("6_0agnu")]
+position = Vector2(224, 128)
+
+[node name="Spikes14" parent="Spikes" instance=ExtResource("6_0agnu")]
+position = Vector2(240, 128)
+
+[node name="Spikes15" parent="Spikes" instance=ExtResource("6_0agnu")]
+position = Vector2(256, 128)
+
 [node name="CameraLimits" parent="." instance=ExtResource("5_8i2dp")]
+visible = false
 offset_left = 16.0
 offset_right = 336.0
 offset_bottom = 176.0
