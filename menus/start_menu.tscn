@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://xy7x20wasjbk"]
+[gd_scene load_steps=4 format=3 uid="uid://xy7x20wasjbk"]
 
 [ext_resource type="Script" path="res://menus/start_menu.gd" id="1_lpgsg"]
 [ext_resource type="PackedScene" uid="uid://dbvi8foqa1c82" path="res://ui/version_gui.tscn" id="2_08anf"]
+[ext_resource type="Texture2D" uid="uid://d1cfoc0ljvias" path="res://menus/title_astronaut.png" id="2_fl040"]
 
 [node name="StartMenu" type="ColorRect"]
 anchors_preset = 15
@@ -11,6 +12,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_lpgsg")
+
+[node name="TitleAstronaut" type="Sprite2D" parent="."]
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("2_fl040")
+centered = false
 
 [node name="VersionGUI" parent="." instance=ExtResource("2_08anf")]
 layout_mode = 1
