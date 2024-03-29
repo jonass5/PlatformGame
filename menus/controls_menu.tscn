@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://g72de712su2d"]
 
-[ext_resource type="PackedScene" uid="uid://cov7bffo55ix6" path="res://menus/input_map_button.tscn" id="1_bciuu"]
+[ext_resource type="PackedScene" uid="uid://cov7bffo55ix6" path="res://menus/menu_components/input_map_button.tscn" id="1_bciuu"]
 [ext_resource type="Script" path="res://menus/controls_menu.gd" id="1_keuih"]
 [ext_resource type="Theme" uid="uid://v155lwusxhu2" path="res://ui/default_theme.tres" id="2_ebe2j"]
 

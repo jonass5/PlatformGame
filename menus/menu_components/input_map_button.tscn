@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cov7bffo55ix6"]
 
-[ext_resource type="Script" path="res://menus/input_map_button.gd" id="1_6r08w"]
+[ext_resource type="Script" path="res://menus/menu_components/input_map_button.gd" id="1_6r08w"]
 
 [node name="InputMapButton" type="HBoxContainer"]
 anchors_preset = 10

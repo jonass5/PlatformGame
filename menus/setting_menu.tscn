@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://dbvi8foqa1c82" path="res://ui/version_gui.tscn" id="1_ob5uv"]
 [ext_resource type="Script" path="res://menus/setting_menu.gd" id="1_tat8a"]
-[ext_resource type="PackedScene" uid="uid://daeqvns614qkb" path="res://menus/volume_slider.tscn" id="2_wqbk7"]
-[ext_resource type="PackedScene" uid="uid://c165sgf7tgyiu" path="res://menus/volume_checkbox.tscn" id="3_2l2mb"]
 [ext_resource type="Theme" uid="uid://v155lwusxhu2" path="res://ui/default_theme.tres" id="3_6l0no"]
+[ext_resource type="PackedScene" uid="uid://c165sgf7tgyiu" path="res://menus/menu_components/volume_checkbox.tscn" id="3_6u2r2"]
+[ext_resource type="PackedScene" uid="uid://daeqvns614qkb" path="res://menus/menu_components/volume_slider.tscn" id="4_ikssd"]
 
 [node name="SettingMenu" type="ColorRect"]
 anchors_preset = 15
@@ -39,11 +39,11 @@ text = "Master Volume"
 [node name="MasterHBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="VolumeCheckbox" parent="CenterContainer/VBoxContainer/VBoxContainer/MasterHBoxContainer" instance=ExtResource("3_2l2mb")]
+[node name="VolumeCheckbox" parent="CenterContainer/VBoxContainer/VBoxContainer/MasterHBoxContainer" instance=ExtResource("3_6u2r2")]
 layout_mode = 2
 bus_name = "Master"
 
-[node name="MasterVolumeSlider" parent="CenterContainer/VBoxContainer/VBoxContainer/MasterHBoxContainer" instance=ExtResource("2_wqbk7")]
+[node name="MasterVolumeSlider" parent="CenterContainer/VBoxContainer/VBoxContainer/MasterHBoxContainer" instance=ExtResource("4_ikssd")]
 layout_mode = 2
 bus_name = "Master"
 
@@ -54,11 +54,11 @@ text = "Music Volume"
 [node name="MusicHBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="VolumeCheckbox" parent="CenterContainer/VBoxContainer/VBoxContainer/MusicHBoxContainer" instance=ExtResource("3_2l2mb")]
+[node name="VolumeCheckbox" parent="CenterContainer/VBoxContainer/VBoxContainer/MusicHBoxContainer" instance=ExtResource("3_6u2r2")]
 layout_mode = 2
 bus_name = "Music"
 
-[node name="MusicVolumeSlider" parent="CenterContainer/VBoxContainer/VBoxContainer/MusicHBoxContainer" instance=ExtResource("2_wqbk7")]
+[node name="MusicVolumeSlider" parent="CenterContainer/VBoxContainer/VBoxContainer/MusicHBoxContainer" instance=ExtResource("4_ikssd")]
 layout_mode = 2
 bus_name = "Music"
 
@@ -69,11 +69,11 @@ text = "Sound Volume"
 [node name="SoundHBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="VolumeCheckbox" parent="CenterContainer/VBoxContainer/VBoxContainer/SoundHBoxContainer" instance=ExtResource("3_2l2mb")]
+[node name="VolumeCheckbox" parent="CenterContainer/VBoxContainer/VBoxContainer/SoundHBoxContainer" instance=ExtResource("3_6u2r2")]
 layout_mode = 2
 bus_name = "Sounds"
 
-[node name="SoundVolumeSlider" parent="CenterContainer/VBoxContainer/VBoxContainer/SoundHBoxContainer" instance=ExtResource("2_wqbk7")]
+[node name="SoundVolumeSlider" parent="CenterContainer/VBoxContainer/VBoxContainer/SoundHBoxContainer" instance=ExtResource("4_ikssd")]
 layout_mode = 2
 bus_name = "Sounds"
 
