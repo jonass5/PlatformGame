@@ -18,4 +18,4 @@ func _on_load_button_pressed():
 
 
 func _on_quit_button_pressed():
-	get_tree().quit()
+	get_tree().change_scene_to_file("res://menus/start_menu.tscn")
