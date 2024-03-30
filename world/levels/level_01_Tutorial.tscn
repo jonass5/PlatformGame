@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkkptul236bce"]
+[gd_scene load_steps=5 format=3 uid="uid://bkkptul236bce"]
 
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_t111h"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="1_tgiig"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="4_m6qto"]
-[ext_resource type="PackedScene" uid="uid://c77cvrcmrwist" path="res://enemies/walking_enemy.tscn" id="5_jju3v"]
 [ext_resource type="PackedScene" uid="uid://y1hme37i72wj" path="res://world/cave_door.tscn" id="5_n5005"]
 
 [node name="Level01Tutorial" type="Node2D"]
@@ -22,6 +21,3 @@ new_level_path = "res://world/levels/level_02_Tutorial.tscn"
 offset_left = 16.0
 offset_right = 320.0
 offset_bottom = 176.0
-
-[node name="WalkingEnemy" parent="." instance=ExtResource("5_jju3v")]
-position = Vector2(152, 96)

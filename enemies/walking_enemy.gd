@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 		turn_around()
 
 	velocity.x = direction * speed
-	sprite_2d.flip_h = direction == FACING_RIGHT
+	sprite_2d.flip_h = is_facing_right()
 
 	move_and_slide()
 
@@ -54,11 +54,14 @@ func is_on_ledge() -> bool:
 
 func turn_around() -> void:
 	direction *= -1.0
-	if direction == FACING_RIGHT:
+	if is_facing_right():
 		back_cast.rotation_degrees = 0
 	else:
 		back_cast.rotation_degrees = 180
 
+
+func is_facing_right() -> bool:
+	return direction == FACING_RIGHT
 
 
 func _on_hurtbox_hurt(_hitbox, damage):
