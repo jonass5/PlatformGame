@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkkptul236bce"]
+[gd_scene load_steps=5 format=3 uid="uid://bkkptul236bce"]
 
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_t111h"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="1_tgiig"]
-[ext_resource type="Resource" uid="uid://u3mrgkygk2f4" path="res://world/door_connections/door_connection_level_01_and_02.tres" id="3_dqyqa"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="4_m6qto"]
 [ext_resource type="PackedScene" uid="uid://y1hme37i72wj" path="res://world/cave_door.tscn" id="5_n5005"]
 
@@ -17,7 +16,6 @@ layer_0/tile_data = PackedInt32Array(65550, 65536, 2, 65549, 65536, 2, 65548, 65
 [node name="CaveDoorToLevel2" parent="Doors" instance=ExtResource("5_n5005")]
 position = Vector2(328, 96)
 new_level_path = "res://world/levels/level_02_Tutorial.tscn"
-connection = ExtResource("3_dqyqa")
 
 [node name="CameraLimits" parent="." instance=ExtResource("4_m6qto")]
 offset_left = 16.0

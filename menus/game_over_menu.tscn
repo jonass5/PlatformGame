@@ -33,9 +33,9 @@ vertical_alignment = 1
 layout_mode = 2
 text = "Load Game"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="MainMenuButton" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+text = "Main Menu"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/LoadButton" to="." method="_on_load_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]

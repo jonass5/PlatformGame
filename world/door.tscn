@@ -15,6 +15,14 @@ target_position = Vector2(16, 0)
 position = Vector2(0, -16)
 target_position = Vector2(-16, 0)
 
+[node name="DownCast" type="RayCast2D" parent="."]
+position = Vector2(0, -16)
+target_position = Vector2(0, 16)
+
+[node name="UpCast" type="RayCast2D" parent="."]
+position = Vector2(0, -16)
+target_position = Vector2(0, -16)
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true

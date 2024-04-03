@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://xdxy33creuwc"]
+[gd_scene load_steps=9 format=3 uid="uid://xdxy33creuwc"]
 
 [ext_resource type="Script" path="res://world/levels/level_43_Jungle_Boss.gd" id="1_elo5q"]
 [ext_resource type="Texture2D" uid="uid://dyv10frxc556s" path="res://world/backgrounds/Jungle.png" id="2_o1x0u"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://x2wpndf26tqo" path="res://world/trigger.tscn" id="5_4md0g"]
 [ext_resource type="PackedScene" uid="uid://dm8in4cn5o38p" path="res://world/brick.tscn" id="6_vgdth"]
 [ext_resource type="PackedScene" uid="uid://y1hme37i72wj" path="res://world/cave_door.tscn" id="7_j55fh"]
-[ext_resource type="Resource" uid="uid://j2f4cjp82584" path="res://world/door_connections/door_connection_level_42_and_43.tres" id="8_xk2o7"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="9_rndt5"]
 
 [node name="Level43JungleBoss" type="Node2D"]
@@ -66,7 +65,6 @@ position = Vector2(48, 80)
 [node name="CaveDoorToLevel42" parent="Doors" instance=ExtResource("7_j55fh")]
 position = Vector2(40, 96)
 new_level_path = "res://world/levels/level_42_Jungle.tscn"
-connection = ExtResource("8_xk2o7")
 
 [node name="CameraLimits" parent="." instance=ExtResource("9_rndt5")]
 offset_left = 48.0

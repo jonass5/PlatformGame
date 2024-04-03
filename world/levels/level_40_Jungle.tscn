@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ugakarccc4xp"]
+[gd_scene load_steps=9 format=3 uid="uid://ugakarccc4xp"]
 
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_t670i"]
 [ext_resource type="PackedScene" uid="uid://b23shwebtwms2" path="res://world/parallax.tscn" id="2_fui6x"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="3_5t5di"]
 [ext_resource type="PackedScene" uid="uid://bulau0fhkxjqh" path="res://world/jungle_door.tscn" id="4_ld7jo"]
-[ext_resource type="Resource" uid="uid://l7psn0tnl34d" path="res://world/door_connections/door_connection_level_10_and_40.tres" id="5_4krdb"]
 [ext_resource type="PackedScene" uid="uid://b8eimfxdhasbx" path="res://world/save_station.tscn" id="6_dumvq"]
-[ext_resource type="Resource" uid="uid://cm5bxo0y8ml3" path="res://world/door_connections/door_connection_level_40_and_41.tres" id="6_mrky8"]
 [ext_resource type="PackedScene" uid="uid://cyctgnqsxsnqf" path="res://enemies/flying_enemy.tscn" id="7_63xjb"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="7_k5pov"]
 [ext_resource type="PackedScene" uid="uid://c77cvrcmrwist" path="res://enemies/walking_enemy.tscn" id="8_kufuy"]
@@ -32,12 +30,10 @@ position = Vector2(512, -128)
 [node name="JungleDoorToLevel10" parent="Doors" instance=ExtResource("4_ld7jo")]
 position = Vector2(-520, 304)
 new_level_path = "res://world/levels/level_10_Entrance_Hall.tscn"
-connection = ExtResource("5_4krdb")
 
 [node name="JungleDoorToLevel42" parent="Doors" instance=ExtResource("4_ld7jo")]
 position = Vector2(456, 304)
 new_level_path = "res://world/levels/level_41_Jungle.tscn"
-connection = ExtResource("6_mrky8")
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -66,7 +62,7 @@ position = Vector2(737, 176)
 [node name="SaveStations" type="Node2D" parent="."]
 
 [node name="SaveStationEnd" parent="SaveStations" instance=ExtResource("6_dumvq")]
-position = Vector2(154, 111)
+position = Vector2(154, 112)
 
 [node name="CameraLimits" parent="." instance=ExtResource("7_k5pov")]
 visible = false

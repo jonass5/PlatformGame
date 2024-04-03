@@ -1,18 +1,19 @@
-[gd_scene load_steps=14 format=3 uid="uid://dp1w2klcnlqs1"]
+[gd_scene load_steps=13 format=3 uid="uid://dp1w2klcnlqs1"]
 
 [ext_resource type="Script" path="res://world/levels/level.gd" id="1_do6ma"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="2_mp061"]
 [ext_resource type="PackedScene" uid="uid://y1hme37i72wj" path="res://world/cave_door.tscn" id="3_ygimp"]
-[ext_resource type="Resource" uid="uid://hpcb7kg27cn0" path="res://world/door_connections/dc_max_01_to_max_02.tres" id="4_1ute6"]
 [ext_resource type="PackedScene" uid="uid://cm38ky2ure14w" path="res://enemies/crawling_enemy.tscn" id="5_5afqs"]
-[ext_resource type="Resource" uid="uid://fa436man311e" path="res://world/door_connections/dc_max_02_to_max_03.tres" id="5_fhjvy"]
 [ext_resource type="PackedScene" uid="uid://cyctgnqsxsnqf" path="res://enemies/flying_enemy.tscn" id="6_wbqax"]
 [ext_resource type="PackedScene" uid="uid://c77cvrcmrwist" path="res://enemies/walking_enemy.tscn" id="7_bv87f"]
-[ext_resource type="PackedScene" uid="uid://bqttrppfaytmh" path="res://world/up_down_moving_platform.tscn" id="8_x0ndy"]
 [ext_resource type="PackedScene" uid="uid://drusidb24xxab" path="res://world/left_right_moving_platform.tscn" id="9_v6xni"]
 [ext_resource type="PackedScene" uid="uid://dnvp6bgu1gilo" path="res://player/missile_powerup.tscn" id="10_bab4s"]
 [ext_resource type="PackedScene" uid="uid://b8eimfxdhasbx" path="res://world/save_station.tscn" id="10_qf82o"]
 [ext_resource type="PackedScene" uid="uid://cgf75ae0x18nf" path="res://world/camera_limits.tscn" id="11_is4c6"]
+[ext_resource type="PackedScene" uid="uid://conrew7lgj0uw" path="res://world/position_trigger.tscn" id="11_rp2uw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6lwwj"]
+size = Vector2(1440, 16)
 
 [node name="level_max_02" type="Node2D"]
 script = ExtResource("1_do6ma")
@@ -25,12 +26,10 @@ layer_0/tile_data = PackedInt32Array(1048575, 65536, 2, 1310719, 65536, 1, 12451
 [node name="CaveDoor" parent="Doors" instance=ExtResource("3_ygimp")]
 position = Vector2(-8, 288)
 new_level_path = "res://world/levels/level_max_01.tscn"
-connection = ExtResource("4_1ute6")
 
 [node name="CaveDoor2" parent="Doors" instance=ExtResource("3_ygimp")]
 position = Vector2(1480, 288)
 new_level_path = "res://world/levels/level_max_03.tscn"
-connection = ExtResource("5_fhjvy")
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -51,9 +50,6 @@ position = Vector2(272, 256)
 
 [node name="Platforms" type="Node2D" parent="."]
 
-[node name="UpDownMovingPlatform" parent="Platforms" instance=ExtResource("8_x0ndy")]
-position = Vector2(72, 355)
-
 [node name="LeftRightMovingPlatform" parent="Platforms" instance=ExtResource("9_v6xni")]
 position = Vector2(536, 296)
 
@@ -72,9 +68,20 @@ position = Vector2(0, 3)
 [node name="MissilePowerup" parent="Powerups" instance=ExtResource("10_bab4s")]
 position = Vector2(960, 197)
 
+[node name="PositionTrigger" parent="." instance=ExtResource("11_rp2uw")]
+position = Vector2(48, 400)
+
+[node name="TargetPosition" parent="PositionTrigger" index="0"]
+position = Vector2(-24, -112)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PositionTrigger"]
+position = Vector2(720, 8)
+shape = SubResource("RectangleShape2D_6lwwj")
+
 [node name="CameraLimits" parent="." instance=ExtResource("11_is4c6")]
 visible = false
-offset_left = 1.0
-offset_top = 96.0
-offset_right = 1473.0
-offset_bottom = 368.0
+offset_top = 104.0
+offset_right = 1472.0
+offset_bottom = 376.0
+
+[editable path="PositionTrigger"]

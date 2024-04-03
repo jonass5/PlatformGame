@@ -23,7 +23,6 @@ func create_buttons():
 	var current_events = InputMap.action_get_events(action_key)
 	for action_event in current_events:
 		if is_input_to_display_on_screen(action_event):
-			#TODO: add action to add and remove input
 			create_button(action_event)
 
 
