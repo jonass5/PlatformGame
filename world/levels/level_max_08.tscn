@@ -30,7 +30,7 @@ new_level_path = "res://world/levels/level_max_07.tscn"
 
 [node name="CaveDoor2" parent="Doors" instance=ExtResource("4_uu7ho")]
 position = Vector2(984, 64)
-new_level_path = "res://world/levels/level_max_02.tscn"
+new_level_path = ""
 
 [node name="Enemies" type="Node2D" parent="."]
 

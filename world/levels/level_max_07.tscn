@@ -30,7 +30,7 @@ new_level_path = "res://world/levels/level_max_08.tscn"
 
 [node name="CaveDoor2" parent="Doors" instance=ExtResource("3_02tfb")]
 position = Vector2(920, 64)
-new_level_path = "res://world/levels/level_max_02.tscn"
+new_level_path = "res://world/levels/level_max_08.tscn"
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -104,7 +104,7 @@ position = Vector2(512, 480)
 position = Vector2(512, 496)
 
 [node name="CameraLimits" parent="." instance=ExtResource("12_11afd")]
-offset_right = 911.0
+offset_right = 912.0
 offset_bottom = 544.0
 
 [node name="PlantEnemy" parent="." instance=ExtResource("9_218bo")]
