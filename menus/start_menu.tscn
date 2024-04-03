@@ -14,7 +14,7 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("1_lpgsg")
 
 [node name="TitleAstronaut" type="Sprite2D" parent="."]
-scale = Vector2(0.33, 0.33)
+scale = Vector2(0.333333, 0.33)
 texture = ExtResource("2_fl040")
 centered = false
 
