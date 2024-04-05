@@ -28,7 +28,7 @@ new_level_path = "res://world/levels/level_30_Cave.tscn"
 
 [node name="CaveDoorToLevel40Jungel" parent="Doors" instance=ExtResource("3_wossg")]
 position = Vector2(344, 64)
-new_level_path = "res://world/levels/level_40_Jungle.tscn"
+new_level_path = "res://world/levels/level_40_Jungle_Boss.tscn"
 
 [node name="SaveStations" type="Node2D" parent="."]
 
