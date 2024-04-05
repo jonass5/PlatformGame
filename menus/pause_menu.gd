@@ -1,7 +1,6 @@
 class_name PauseMenu
 extends ColorRect
 
-@onready var resume_button = $CenterContainer/VBoxContainer/ResumeButton
 
 
 var paused = false :
@@ -15,6 +14,7 @@ var paused = false :
 			Sound.play(Sound.unpause, 1.0, -10.0)
 
 @onready var quit_button = $CenterContainer/VBoxContainer/QuitButton
+@onready var resume_button = $CenterContainer/VBoxContainer/ResumeButton
 
 
 func _ready():
