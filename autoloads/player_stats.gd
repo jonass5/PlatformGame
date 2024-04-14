@@ -28,7 +28,6 @@ func reset():
 
 func refill():
 	health = max_health
-	missiles = max_missiles
 
 
 func stash_stats():
