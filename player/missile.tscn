@@ -20,7 +20,7 @@ speed = 150
 texture = ExtResource("2_3jdlj")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="1"]
-position = Vector2(-1, 0)
+position = Vector2(-128, 0)
 scale = Vector2(0.7, 0.3)
 
 [node name="Hitbox" parent="." index="2"]
