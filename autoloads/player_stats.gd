@@ -34,11 +34,13 @@ func refill():
 func stash_stats():
 	WorldStash.stash("player", "max_health", max_health)
 	WorldStash.stash("player", "max_missiles", max_missiles)
+	WorldStash.stash("player", "missiles", missiles)
 
 
 func retrieve_stats():
 	max_health = WorldStash.retrieve("player", "max_health")
 	max_missiles = WorldStash.retrieve("player", "max_missiles")
+	missiles = WorldStash.retrieve("player", "missiles")
 	refill()
 
 
