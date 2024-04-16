@@ -45,3 +45,8 @@ func retrieve_stats():
 
 func has_missiles():
 	return missiles > 0
+
+
+func fire_missile():
+	missiles -= 1
+	return missiles

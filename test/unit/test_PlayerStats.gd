@@ -62,7 +62,7 @@ func test_should_reduce_health_when_player_got_hurt():
 	
 	
 func test_should_reduce_health_never_below_zero_when_player_got_hurt():
-		# arrange
+	# arrange
 	PlayerStats.max_health = 3
 	PlayerStats.health = 3
 	
@@ -73,3 +73,27 @@ func test_should_reduce_health_never_below_zero_when_player_got_hurt():
 	assert_eq(result, 0)
 	assert_eq(PlayerStats.health, 0)
 
+
+func test_should_reduce_missile_when_missile_is_fired():
+	# arrange
+	PlayerStats.max_missiles = 10
+	PlayerStats.missiles = 10
+	
+	# act
+	var result = PlayerStats.fire_missile()
+	
+	# assert
+	assert_eq(result, 9)
+	assert_eq(PlayerStats.missiles, 9)
+
+
+func test_should_reduce_missiles_never_below_zero_when_player_fires_missile():
+	# arrange
+	PlayerStats.missiles = 0
+	
+	# act
+	var result = PlayerStats.fire_missile()
+	
+	# assert
+	assert_eq(result, 0)
+	assert_eq(PlayerStats.missiles, 0)
