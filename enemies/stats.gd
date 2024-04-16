@@ -17,8 +17,11 @@ func set_max_health(value: int) -> void:
 
 func set_health(value: int) -> void:
 	health = clamp(value, 0, max_health)
-
 	health_changed.emit()
-
-	if(health <= 0):
+	if health <= 0:
 		no_health.emit()
+
+
+func hurt(damage: int) -> int:
+	health -= damage
+	return health

@@ -46,3 +46,30 @@ func test_should_retrieve_missiles_from_world_stash_when_called():
 	
 	# assert
 	assert_eq(PlayerStats.missiles, 10)
+
+
+func test_should_reduce_health_when_player_got_hurt():
+	# arrange
+	PlayerStats.max_health = 10
+	PlayerStats.health = 10
+	
+	# act
+	var result = PlayerStats.hurt(1)
+	
+	# assert
+	assert_eq(result, 9)
+	assert_eq(PlayerStats.health, 9)
+	
+	
+func test_should_reduce_health_never_below_zero_when_player_got_hurt():
+		# arrange
+	PlayerStats.max_health = 3
+	PlayerStats.health = 3
+	
+	# act
+	var result = PlayerStats.hurt(5)
+	
+	# assert
+	assert_eq(result, 0)
+	assert_eq(PlayerStats.health, 0)
+
