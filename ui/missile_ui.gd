@@ -16,5 +16,5 @@ func update_missile_label():
 	
 	
 func _max_missiles_changed():
-	visible = PlayerStats.max_missiles > 0
+	visible = PlayerStats.has_missiles()
 
