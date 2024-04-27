@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://cs3kyspr0gkui"]
 
 [ext_resource type="PackedScene" uid="uid://dbvi8foqa1c82" path="res://ui/version_gui.tscn" id="1_ob5uv"]
-[ext_resource type="Script" path="res://menus/setting_menu.gd" id="1_tat8a"]
+[ext_resource type="Script" path="res://menus/settings_menu.gd" id="1_tat8a"]
 [ext_resource type="Theme" uid="uid://v155lwusxhu2" path="res://ui/default_theme.tres" id="3_6l0no"]
 [ext_resource type="PackedScene" uid="uid://c165sgf7tgyiu" path="res://menus/menu_components/volume_checkbox.tscn" id="3_6u2r2"]
 [ext_resource type="PackedScene" uid="uid://daeqvns614qkb" path="res://menus/menu_components/volume_slider.tscn" id="4_ikssd"]
 
-[node name="SettingMenu" type="ColorRect"]
+[node name="SettingsMenu" type="ColorRect"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

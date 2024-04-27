@@ -1,5 +1,5 @@
 class_name StartMenu
-extends ColorRect
+extends Menu
 
 @onready var start_button = $CenterContainer/VBoxContainer/StartButton
 @onready var quit_button = $CenterContainer/VBoxContainer/QuitButton
@@ -29,13 +29,11 @@ func _on_load_button_pressed():
 
 
 func _on_settings_button_pressed():
-	Sound.play(Sound.click, 1.0, -10.0)
-	get_tree().change_scene_to_file("res://menus/setting_menu.tscn")
+	menu_changed.emit(Name.settings_menu)
 
 
-func _on_input_button_pressed():
-	Sound.play(Sound.click, 1.0, -10.0)
-	get_tree().change_scene_to_file("res://menus/controls_menu.tscn")
+func _on_controls_button_pressed():
+	menu_changed.emit(Name.controls_menu)
 	
 
 func _on_quit_button_pressed():

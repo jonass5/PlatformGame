@@ -1,4 +1,4 @@
-class_name ControlsMenu
+class_name SettingsMenu
 extends Menu
 
 
