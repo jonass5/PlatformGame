@@ -1,17 +1,6 @@
 class_name PauseMenu
-extends ColorRect
+extends Menu
 
-
-
-var paused = false :
-	set(value):
-		paused = value
-		get_tree().paused = paused
-		visible = paused
-		if paused:
-			Sound.play(Sound.pause, 1.0, -10.0)
-		else:
-			Sound.play(Sound.unpause, 1.0, -10.0)
 
 @onready var quit_button = $CenterContainer/VBoxContainer/QuitButton
 @onready var resume_button = $CenterContainer/VBoxContainer/ResumeButton
@@ -20,28 +9,22 @@ var paused = false :
 func _ready():
 	if OS.get_name() == "Web":
 		quit_button.hide()
-
-
-func _process(_delta):
-	if not MainInstances.player is Player:
-		return
-	if Input.is_action_just_pressed("pause"):
-		paused = !paused
-		resume_button.grab_focus()
+	resume_button.grab_focus()
 
 
 func _on_resume_button_pressed():
-	paused = false
-	Sound.play(Sound.click, 1.0, -10.0)
+	menu_changed.emit(Name.controls_menu)
+
+
+func _on_settings_button_pressed():
+	menu_changed.emit(Name.settings_menu)
 
 
 func _on_menu_button_pressed():
 	WorldStash.data = {}
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://menus/start_menu.tscn")
+	get_tree().change_scene_to_file("res://menus/start_gui.tscn")
 
 
 func _on_quit_button_pressed():
 	get_tree().quit()
-
-

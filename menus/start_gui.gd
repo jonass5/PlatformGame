@@ -2,7 +2,7 @@ class_name StartGui
 extends Node
 
 @onready var start_menu = $StartMenu
-@onready var setting_menu = $SettingMenu
+@onready var settings_menu = $SettingsMenu
 @onready var controls_menu = $ControlsMenu
 
 
@@ -14,14 +14,14 @@ func _on_menu_changed(menu_name):
 
 func hide_menus() -> void:
 	start_menu.hide()
-	setting_menu.hide()
+	settings_menu.hide()
 	controls_menu.hide()
 
 
 func show_menu(menu_name: Menu.Name) -> void:
 	match menu_name:
 		Menu.Name.settings_menu:
-			setting_menu.show()
+			settings_menu.show()
 		Menu.Name.controls_menu:
 			controls_menu.show()
 		_:

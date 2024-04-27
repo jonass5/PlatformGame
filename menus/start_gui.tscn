@@ -10,12 +10,12 @@ script = ExtResource("1_61hie")
 
 [node name="StartMenu" parent="." instance=ExtResource("1_omhbv")]
 
-[node name="SettingMenu" parent="." instance=ExtResource("3_xklse")]
+[node name="SettingsMenu" parent="." instance=ExtResource("3_xklse")]
 visible = false
 
 [node name="ControlsMenu" parent="." instance=ExtResource("4_belhd")]
 visible = false
 
 [connection signal="menu_changed" from="StartMenu" to="." method="_on_menu_changed"]
-[connection signal="menu_changed" from="SettingMenu" to="." method="_on_menu_changed"]
+[connection signal="menu_changed" from="SettingsMenu" to="." method="_on_menu_changed"]
 [connection signal="menu_changed" from="ControlsMenu" to="." method="_on_menu_changed"]
