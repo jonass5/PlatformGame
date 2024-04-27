@@ -13,7 +13,7 @@ func _ready():
 
 
 func _on_resume_button_pressed():
-	menu_changed.emit(Name.controls_menu)
+	menu_closed.emit()
 
 
 func _on_settings_button_pressed():

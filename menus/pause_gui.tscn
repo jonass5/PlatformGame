@@ -17,4 +17,5 @@ process_mode = 2
 visible = false
 
 [connection signal="menu_changed" from="PauseMenu" to="." method="_on_menu_changed"]
+[connection signal="menu_closed" from="PauseMenu" to="." method="_on_menu_closed"]
 [connection signal="menu_changed" from="SettingsMenu" to="." method="_on_menu_changed"]

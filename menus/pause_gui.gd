@@ -41,7 +41,9 @@ func show_menu(menu_name: Menu.Name) -> void:
 			settings_menu.show()
 		Menu.Name.default_menu:
 			pause_menu.show()
-		_:
-			hide_menus()
-			paused = false
+
+
+func _on_menu_closed():
+	hide_menus()
+	paused = false
 
