@@ -11,9 +11,10 @@ var paused = false:
 		get_tree().paused = paused
 		if paused:
 			Sound.play(Sound.pause, 1.0, -10.0)
-			show_menu(Menu.Name.pause_menu)
+			show_menu(Menu.Name.default_menu)
 		else:
 			Sound.play(Sound.unpause, 1.0, -10.0)
+			hide_menus()
 
 
 func _process(_delta):
@@ -36,10 +37,10 @@ func hide_menus() -> void:
 
 func show_menu(menu_name: Menu.Name) -> void:
 	match menu_name:
-		Menu.Name.pause_menu:
-			pause_menu.show()
 		Menu.Name.settings_menu:
 			settings_menu.show()
+		Menu.Name.default_menu:
+			pause_menu.show()
 		_:
 			hide_menus()
 			paused = false

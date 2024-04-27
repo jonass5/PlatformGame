@@ -3,4 +3,4 @@ extends Menu
 
 
 func _on_back_button_pressed():
-	menu_changed.emit(Name.start_menu)
+	menu_changed.emit(Name.default_menu)
