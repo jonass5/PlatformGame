@@ -5,14 +5,13 @@ extends Node
 @onready var settings_menu = $SettingsMenu
 
 
-var paused = false :
+var paused = false:
 	set(value):
 		paused = value
 		get_tree().paused = paused
-		hide_menus()
-		show_menu(Menu.Name.pause_menu)
 		if paused:
 			Sound.play(Sound.pause, 1.0, -10.0)
+			show_menu(Menu.Name.pause_menu)
 		else:
 			Sound.play(Sound.unpause, 1.0, -10.0)
 
@@ -41,8 +40,7 @@ func show_menu(menu_name: Menu.Name) -> void:
 			pause_menu.show()
 		Menu.Name.settings_menu:
 			settings_menu.show()
-		Menu.Name.controls_menu:
-			paused = false
 		_:
-			pause_menu.show()
+			hide_menus()
+			paused = false
 
