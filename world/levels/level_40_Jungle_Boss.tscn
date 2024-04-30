@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://xdxy33creuwc"]
+[gd_scene load_steps=11 format=3 uid="uid://xdxy33creuwc"]
 
 [ext_resource type="Script" path="res://world/levels/level_40_Jungle_Boss.gd" id="1_c2jg7"]
 [ext_resource type="Texture2D" uid="uid://dyv10frxc556s" path="res://world/backgrounds/Jungle.png" id="2_ve6x8"]
 [ext_resource type="PackedScene" uid="uid://brni5sww7nvu5" path="res://world/world_tile_map.tscn" id="3_bpkro"]
+[ext_resource type="PackedScene" uid="uid://eivlbt2voo54" path="res://world/level_title.tscn" id="3_xrbn3"]
 [ext_resource type="PackedScene" uid="uid://bpl8o5wof2i0i" path="res://enemies/boss_enemy.tscn" id="4_0h1cf"]
 [ext_resource type="PackedScene" uid="uid://x2wpndf26tqo" path="res://world/trigger.tscn" id="5_hfxwc"]
 [ext_resource type="PackedScene" uid="uid://dm8in4cn5o38p" path="res://world/brick.tscn" id="6_d3qm3"]
@@ -18,6 +19,10 @@ position = Vector2(0, -16)
 scale = Vector2(0.222222, 0.222222)
 texture = ExtResource("2_ve6x8")
 centered = false
+
+[node name="LevelTitle" parent="." instance=ExtResource("3_xrbn3")]
+position = Vector2(168, 136)
+title = "The Jungle"
 
 [node name="Border" type="StaticBody2D" parent="."]
 
