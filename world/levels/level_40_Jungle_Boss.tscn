@@ -21,7 +21,7 @@ texture = ExtResource("2_ve6x8")
 centered = false
 
 [node name="LevelTitle" parent="." instance=ExtResource("3_xrbn3")]
-position = Vector2(168, 136)
+position = Vector2(141, 135)
 title = "The Jungle"
 
 [node name="Border" type="StaticBody2D" parent="."]
@@ -77,6 +77,7 @@ position = Vector2(376, 160)
 new_level_path = "res://world/levels/level_41_Jungle.tscn"
 
 [node name="CameraLimits" parent="." instance=ExtResource("8_7csah")]
+visible = false
 offset_left = 48.0
 offset_right = 368.0
 offset_bottom = 176.0
