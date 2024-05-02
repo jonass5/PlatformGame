@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://world/world.gd" id="1_pxeu2"]
 [ext_resource type="PackedScene" uid="uid://dbvi8foqa1c82" path="res://ui/version_gui.tscn" id="2_c7vam"]
 [ext_resource type="PackedScene" uid="uid://ciuq1j8jgxaxs" path="res://ui/health_meter.tscn" id="5_r4qfi"]
-[ext_resource type="PackedScene" uid="uid://de63oipctsyad" path="res://menus/pause_menu.tscn" id="6_cs515"]
+[ext_resource type="PackedScene" uid="uid://simlhqeanfc8" path="res://menus/pause_gui.tscn" id="5_x0wdm"]
 [ext_resource type="PackedScene" uid="uid://cnl4sauj6u1tx" path="res://ui/missile_ui.tscn" id="7_p6sfx"]
 [ext_resource type="PackedScene" uid="uid://bkkptul236bce" path="res://world/levels/level_01_Tutorial.tscn" id="7_v11b0"]
 
@@ -28,8 +28,7 @@ offset_top = 17.0
 offset_right = 16.0
 offset_bottom = 27.0
 
-[node name="PauseMenu" parent="GUI" instance=ExtResource("6_cs515")]
-visible = false
+[node name="PauseGui" parent="GUI" instance=ExtResource("5_x0wdm")]
 
 [node name="VersionGUI" parent="GUI" instance=ExtResource("2_c7vam")]
 offset_top = 173.0

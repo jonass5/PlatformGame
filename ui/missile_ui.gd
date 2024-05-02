@@ -13,8 +13,8 @@ func _ready():
 
 func update_missile_label():
 	label.text = str(PlayerStats.missiles)
-	
-	
+
+
 func _max_missiles_changed():
-	visible = PlayerStats.max_missiles > 0
+	visible = PlayerStats.is_missiles_activated()
 

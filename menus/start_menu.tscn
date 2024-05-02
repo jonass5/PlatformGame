@@ -42,12 +42,12 @@ custom_minimum_size = Vector2(64, 16)
 layout_mode = 2
 text = "Load Game"
 
-[node name="SettingstButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="SettingsButton" type="Button" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(64, 16)
 layout_mode = 2
 text = "Settings"
 
-[node name="InputButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="ControlsButton" type="Button" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(64, 16)
 layout_mode = 2
 text = "Controls"
@@ -59,6 +59,6 @@ text = "Quit"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/LoadButton" to="." method="_on_load_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/SettingstButton" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/InputButton" to="." method="_on_input_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ControlsButton" to="." method="_on_controls_button_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

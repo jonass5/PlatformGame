@@ -62,7 +62,7 @@ size = Vector2(6, 4)
 script = ExtResource("2_xx6yq")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
-position = Vector2(2.38419e-07, 0)
+position = Vector2(-128, 0)
 scale = Vector2(0.4, 0.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="1"]

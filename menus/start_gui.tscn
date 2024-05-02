@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://x4i44hlh05tx"]
+
+[ext_resource type="Script" path="res://menus/start_gui.gd" id="1_61hie"]
+[ext_resource type="PackedScene" uid="uid://xy7x20wasjbk" path="res://menus/start_menu.tscn" id="1_omhbv"]
+[ext_resource type="PackedScene" uid="uid://cs3kyspr0gkui" path="res://menus/settings_menu.tscn" id="3_xklse"]
+[ext_resource type="PackedScene" uid="uid://g72de712su2d" path="res://menus/controls_menu.tscn" id="4_belhd"]
+
+[node name="StartGUI" type="Node"]
+script = ExtResource("1_61hie")
+
+[node name="StartMenu" parent="." instance=ExtResource("1_omhbv")]
+
+[node name="SettingsMenu" parent="." instance=ExtResource("3_xklse")]
+visible = false
+
+[node name="ControlsMenu" parent="." instance=ExtResource("4_belhd")]
+visible = false
+
+[connection signal="menu_changed" from="StartMenu" to="." method="_on_menu_changed"]
+[connection signal="menu_changed" from="SettingsMenu" to="." method="_on_menu_changed"]
+[connection signal="menu_changed" from="ControlsMenu" to="." method="_on_menu_changed"]

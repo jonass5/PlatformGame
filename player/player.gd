@@ -228,7 +228,7 @@ func _on_hurtbox_hurt(_hitbox, _damage):
 func hurt():
 	Sound.play(Sound.hurt)
 	Events.add_screenshake.emit(10, 0.1)
-	PlayerStats.health -= 1
+	PlayerStats.hurt(1)
 
 
 func cool_down(delta: float):
@@ -248,7 +248,7 @@ func fire_missile():
 	and PlayerStats.has_missiles()):
 		cool_down_time = MISSILE_COOL_DOWN_TIME
 		player_blaster.fire_missile()
-		PlayerStats.missiles -= 1
+		PlayerStats.fire_missile()
 
 
 func is_weapon_cold() -> bool:

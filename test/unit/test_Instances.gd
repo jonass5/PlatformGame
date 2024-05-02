@@ -25,8 +25,8 @@ func test_should_stash_player_position_and_level_path_in_stash():
 	instances.stash_stats()
 
 	# assert
-	assert_eq(WorldStash.data["player"]["x"], 100)
-	assert_eq(WorldStash.data["player"]["y"], 200)
+	assert_eq(WorldStash.data["player"]["x"], 100.0)
+	assert_eq(WorldStash.data["player"]["y"], 200.0)
 	assert_eq(WorldStash.data["level"]["file_path"], LEVEL_FILE_PATH)
 
 	# tear down
@@ -46,8 +46,8 @@ func test_should_retrieve_data_from_stash():
 	instances.retrieve_stats()
 
 	# assert
-	assert_eq(player.global_position.x, 10)
-	assert_eq(player.global_position.y, 20)
+	assert_eq(player.global_position.x, 10.0)
+	assert_eq(player.global_position.y, 20.0)
 	
 	# tear down
 	player.free()
