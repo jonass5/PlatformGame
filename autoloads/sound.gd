@@ -25,3 +25,18 @@ func play(sound_stream: AudioStream, pitch_scale: float = 1.0, volume_db: float 
 			sound_player.play()
 			return
 	print("Too many sounds playing at once")
+
+
+func play_with_distance(sound_stream: AudioStream, position: Vector2, pitch_scale: float = 1.0):
+	var distance = position.distance_to(MainInstances.player.global_position)
+	var viewport_width = ProjectSettings.get_setting("display/window/size/viewport_width")
+	var volume_cluster = round(distance / viewport_width)
+	if volume_cluster == 0:
+		Sound.play(sound_stream, pitch_scale)
+	elif volume_cluster == 1:
+		Sound.play(sound_stream, pitch_scale, -5.0)
+	elif volume_cluster == 2:
+		Sound.play(sound_stream, pitch_scale, -10.0)
+	elif volume_cluster == 3:
+		Sound.play(sound_stream, pitch_scale, -20.0)
+
