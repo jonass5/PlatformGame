@@ -1,0 +1,11 @@
+~ start
+
+if Utils.metNathan == false
+	Nathan: Hi, I'm Nathan.
+	set Utils.metNathan = true
+	=> END
+Nathan: We met before right?
+Nathan: What can I do for you?
+- Tell me more about this dialogue editor
+
+=> END

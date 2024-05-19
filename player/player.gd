@@ -40,6 +40,12 @@ var cool_down_time: float = 0.0
 @onready var center = $Center
 
 
+func _unhandled_input(_event: InputEvent):
+	if Input.is_action_just_pressed("ui_accept"):
+		DialogueManager.show_dialogue_balloon_scene(load("res://dialogue/my_ballon.tscn"), load("res://dialogue/first.dialogue"), "start")
+		return
+		
+		
 func _ready():
 	PlayerStats.no_health.connect(die)
 
