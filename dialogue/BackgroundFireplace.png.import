@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6i1b50gqsqxb"
-path="res://.godot/imported/PEPEGA.PNG-047f309caf1e44690a9a8f54d0c66db1.ctex"
+uid="uid://btepwc83gdch2"
+path="res://.godot/imported/BackgroundFireplace.png-57d5bda5e887fcf4112e2d41406e3644.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://chars/PEPEGA.PNG"
-dest_files=["res://.godot/imported/PEPEGA.PNG-047f309caf1e44690a9a8f54d0c66db1.ctex"]
+source_file="res://dialogue/BackgroundFireplace.png"
+dest_files=["res://.godot/imported/BackgroundFireplace.png-57d5bda5e887fcf4112e2d41406e3644.ctex"]
 
 [params]
 

@@ -2,22 +2,22 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(0.0784314, 0.427451, 0.733333, 1),
+"color": Color(1, 1, 1, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "New portrait",
-"description": "a random char",
-"display_name": "character",
+"default_portrait": "Default",
+"description": "",
+"display_name": "Grandfather Dougal",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"New portrait": {
+"Default": {
 "export_overrides": {
-"image": "\"res://chars/PEPEGA.PNG\""
+"image": "\"res://dialogue/character/TimGrandfatherPortrait.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

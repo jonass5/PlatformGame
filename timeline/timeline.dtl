@@ -1,8 +1,0 @@
-character (New portrait): Hello ....
-[end_timeline]
-- abc [if {} == ""]
-- abc2a [if {} == ""]
-	- ab
-	- abc2b
-		- 
-		- 
