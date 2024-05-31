@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch1wvgvuahnit"]
+[gd_scene load_steps=9 format=3 uid="uid://ch1wvgvuahnit"]
 
 [ext_resource type="PackedScene" uid="uid://cr81v0u4ichr" path="res://player/player.tscn" id="1_mkr1u"]
 [ext_resource type="Script" path="res://world/world.gd" id="1_pxeu2"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ciuq1j8jgxaxs" path="res://ui/health_meter.tscn" id="5_r4qfi"]
 [ext_resource type="PackedScene" uid="uid://simlhqeanfc8" path="res://menus/pause_gui.tscn" id="5_x0wdm"]
 [ext_resource type="PackedScene" uid="uid://cnl4sauj6u1tx" path="res://ui/missile_ui.tscn" id="7_p6sfx"]
+[ext_resource type="Script" path="res://world/SubViewport.gd" id="7_qqs3c"]
 [ext_resource type="PackedScene" uid="uid://bkkptul236bce" path="res://world/levels/level_01_Tutorial.tscn" id="7_v11b0"]
 
 [node name="World" type="Node2D"]
@@ -33,5 +34,21 @@ offset_bottom = 27.0
 [node name="VersionGUI" parent="GUI" instance=ExtResource("2_c7vam")]
 offset_top = 173.0
 offset_right = -300.0
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="GUI"]
+offset_right = 40.0
+offset_bottom = 40.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="GUI/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(40, 40)
+render_target_update_mode = 4
+script = ExtResource("7_qqs3c")
+
+[node name="Camera2D" type="Camera2D" parent="GUI/SubViewportContainer/SubViewport"]
+modulate = Color(0.45098, 0.27451, 0.505882, 1)
+self_modulate = Color(0.254902, 0.0313726, 0.101961, 1)
+zoom = Vector2(0.2, 0.2)
 
 [node name="Level01" parent="." instance=ExtResource("7_v11b0")]
