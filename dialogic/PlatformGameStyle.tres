@@ -30,8 +30,9 @@ overrides = {}
 script = ExtResource("2_q5m8f")
 scene = ExtResource("5_242ln")
 overrides = {
+"box_margin_bottom": "5.0",
 "box_panel": "\"vn_textbox_default_panel.tres\"",
-"box_size": "Vector2(250, 75)",
+"box_size": "Vector2(250, 50)",
 "next_indicator_size": "Vector2(10, 10)",
 "text_size": "5.0",
 "text_use_global_size": "false"
