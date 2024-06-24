@@ -9,7 +9,7 @@ var velocity = Vector2.ZERO
 
 
 func _ready():
-	Sound.play(Sound.bullet, randf_range(0.6, 1.2))
+	Sound.play_with_distance(Sound.bullet, global_position, randf_range(0.6, 1.2))
 
 
 func update_velocity():

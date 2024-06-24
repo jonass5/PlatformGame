@@ -62,7 +62,7 @@ position = Vector2(1048, 208)
 rotation = 3.14159
 
 [node name="PlantEnemy3" parent="Enemies" instance=ExtResource("12_su18u")]
-position = Vector2(864, 83)
+position = Vector2(864, 80)
 rotation = -3.14159
 
 [node name="FlyingEnemy2" parent="Enemies" instance=ExtResource("6_n7hne")]
