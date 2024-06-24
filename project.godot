@@ -35,6 +35,7 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Tim": "res://dialogic/characters/Tim.dch",
 "TimsGrandpa": "res://dialogic/characters/TimsGrandpa.dch"
 }
 directories/dtl_directory={
