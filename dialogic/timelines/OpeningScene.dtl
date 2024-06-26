@@ -9,5 +9,7 @@ I have problems with the rocket engine. I need to make an emergency landing on a
 TimsGrandpa: Tim are you ready to rescure your farther?
 - Yes, I'm ready to go!
 	TimsGrandpa: Great!
+	[signal arg=" end_scene_one"]
 - No, I'm not ready to go!
 	TimsGrandpa: You are a bad son!
+	[signal arg=" end_scene_one"]

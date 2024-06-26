@@ -6,10 +6,6 @@ extends Node
 @onready var controls_menu = $ControlsMenu
 
 
-func _ready():
-	Dialogic.start("OpeningScene")
-
-
 func _on_menu_changed(menu_name):
 	Sound.play(Sound.click, 1.0, -10.0)
 	hide_menus()
