@@ -1,9 +1,13 @@
 [background arg="res://dialogic/BackgroundFireplace.png" fade="0.0"]
 join TimsGrandpa 1
 TimsGrandpa: Tim, I just received a massage from your dad
-join Tim 1 [ z_index="1" mirrored="true"]
+join Tim 3
 Tim: Please play it
 TimsGrandpa: Here we, go...
-TimsFather: I have problems with the rocket engine. I need to make an emergency landing on an unexplored plant in the Waro system. It is the forth planet in the Waro system. Please send Tim with our rescue starship.
+[wait time="2.0"]
+I have problems with the rocket engine. I need to make an emergency landing on an unexplored plant in the Waro system. It is the forth planet in the Waro system. Please send Tim with our rescue starship.
 TimsGrandpa: Tim are you ready to rescure your farther?
-Tim: Yes, I'm ready to go!
+- Yes, I'm ready to go!
+	TimsGrandpa: Great!
+- No, I'm not ready to go!
+	TimsGrandpa: You are a bad son!

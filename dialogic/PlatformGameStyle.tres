@@ -48,7 +48,12 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_ysmlr"]
 script = ExtResource("2_q5m8f")
 scene = ExtResource("7_ppepm")
-overrides = {}
+overrides = {
+"boxes_fill_width": "false",
+"boxes_v_separation": "5.0",
+"font_size_custom": "5.0",
+"font_size_use_global": "false"
+}
 
 [sub_resource type="Resource" id="Resource_5tcua"]
 script = ExtResource("2_q5m8f")
@@ -67,4 +72,4 @@ base_overrides = {
 "global_font_size": "8.0"
 }
 layers = Array[ExtResource("2_q5m8f")]([SubResource("Resource_mu0cp"), SubResource("Resource_48ret"), SubResource("Resource_k6m4d"), SubResource("Resource_xkjw4"), SubResource("Resource_rdusg"), SubResource("Resource_ysmlr"), SubResource("Resource_5tcua"), SubResource("Resource_n6jjm")])
-metadata/_latest_layer = 3
+metadata/_latest_layer = 5
