@@ -7,5 +7,3 @@
 sprite_frames = ExtResource("1_14pho")
 autoplay = "default"
 script = ExtResource("2_se1wy")
-
-[connection signal="animation_looped" from="." to="." method="_on_animation_looped"]
