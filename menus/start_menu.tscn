@@ -20,6 +20,7 @@ texture = ExtResource("2_fl040")
 centered = false
 
 [node name="GameTitle" type="Label" parent="."]
+layout_mode = 0
 offset_top = 1.0
 offset_right = 320.0
 offset_bottom = 57.0
