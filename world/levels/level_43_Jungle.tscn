@@ -94,7 +94,7 @@ position = Vector2(912, 80)
 [node name="Teleports" type="Node2D" parent="."]
 
 [node name="Teleport" parent="Teleports" instance=ExtResource("13_c5kng")]
-position = Vector2(890, -8)
+position = Vector2(887, -17)
 new_level_path = "res://world/levels/level_10_Entrance_Hall.tscn"
 
 [node name="CameraLimits" parent="." instance=ExtResource("13_4awq4")]

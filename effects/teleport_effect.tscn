@@ -1,75 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://ci54axyaim53g"]
+[gd_scene load_steps=3 format=3 uid="uid://ci54axyaim53g"]
 
-[ext_resource type="Texture2D" uid="uid://c7h1fskh7aak" path="res://world/diamond.png" id="1_hel4k"]
+[ext_resource type="SpriteFrames" uid="uid://bnhe06m4qtdul" path="res://world/dimensional_portal.tres" id="1_14pho"]
 [ext_resource type="Script" path="res://effects/teleport_effect.gd" id="2_se1wy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ma06"]
-atlas = ExtResource("1_hel4k")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nhhnt"]
-atlas = ExtResource("1_hel4k")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3e7lh"]
-atlas = ExtResource("1_hel4k")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qywp3"]
-atlas = ExtResource("1_hel4k")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_db42i"]
-atlas = ExtResource("1_hel4k")
-region = Rect2(64, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3q04k"]
-atlas = ExtResource("1_hel4k")
-region = Rect2(80, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s4gn1"]
-atlas = ExtResource("1_hel4k")
-region = Rect2(96, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mrd6l"]
-atlas = ExtResource("1_hel4k")
-region = Rect2(112, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_eaobl"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7ma06")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nhhnt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3e7lh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qywp3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_db42i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3q04k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s4gn1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mrd6l")
-}],
-"loop": false,
-"name": &"default",
-"speed": 20.0
-}]
-
 [node name="TeleportEffect" type="AnimatedSprite2D"]
-sprite_frames = SubResource("SpriteFrames_eaobl")
+sprite_frames = ExtResource("1_14pho")
 autoplay = "default"
-frame = 7
-frame_progress = 1.0
 script = ExtResource("2_se1wy")
