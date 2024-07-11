@@ -13,10 +13,25 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_lpgsg")
 
-[node name="TitleAstronaut" type="Sprite2D" parent="."]
-scale = Vector2(0.333333, 0.33)
+[node name="BackgroundImage" type="Sprite2D" parent="."]
+position = Vector2(-89.6257, -49)
+scale = Vector2(0.426693, 0.420074)
 texture = ExtResource("2_fl040")
 centered = false
+
+[node name="GameTitle" type="Label" parent="."]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 320.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+text = "Tim's Journey"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+uppercase = true
 
 [node name="VersionGUI" parent="." instance=ExtResource("2_08anf")]
 layout_mode = 1
@@ -26,6 +41,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 38.0
 grow_horizontal = 2
 grow_vertical = 2
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7h1fskh7aak"
-path="res://.godot/imported/diamond.png-ce7f0e2e8b85ba1343683512ee4c2e61.ctex"
+uid="uid://cvm0p0bpdl12q"
+path="res://.godot/imported/TimGrandfatherPortrait.png-ceac650817279a88e386ff2890ec2de0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/diamond.png"
-dest_files=["res://.godot/imported/diamond.png-ce7f0e2e8b85ba1343683512ee4c2e61.ctex"]
+source_file="res://dialogic/characters/TimGrandfatherPortrait.png"
+dest_files=["res://.godot/imported/TimGrandfatherPortrait.png-ceac650817279a88e386ff2890ec2de0.ctex"]
 
 [params]
 
