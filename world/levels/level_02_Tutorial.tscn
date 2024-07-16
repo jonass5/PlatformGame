@@ -14,14 +14,15 @@ layer_0/tile_data = PackedInt32Array(65550, 65536, 2, 65549, 65536, 2, 65548, 65
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="CaveDoorToLevel01" parent="Doors" instance=ExtResource("3_q52ds")]
-position = Vector2(8, 96)
+position = Vector2(10, 189)
 new_level_path = "res://world/levels/level_01_Tutorial.tscn"
 
 [node name="CaveDoorToLevel03" parent="Doors" instance=ExtResource("3_q52ds")]
-position = Vector2(344, 96)
+position = Vector2(695, 189)
 new_level_path = "res://world/levels/level_03_Tutorial.tscn"
 
 [node name="CameraLimits" parent="." instance=ExtResource("5_a43il")]
-offset_left = 16.0
-offset_right = 336.0
-offset_bottom = 176.0
+offset_left = 21.0
+offset_top = 26.0
+offset_right = 687.0
+offset_bottom = 354.0
