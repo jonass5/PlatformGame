@@ -12,7 +12,7 @@
 script = ExtResource("1_pxeu2")
 
 [node name="Player" parent="." instance=ExtResource("1_mkr1u")]
-position = Vector2(73, 95)
+position = Vector2(157, 192)
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
