@@ -8,21 +8,21 @@
 [ext_resource type="PackedScene" uid="uid://bwdq65xhu11si" path="res://enemies/enemy_health_bar.tscn" id="6_45q5d"]
 [ext_resource type="PackedScene" uid="uid://c1br858hwlc05" path="res://enemies/enemy.tscn" id="7_67ch4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kp5i0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcv7w"]
 atlas = ExtResource("1_cpv5o")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6vbhl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppcw7"]
 atlas = ExtResource("1_cpv5o")
-region = Rect2(16, 0, 16, 16)
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m3u6n"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0cdr"]
 atlas = ExtResource("1_cpv5o")
-region = Rect2(32, 0, 16, 16)
+region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kf0vu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg7dl"]
 atlas = ExtResource("1_cpv5o")
-region = Rect2(48, 0, 16, 16)
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lq83v"]
 atlas = ExtResource("1_cpv5o")
@@ -32,16 +32,16 @@ region = Rect2(32, 0, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kp5i0")
+"texture": SubResource("AtlasTexture_xcv7w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6vbhl")
+"texture": SubResource("AtlasTexture_ppcw7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m3u6n")
+"texture": SubResource("AtlasTexture_e0cdr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kf0vu")
+"texture": SubResource("AtlasTexture_rg7dl")
 }],
 "loop": true,
 "name": &"crawl",
