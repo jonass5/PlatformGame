@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cm38ky2ure14w" path="res://enemies/crawling_enemy.tscn" id="8_chyuj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6st3y"]
-size = Vector2(448, 11.5)
+size = Vector2(448, 16)
 
 [node name="Level04Tutorial" type="Node2D"]
 script = ExtResource("1_6cinw")
@@ -81,6 +81,7 @@ position = Vector2(480, 256)
 position = Vector2(512, 256)
 
 [node name="CameraLimits" parent="." instance=ExtResource("5_8i2dp")]
+visible = false
 offset_left = 16.0
 offset_right = 688.0
 offset_bottom = 360.0
@@ -92,7 +93,7 @@ position = Vector2(96, 272)
 position = Vector2(-40, -80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PositionTrigger"]
-position = Vector2(224, 10.25)
+position = Vector2(224, 8)
 shape = SubResource("RectangleShape2D_6st3y")
 
 [editable path="PositionTrigger"]
