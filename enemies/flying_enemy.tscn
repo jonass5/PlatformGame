@@ -9,50 +9,50 @@
 [ext_resource type="PackedScene" uid="uid://bt0stmjftwou3" path="res://enemies/waypoint_pathfinding.tscn" id="6_3hhuw"]
 [ext_resource type="PackedScene" uid="uid://bwdq65xhu11si" path="res://enemies/enemy_health_bar.tscn" id="7_sfw1v"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ynxix"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_o38oy"]
 atlas = ExtResource("1_chy3y")
-region = Rect2(0, 0, 32, 24)
+region = Rect2(0, 0, 64, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7kw5c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_myfap"]
 atlas = ExtResource("1_chy3y")
-region = Rect2(32, 0, 32, 24)
+region = Rect2(64, 0, 64, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_up422"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jufi1"]
 atlas = ExtResource("1_chy3y")
-region = Rect2(64, 0, 32, 24)
+region = Rect2(128, 0, 64, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t6svb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_norv8"]
 atlas = ExtResource("1_chy3y")
-region = Rect2(96, 0, 32, 24)
+region = Rect2(192, 0, 64, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6x5gc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v03o"]
 atlas = ExtResource("1_chy3y")
-region = Rect2(128, 0, 32, 24)
+region = Rect2(256, 0, 64, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y81pp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl4qo"]
 atlas = ExtResource("1_chy3y")
-region = Rect2(160, 0, 32, 24)
+region = Rect2(320, 0, 64, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wuf7g"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ynxix")
+"texture": SubResource("AtlasTexture_o38oy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7kw5c")
+"texture": SubResource("AtlasTexture_myfap")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_up422")
+"texture": SubResource("AtlasTexture_jufi1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t6svb")
+"texture": SubResource("AtlasTexture_norv8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6x5gc")
+"texture": SubResource("AtlasTexture_4v03o")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y81pp")
+"texture": SubResource("AtlasTexture_fl4qo")
 }],
 "loop": true,
 "name": &"default",
@@ -60,13 +60,13 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ln1aa"]
-radius = 5.0
+radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t4oen"]
-radius = 7.0
+radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iov5k"]
-radius = 4.0
+radius = 7.07107
 
 [node name="FlyingEnemy" type="CharacterBody2D"]
 collision_layer = 8
@@ -105,9 +105,9 @@ script = ExtResource("5_2iooe")
 
 [node name="EnemyHealthBar" parent="." instance=ExtResource("7_sfw1v")]
 offset_left = -13.0
-offset_top = -16.0
+offset_top = -30.0
 offset_right = 13.0
-offset_bottom = -12.0
+offset_bottom = -26.0
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]
