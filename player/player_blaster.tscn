@@ -7,9 +7,8 @@
 script = ExtResource("1_i1bxa")
 
 [node name="BlasterSprite" type="Sprite2D" parent="."]
-position = Vector2(8, -5)
 texture = ExtResource("2_1vjw6")
 offset = Vector2(4, 0)
 
 [node name="Muzzle" type="Marker2D" parent="BlasterSprite"]
-position = Vector2(18, 0)
+position = Vector2(16, 0)
