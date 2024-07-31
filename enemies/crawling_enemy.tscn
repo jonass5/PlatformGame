@@ -24,9 +24,9 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("1_cpv5o")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lq83v"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsi58"]
 atlas = ExtResource("1_cpv5o")
-region = Rect2(32, 0, 16, 16)
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_itp15"]
 animations = [{
@@ -49,7 +49,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lq83v")
+"texture": SubResource("AtlasTexture_jsi58")
 }],
 "loop": true,
 "name": &"fall",
@@ -57,10 +57,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nuis5"]
-size = Vector2(16, 8)
+size = Vector2(28, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nswa8"]
-size = Vector2(10, 5)
+size = Vector2(20, 7)
 
 [node name="CrawlingEnemy" type="Node2D"]
 script = ExtResource("1_kh8e2")
@@ -68,7 +68,7 @@ script = ExtResource("1_kh8e2")
 [node name="Enemy" parent="." instance=ExtResource("7_67ch4")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_itp15")
 animation = &"fall"
 autoplay = "crawl"
@@ -78,14 +78,14 @@ position = Vector2(0, -8)
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(0, 4)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_nuis5")
 
 [node name="Hitbox" parent="." instance=ExtResource("3_utb2a")]
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -2.5)
+position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_nswa8")
 
 [node name="FloorCast" type="RayCast2D" parent="."]
@@ -104,9 +104,9 @@ max_health = 2
 
 [node name="EnemyHealthBar" parent="." instance=ExtResource("6_45q5d")]
 offset_left = -11.0
-offset_top = -13.0
+offset_top = -21.0
 offset_right = 11.0
-offset_bottom = -9.0
+offset_bottom = -17.0
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]

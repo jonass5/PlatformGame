@@ -31,7 +31,7 @@ new_level_path = "res://world/levels/level_05_Tutorial.tscn"
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="WalkingEnemy" parent="Enemies" instance=ExtResource("6_h6wy3")]
-position = Vector2(424, 184)
+position = Vector2(424, 192)
 
 [node name="CrawlingEnemy" parent="Enemies" instance=ExtResource("8_chyuj")]
 position = Vector2(224, 192)
@@ -81,10 +81,9 @@ position = Vector2(400, 272)
 position = Vector2(416, 272)
 
 [node name="CameraLimits" parent="." instance=ExtResource("5_8i2dp")]
-visible = false
 offset_left = 16.0
-offset_right = 336.0
-offset_bottom = 176.0
+offset_right = 688.0
+offset_bottom = 360.0
 
 [node name="PositionTrigger" parent="." instance=ExtResource("8_4hg4w")]
 position = Vector2(208, 275)
