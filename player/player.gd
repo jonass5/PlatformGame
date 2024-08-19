@@ -14,15 +14,15 @@ enum FACING {
 	LEFT = -1
 }
 
-@export var acceleration = 512
-@export var max_velocity = 64
-@export var friction = 256
-@export var air_friction = 64
-@export var gravity = 200
-@export var jump_force = 128
-@export var max_fall_velocity = 128
-@export var wall_slide_speed = 42
-@export var max_wall_slide_speed = 128
+@export var acceleration = 1024
+@export var max_velocity = 128
+@export var friction = 512
+@export var air_friction = 128
+@export var gravity = 400
+@export var jump_force = 256
+@export var max_fall_velocity = 256
+@export var wall_slide_speed = 84
+@export var max_wall_slide_speed = 256
 
 var air_jump : bool = false
 var state : Callable = move_state

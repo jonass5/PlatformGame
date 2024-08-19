@@ -3,43 +3,43 @@
 [ext_resource type="Texture2D" uid="uid://bd38y2muuecc5" path="res://effects/wall_dust_effect.png" id="1_3txro"]
 [ext_resource type="Script" path="res://effects/effect.gd" id="2_50hg1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wt1y8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ld0f"]
 atlas = ExtResource("1_3txro")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q5jb7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip77l"]
 atlas = ExtResource("1_3txro")
-region = Rect2(16, 0, 16, 16)
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n8uou"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m84sa"]
 atlas = ExtResource("1_3txro")
-region = Rect2(32, 0, 16, 16)
+region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a1hel"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_brgr4"]
 atlas = ExtResource("1_3txro")
-region = Rect2(48, 0, 16, 16)
+region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vn3y4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_o472x"]
 atlas = ExtResource("1_3txro")
-region = Rect2(64, 0, 16, 16)
+region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nclmy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wt1y8")
+"texture": SubResource("AtlasTexture_0ld0f")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q5jb7")
+"texture": SubResource("AtlasTexture_ip77l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n8uou")
+"texture": SubResource("AtlasTexture_m84sa")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a1hel")
+"texture": SubResource("AtlasTexture_brgr4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vn3y4")
+"texture": SubResource("AtlasTexture_o472x")
 }],
 "loop": false,
 "name": &"default",
