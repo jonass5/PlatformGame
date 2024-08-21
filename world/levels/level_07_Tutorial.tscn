@@ -28,7 +28,6 @@ new_level_path = "res://world/levels/level_10_Entrance_Hall.tscn"
 position = Vector2(520, 112)
 
 [node name="CameraLimits" parent="." instance=ExtResource("6_eu8vs")]
-visible = false
 offset_left = 32.0
 offset_right = 672.0
 offset_bottom = 312.0

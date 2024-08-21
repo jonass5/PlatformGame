@@ -23,6 +23,5 @@ new_level_path = "res://world/levels/level_03_Tutorial.tscn"
 
 [node name="CameraLimits" parent="." instance=ExtResource("5_a43il")]
 offset_left = 32.0
-offset_top = 26.0
 offset_right = 672.0
-offset_bottom = 354.0
+offset_bottom = 328.0

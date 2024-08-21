@@ -61,10 +61,10 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ii4k"]
-size = Vector2(14, 12)
+size = Vector2(26, 24)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lsn7f"]
-radius = 5.0
+radius = 12.0
 
 [node name="PlantEnemy" type="Node2D"]
 script = ExtResource("1_46wei")
@@ -72,7 +72,7 @@ script = ExtResource("1_46wei")
 [node name="Enemy" parent="." instance=ExtResource("2_i7avb")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, -16)
 texture = ExtResource("1_d85q6")
 hframes = 6
 
@@ -84,36 +84,36 @@ libraries = {
 autoplay = "attack"
 
 [node name="BulletSpawnPoint" type="Marker2D" parent="."]
-position = Vector2(0, -9)
+position = Vector2(0, -25)
 
 [node name="FireDirection" type="Marker2D" parent="."]
-position = Vector2(0, -15)
+position = Vector2(0, -31)
 
 [node name="Hurtbox" parent="." instance=ExtResource("2_kf55f")]
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(0, -6)
+position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_7ii4k")
 
 [node name="Hitbox" parent="." instance=ExtResource("3_7jpk2")]
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -6)
+position = Vector2(0, -12)
 shape = SubResource("CircleShape2D_lsn7f")
 
 [node name="Stats" parent="." instance=ExtResource("5_e6px6")]
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-position = Vector2(-2.27374e-13, -6)
+position = Vector2(-2.71051e-20, -13)
 scale = Vector2(2.8, 2.8)
 
 [node name="EnemyHealthBar" parent="." instance=ExtResource("6_n2kiq")]
 offset_left = -11.0
-offset_top = -19.0
+offset_top = -33.0
 offset_right = 11.0
-offset_bottom = -15.0
+offset_bottom = -29.0
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]
