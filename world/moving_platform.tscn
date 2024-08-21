@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dyhktjpx7um0u" path="res://world/moving_platform.png" id="1_lhlu6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1vte1"]
-size = Vector2(68, 20)
+size = Vector2(64, 16)
 
 [sub_resource type="Animation" id="Animation_as5fx"]
 length = 0.001
