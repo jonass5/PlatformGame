@@ -19,7 +19,7 @@ title = "Level 1"
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="CaveDoorToLevel2" parent="Doors" instance=ExtResource("5_n5005")]
-position = Vector2(663, 191)
+position = Vector2(656, 192)
 new_level_path = "res://world/levels/level_02_Tutorial.tscn"
 
 [node name="CameraLimits" parent="." instance=ExtResource("4_m6qto")]
