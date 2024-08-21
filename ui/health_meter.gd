@@ -12,8 +12,8 @@ func _ready():
 	
 	
 func update_health_ui():
-	full.size.x = PlayerStats.health * 5 + 1
+	full.size.x = PlayerStats.health * 10 + 2
 
 func update_max_health_ui():
-	empty.size.x = PlayerStats.max_health * 5 + 1
+	empty.size.x = PlayerStats.max_health * 10 + 2
 	
