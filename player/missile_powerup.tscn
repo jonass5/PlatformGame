@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://player/missile_powerup.gd" id="2_sxued"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_evoxf"]
-size = Vector2(6, 15)
+size = Vector2(8, 28)
 
 [node name="MissilePowerup" instance=ExtResource("1_27y5f")]
 script = ExtResource("2_sxued")
@@ -15,5 +15,5 @@ rotation = -1.57079
 texture = ExtResource("2_pqsv0")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(0, 0.5)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_evoxf")
