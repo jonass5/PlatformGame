@@ -21,13 +21,13 @@ offset_bottom = 360.0
 [node name="Bricks" type="Node2D" parent="."]
 
 [node name="Brick" parent="Bricks" instance=ExtResource("7_bk6qf")]
-position = Vector2(416, 176)
-
-[node name="Brick2" parent="Bricks" instance=ExtResource("7_bk6qf")]
 position = Vector2(416, 160)
 
+[node name="Brick2" parent="Bricks" instance=ExtResource("7_bk6qf")]
+position = Vector2(416, 128)
+
 [node name="Brick3" parent="Bricks" instance=ExtResource("7_bk6qf")]
-position = Vector2(416, 144)
+position = Vector2(416, 96)
 
 [node name="Doors" type="Node2D" parent="."]
 
