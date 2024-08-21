@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://world/trap_door.gd" id="2_1pviv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2jo1"]
-size = Vector2(32, 16)
+size = Vector2(64, 32)
 
 [node name="TrapDoor" instance=ExtResource("1_e4hnk")]
 script = ExtResource("2_1pviv")
@@ -12,3 +12,9 @@ script = ExtResource("2_1pviv")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_g2jo1")
+
+[node name="RightCast" parent="." index="1"]
+target_position = Vector2(64, 0)
+
+[node name="LeftCast" parent="." index="2"]
+target_position = Vector2(-64, 0)

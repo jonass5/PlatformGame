@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://lgt5o6qelkwv" path="res://world/door.tscn" id="1_b3gc0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrrnd"]
-size = Vector2(16, 176)
+size = Vector2(32, 352)
 
 [node name="JungleDoor" instance=ExtResource("1_b3gc0")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, -88)
+position = Vector2(0, -176)
 shape = SubResource("RectangleShape2D_wrrnd")
