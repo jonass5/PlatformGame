@@ -3,8 +3,8 @@ extends CharacterBody2D
 
 const EnemyDeathEffectScene = preload("res://effects/enemy_death_effect.tscn")
 
-@export var acceleration = 100
-@export var max_speed = 40
+@export var acceleration = 200
+@export var max_speed = 80
 
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var stats = $Stats
