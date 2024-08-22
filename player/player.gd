@@ -129,7 +129,7 @@ func wall_jump_check(wall_axis) -> void:
 		velocity.x = wall_axis * max_velocity
 		state = move_state
 		jump(jump_force * 0.75, false)
-		var wall_jump_effect_position = global_position + Vector2(wall_axis * 3.5, -2)
+		var wall_jump_effect_position = global_position + Vector2(wall_axis * 7, -4)
 		var wall_jump_effect = Utils.instanciate_scene_on_level(WallJumpEffectScene, wall_jump_effect_position)
 		wall_jump_effect.flip_h = wall_axis == FACING.LEFT
 
