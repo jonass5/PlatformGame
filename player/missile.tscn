@@ -14,7 +14,7 @@ point_count = 2
 
 [node name="Missile" instance=ExtResource("1_jagoj")]
 script = ExtResource("2_8jubh")
-speed = 150
+speed = 300
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_3jdlj")
