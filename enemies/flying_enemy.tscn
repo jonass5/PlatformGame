@@ -104,10 +104,10 @@ script = ExtResource("5_2iooe")
 [node name="WaypointPathfinding" parent="." instance=ExtResource("6_3hhuw")]
 
 [node name="EnemyHealthBar" parent="." instance=ExtResource("7_sfw1v")]
-offset_left = -13.0
-offset_top = -30.0
-offset_right = 13.0
-offset_bottom = -26.0
+offset_left = -26.0
+offset_top = -32.0
+offset_right = 26.0
+offset_bottom = -24.0
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]
