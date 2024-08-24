@@ -53,7 +53,7 @@ position = Vector2(0, -48)
 texture = ExtResource("1_85lrm")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-26, 0, -20, -6, 20, -6, 25, 0)
+polygon = PackedVector2Array(-26, 0, -20, -6, 20, -6, 26, 0)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
