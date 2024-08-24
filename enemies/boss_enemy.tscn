@@ -194,10 +194,10 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kuxx5"]
-radius = 20.0
+radius = 40.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_77dqq"]
-radius = 17.0
+radius = 34.0
 
 [node name="BossEnemy" type="Node2D"]
 script = ExtResource("1_3lger")
@@ -216,45 +216,45 @@ texture = ExtResource("2_btovj")
 
 [node name="LeftWing" type="Sprite2D" parent="Body"]
 show_behind_parent = true
-position = Vector2(-8, -20)
+position = Vector2(-16, -40)
 rotation = 0.785398
 texture = ExtResource("3_gevtm")
-offset = Vector2(-21, -4)
+offset = Vector2(-42, -8)
 
 [node name="RightWing" type="Sprite2D" parent="Body"]
 show_behind_parent = true
-position = Vector2(9, -20)
+position = Vector2(18, -40)
 rotation = -0.785398
 texture = ExtResource("3_gevtm")
-offset = Vector2(21, -4)
+offset = Vector2(42, -8)
 flip_h = true
 
 [node name="Head" type="Sprite2D" parent="Body"]
-position = Vector2(0.5, -7)
+position = Vector2(1, -14)
 texture = ExtResource("4_ykqbm")
 
 [node name="UpperLeftLeg" type="Sprite2D" parent="Body"]
-position = Vector2(-11.5, -12)
+position = Vector2(-23, -24)
 texture = ExtResource("5_yow68")
-offset = Vector2(-8, 8)
+offset = Vector2(-16, 16)
 
 [node name="LowerLeftLeg" type="Sprite2D" parent="Body"]
-position = Vector2(-10, -2)
+position = Vector2(-20, -4)
 rotation = -0.523599
 texture = ExtResource("5_yow68")
-offset = Vector2(-8, 8)
+offset = Vector2(-16, 16)
 
 [node name="UpperLeftLeg2" type="Sprite2D" parent="Body"]
-position = Vector2(12.5, -12)
+position = Vector2(25, -24)
 texture = ExtResource("5_yow68")
-offset = Vector2(8, 8)
+offset = Vector2(16, 16)
 flip_h = true
 
 [node name="LowerLeftLeg2" type="Sprite2D" parent="Body"]
-position = Vector2(10.5, -2)
+position = Vector2(21, -4)
 rotation = 0.523599
 texture = ExtResource("5_yow68")
-offset = Vector2(8, 8)
+offset = Vector2(16, 16)
 flip_h = true
 
 [node name="Stats" parent="." instance=ExtResource("6_536o4")]
@@ -275,7 +275,7 @@ position = Vector2(0, 9)
 shape = SubResource("CircleShape2D_77dqq")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
-polygon = PackedVector2Array(-8, 16, -8, 22, -1, 34, 1, 34, 8, 22, 8, 16)
+polygon = PackedVector2Array(-16, 32, -16, 44, -2, 68, 2, 68, 16, 44, 16, 32)
 
 [node name="FirerateTimer" type="Timer" parent="."]
 wait_time = 0.1
@@ -294,10 +294,10 @@ position = Vector2(0, 7)
 position = Vector2(14, 0)
 
 [node name="EnemyHealthBar" parent="." instance=ExtResource("9_y7hm0")]
-offset_left = -53.0
-offset_top = -62.0
-offset_right = 52.0
-offset_bottom = -56.0
+offset_left = -105.0
+offset_top = -128.0
+offset_right = 105.0
+offset_bottom = -116.0
 
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
