@@ -23,84 +23,83 @@ layer_0/tile_data = PackedInt32Array(14, 65536, 1, 13, 65536, 1, 12, 65536, 1, 1
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="CaveDoor" parent="Doors" instance=ExtResource("3_832ch")]
-position = Vector2(8, 240)
+position = Vector2(16, 480)
 new_level_path = "res://world/levels/level_max_04.tscn"
 
 [node name="CaveDoor2" parent="Doors" instance=ExtResource("3_832ch")]
-position = Vector2(1144, 48)
+position = Vector2(2288, 96)
 new_level_path = "res://world/levels/level_max_06.tscn"
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="CrawlingEnemy" parent="Enemies" instance=ExtResource("5_yygcf")]
-position = Vector2(816, 96)
+position = Vector2(1632, 192)
 
 [node name="FlyingEnemy" parent="Enemies" instance=ExtResource("6_l3bdo")]
-position = Vector2(1000, 48)
+position = Vector2(2000, 96)
 
 [node name="WalkingEnemy" parent="Enemies" instance=ExtResource("7_6kwoq")]
-position = Vector2(344, 240)
+position = Vector2(688, 480)
 
 [node name="WalkingEnemy2" parent="Enemies" instance=ExtResource("7_6kwoq")]
-position = Vector2(520, 240)
+position = Vector2(1040, 480)
 
 [node name="FlyingEnemy2" parent="Enemies" instance=ExtResource("6_l3bdo")]
-position = Vector2(1056, 38)
+position = Vector2(2112, 76)
 
 [node name="CrawlingEnemy2" parent="Enemies" instance=ExtResource("5_yygcf")]
-position = Vector2(640, 64)
+position = Vector2(1280, 128)
 
 [node name="CrawlingEnemy3" parent="Enemies" instance=ExtResource("5_yygcf")]
-position = Vector2(384, 80)
+position = Vector2(768, 160)
 
 [node name="PlantEnemy" parent="Enemies" instance=ExtResource("8_5lkol")]
-position = Vector2(508, 16)
+position = Vector2(1016, 32)
 rotation = 3.14159
 
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="UpDownMovingPlatform" parent="Platforms" instance=ExtResource("8_30qtv")]
-position = Vector2(152, 152)
+position = Vector2(304, 304)
 
 [node name="TriangleMovingPlatform" parent="Platforms" instance=ExtResource("10_8sk4p")]
-position = Vector2(696, 96)
+position = Vector2(1392, 192)
 
 [node name="LeftRightMovingPlatform" parent="Platforms" instance=ExtResource("11_m3ut6")]
-position = Vector2(232, 120)
+position = Vector2(464, 240)
 
 [node name="UpDownMovingPlatform2" parent="Platforms" instance=ExtResource("8_30qtv")]
-position = Vector2(320, 104)
+position = Vector2(640, 208)
 
 [node name="LeftRightMovingPlatform2" parent="Platforms" instance=ExtResource("11_m3ut6")]
-position = Vector2(472, 87)
+position = Vector2(944, 174)
 
 [node name="UpDownMovingPlatform3" parent="Platforms" instance=ExtResource("8_30qtv")]
-position = Vector2(568, 93)
+position = Vector2(1136, 186)
 
 [node name="UpDownMovingPlatform4" parent="Platforms" instance=ExtResource("8_30qtv")]
-position = Vector2(880, 83)
+position = Vector2(1760, 166)
 
 [node name="LeftRightMovingPlatform3" parent="Platforms" instance=ExtResource("11_m3ut6")]
-position = Vector2(968, 72)
+position = Vector2(1936, 144)
 
 [node name="SaveStations" type="Node2D" parent="."]
 position = Vector2(0, 1)
 
 [node name="SaveStation" parent="SaveStations" instance=ExtResource("9_4sicf")]
-position = Vector2(111, 208)
+position = Vector2(222, 416)
 
 [node name="Bricks" type="Node2D" parent="."]
 position = Vector2(0, 1)
 
 [node name="Brick" parent="Bricks" instance=ExtResource("13_etv2t")]
-position = Vector2(1088, 16)
+position = Vector2(2176, 32)
 
 [node name="Brick2" parent="Bricks" instance=ExtResource("13_etv2t")]
-position = Vector2(1088, 31)
+position = Vector2(2176, 62)
 
 [node name="CameraLimits" parent="." instance=ExtResource("11_h7j38")]
-visible = false
-offset_left = 16.0
-offset_top = 1.0
-offset_right = 1136.0
-offset_bottom = 256.0
+offset_left = 32.0
+offset_top = 2.0
+offset_right = 2272.0
+offset_bottom = 512.0
