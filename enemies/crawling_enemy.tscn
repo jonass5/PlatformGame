@@ -90,12 +90,12 @@ shape = SubResource("RectangleShape2D_nswa8")
 
 [node name="FloorCast" type="RayCast2D" parent="."]
 position = Vector2(0, -3)
-target_position = Vector2(0, 8)
+target_position = Vector2(0, 16)
 collision_mask = 3
 
 [node name="WallCast" type="RayCast2D" parent="."]
 position = Vector2(0, -4)
-target_position = Vector2(4, 0)
+target_position = Vector2(8, 0)
 collision_mask = 3
 
 [node name="Stats" type="Node" parent="."]
