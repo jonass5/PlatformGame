@@ -103,10 +103,10 @@ script = ExtResource("5_4lvfk")
 max_health = 2
 
 [node name="EnemyHealthBar" parent="." instance=ExtResource("6_45q5d")]
-offset_left = -11.0
-offset_top = -21.0
-offset_right = 11.0
-offset_bottom = -17.0
+offset_left = -22.0
+offset_top = -30.0
+offset_right = 22.0
+offset_bottom = -22.0
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]
