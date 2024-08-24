@@ -42,10 +42,11 @@ new_level_path = "res://world/levels/level_40_Jungle_Boss.tscn"
 position = Vector2(352, 224)
 
 [node name="CameraLimits" parent="." instance=ExtResource("5_ql2c3")]
+visible = false
 offset_left = 32.0
 offset_top = 24.0
 offset_right = 672.0
 offset_bottom = 376.0
 
 [node name="TeleportTarget" parent="." instance=ExtResource("6_7p04o")]
-position = Vector2(176, 112)
+position = Vector2(352, 224)
