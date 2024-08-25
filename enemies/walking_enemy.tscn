@@ -9,13 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://c1br858hwlc05" path="res://enemies/enemy.tscn" id="7_nqtno"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wr4c"]
-size = Vector2(36, 32)
+size = Vector2(16, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhibs"]
-size = Vector2(32, 28)
+size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_olcer"]
-size = Vector2(25, 21)
+size = Vector2(34, 22)
 
 [node name="WalkingEnemy" type="CharacterBody2D"]
 collision_layer = 8
@@ -33,7 +33,7 @@ flip_h = true
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_6wr4c")
 
 [node name="FloorCast" type="RayCast2D" parent="."]
@@ -49,14 +49,14 @@ collision_mask = 4
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(0, -14)
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_vhibs")
 
 [node name="Hitbox" parent="." instance=ExtResource("4_4fdfs")]
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-0.5, -10.5)
+position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_olcer")
 
 [node name="Stats" parent="." instance=ExtResource("5_b8a2b")]
