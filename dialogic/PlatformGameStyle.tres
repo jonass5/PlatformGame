@@ -30,14 +30,9 @@ overrides = {}
 script = ExtResource("2_q5m8f")
 scene = ExtResource("5_242ln")
 overrides = {
-"box_margin_bottom": "5.0",
-"box_panel": "\"vn_textbox_default_panel.tres\"",
-"box_size": "Vector2(250, 50)",
 "name_label_box_offset": "Vector2(0, 10)",
 "next_indicator_animation": "2",
-"next_indicator_size": "Vector2(10, 10)",
-"text_size": "5.0",
-"text_use_global_size": "false"
+"next_indicator_size": "Vector2(10, 10)"
 }
 
 [sub_resource type="Resource" id="Resource_rdusg"]
@@ -50,9 +45,7 @@ script = ExtResource("2_q5m8f")
 scene = ExtResource("7_ppepm")
 overrides = {
 "boxes_fill_width": "false",
-"boxes_v_separation": "5.0",
-"font_size_custom": "5.0",
-"font_size_use_global": "false"
+"boxes_v_separation": "5.0"
 }
 
 [sub_resource type="Resource" id="Resource_5tcua"]
@@ -72,4 +65,4 @@ base_overrides = {
 "global_font_size": "8.0"
 }
 layers = Array[ExtResource("2_q5m8f")]([SubResource("Resource_mu0cp"), SubResource("Resource_48ret"), SubResource("Resource_k6m4d"), SubResource("Resource_xkjw4"), SubResource("Resource_rdusg"), SubResource("Resource_ysmlr"), SubResource("Resource_5tcua"), SubResource("Resource_n6jjm")])
-metadata/_latest_layer = 5
+metadata/_latest_layer = 3
