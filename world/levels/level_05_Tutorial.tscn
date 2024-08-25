@@ -31,9 +31,10 @@ position = Vector2(448, 192)
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="LeftRightMovingPlatform" parent="Platforms" instance=ExtResource("7_maejd")]
-position = Vector2(192, 200)
+position = Vector2(254, 208)
 
 [node name="CameraLimits" parent="." instance=ExtResource("5_io4or")]
+visible = false
 offset_left = 32.0
 offset_right = 672.0
 offset_bottom = 352.0
