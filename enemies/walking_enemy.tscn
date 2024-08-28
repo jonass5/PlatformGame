@@ -9,53 +9,54 @@
 [ext_resource type="PackedScene" uid="uid://c1br858hwlc05" path="res://enemies/enemy.tscn" id="7_nqtno"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6wr4c"]
-size = Vector2(8, 10)
+size = Vector2(16, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vhibs"]
-size = Vector2(16, 16)
+size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_olcer"]
-size = Vector2(17, 11)
+size = Vector2(34, 22)
 
 [node name="WalkingEnemy" type="CharacterBody2D"]
 collision_layer = 8
 floor_constant_speed = true
 floor_snap_length = 2.0
 script = ExtResource("1_mnclh")
+speed = 40.0
 
 [node name="Enemy" parent="." instance=ExtResource("7_nqtno")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -9)
+position = Vector2(0, -18)
 texture = ExtResource("1_cjplw")
 flip_h = true
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
+position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_6wr4c")
 
 [node name="FloorCast" type="RayCast2D" parent="."]
 position = Vector2(0, -5)
-target_position = Vector2(0, 12)
+target_position = Vector2(0, 24)
 
 [node name="BackCast" type="RayCast2D" parent="."]
 position = Vector2(0, -7)
-target_position = Vector2(-50, 0)
+target_position = Vector2(-100, 0)
 collision_mask = 4
 
 [node name="Hurtbox" parent="." instance=ExtResource("3_3ppk1")]
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(0, -8)
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_vhibs")
 
 [node name="Hitbox" parent="." instance=ExtResource("4_4fdfs")]
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-0.5, -10.5)
+position = Vector2(0, -20)
 shape = SubResource("RectangleShape2D_olcer")
 
 [node name="Stats" parent="." instance=ExtResource("5_b8a2b")]
@@ -65,10 +66,10 @@ max_health = 2
 position = Vector2(0, -7)
 
 [node name="EnemyHealthBar" parent="." instance=ExtResource("6_yumjq")]
-offset_left = -12.0
-offset_top = -21.0
-offset_right = 12.0
-offset_bottom = -17.0
+offset_left = -24.0
+offset_top = -43.0
+offset_right = 24.0
+offset_bottom = -35.0
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]

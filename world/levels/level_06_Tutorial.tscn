@@ -15,23 +15,23 @@ layer_0/tile_data = PackedInt32Array(65550, 65536, 2, 65549, 65536, 2, 65548, 65
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="CaveDoorToLevel05" parent="Doors" instance=ExtResource("3_jhtts")]
-position = Vector2(8, 96)
+position = Vector2(16, 192)
 new_level_path = "res://world/levels/level_05_Tutorial.tscn"
 
 [node name="CaveDoorToLevel06" parent="Doors" instance=ExtResource("3_jhtts")]
-position = Vector2(344, 96)
+position = Vector2(688, 192)
 new_level_path = "res://world/levels/level_07_Tutorial.tscn"
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="PlantEnemy" parent="Enemies" instance=ExtResource("7_g23ur")]
-position = Vector2(208, 96)
+position = Vector2(424, 192)
 
 [node name="PlantEnemy2" parent="Enemies" instance=ExtResource("7_g23ur")]
-position = Vector2(112, 32)
+position = Vector2(224, 64)
 rotation = 3.14159
 
 [node name="CameraLimits" parent="." instance=ExtResource("6_0kl1e")]
-offset_left = 16.0
-offset_right = 336.0
-offset_bottom = 176.0
+offset_left = 32.0
+offset_right = 672.0
+offset_bottom = 352.0

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://de63oipctsyad"]
+[gd_scene load_steps=3 format=3 uid="uid://de63oipctsyad"]
 
 [ext_resource type="Script" path="res://menus/pause_menu.gd" id="1_3nqcl"]
+[ext_resource type="Theme" uid="uid://b51i1llgdtccl" path="res://menus/menu_theme.tres" id="1_wdukd"]
 
 [node name="PauseMenu" type="ColorRect"]
 anchors_preset = 15
@@ -8,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_wdukd")
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_3nqcl")
 
@@ -23,25 +25,29 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(64, 16)
+custom_minimum_size = Vector2(128, 32)
 layout_mode = 2
 text = "GAME PAUSED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ResumeButton" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 32)
 layout_mode = 2
 text = "Resume Game"
 
 [node name="SettingsButton" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 32)
 layout_mode = 2
 text = "Settings"
 
 [node name="MenuButton" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 32)
 layout_mode = 2
 text = "Main Menu"
 
 [node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 32)
 layout_mode = 2
 text = "Quit"
 

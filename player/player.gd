@@ -14,15 +14,15 @@ enum FACING {
 	LEFT = -1
 }
 
-@export var acceleration = 512
-@export var max_velocity = 64
-@export var friction = 256
-@export var air_friction = 64
-@export var gravity = 200
-@export var jump_force = 128
-@export var max_fall_velocity = 128
-@export var wall_slide_speed = 42
-@export var max_wall_slide_speed = 128
+@export var acceleration = 1024
+@export var max_velocity = 128
+@export var friction = 512
+@export var air_friction = 128
+@export var gravity = 400
+@export var jump_force = 256
+@export var max_fall_velocity = 256
+@export var wall_slide_speed = 84
+@export var max_wall_slide_speed = 256
 
 var air_jump : bool = false
 var state : Callable = move_state
@@ -129,7 +129,7 @@ func wall_jump_check(wall_axis) -> void:
 		velocity.x = wall_axis * max_velocity
 		state = move_state
 		jump(jump_force * 0.75, false)
-		var wall_jump_effect_position = global_position + Vector2(wall_axis * 3.5, -2)
+		var wall_jump_effect_position = global_position + Vector2(wall_axis * 7, -4)
 		var wall_jump_effect = Utils.instanciate_scene_on_level(WallJumpEffectScene, wall_jump_effect_position)
 		wall_jump_effect.flip_h = wall_axis == FACING.LEFT
 

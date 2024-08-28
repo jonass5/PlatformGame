@@ -18,8 +18,8 @@ stretch_mode = 1
 
 [node name="Full" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 6.0
-offset_bottom = 12.0
+offset_right = 11.0
+offset_bottom = 24.0
 texture = ExtResource("2_sx33t")
 expand_mode = 1
 stretch_mode = 1

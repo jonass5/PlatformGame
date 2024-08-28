@@ -15,19 +15,19 @@ layer_0/tile_data = PackedInt32Array(65550, 65536, 2, 65549, 65536, 2, 65548, 65
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="CaveDoorToLevel06" parent="Doors" instance=ExtResource("3_cl8u2")]
-position = Vector2(8, 96)
+position = Vector2(16, 192)
 new_level_path = "res://world/levels/level_06_Tutorial.tscn"
 
 [node name="CaveDoorToLevel10" parent="Doors" instance=ExtResource("3_cl8u2")]
-position = Vector2(344, 96)
+position = Vector2(688, 192)
 new_level_path = "res://world/levels/level_10_Entrance_Hall.tscn"
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="FlyingEnemy" parent="Enemies" instance=ExtResource("6_pr463")]
-position = Vector2(288, 72)
+position = Vector2(520, 112)
 
 [node name="CameraLimits" parent="." instance=ExtResource("6_eu8vs")]
-offset_left = 16.0
-offset_right = 336.0
-offset_bottom = 152.0
+offset_left = 32.0
+offset_right = 672.0
+offset_bottom = 312.0

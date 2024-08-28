@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://5uy3efkbsge6" path="res://collisions/hurtbox.tscn" id="4_x8sb1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rqff0"]
-size = Vector2(8, 15)
+size = Vector2(16, 30)
 
 [sub_resource type="Animation" id="Animation_eyq4x"]
 length = 0.001
@@ -117,7 +117,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyie6"]
-size = Vector2(7, 15)
+size = Vector2(14, 30)
 
 [sub_resource type="Animation" id="Animation_fl18l"]
 length = 0.001
@@ -191,21 +191,21 @@ script = ExtResource("1_ti4np")
 
 [node name="PlayerBlaster" parent="." instance=ExtResource("2_wq8nx")]
 show_behind_parent = true
-position = Vector2(2, -8)
+position = Vector2(4, -16)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(0, -24)
 texture = ExtResource("1_e17rk")
 hframes = 12
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Sprite2D"]
-position = Vector2(2, 4)
+position = Vector2(4, 8)
 remote_path = NodePath("../../PlayerBlaster")
 update_rotation = false
 update_scale = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7.5)
+position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_rqff0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -214,6 +214,7 @@ libraries = {
 }
 
 [node name="Camera2D" parent="." instance=ExtResource("4_fd2go")]
+position = Vector2(0, -16)
 
 [node name="CoyoteJumpTimer" type="Timer" parent="."]
 wait_time = 0.15
@@ -227,7 +228,7 @@ one_shot = true
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(-0.5, -7.5)
+position = Vector2(-1, -15)
 shape = SubResource("RectangleShape2D_tyie6")
 
 [node name="BlinkingAnimationPlayer" type="AnimationPlayer" parent="."]
@@ -236,7 +237,7 @@ libraries = {
 }
 
 [node name="Center" type="Marker2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, -16)
 
 [connection signal="timeout" from="DropTimer" to="." method="_on_drop_timer_timeout"]
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]

@@ -15,5 +15,6 @@ texture = ExtResource("1_5vvs4")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
+theme_override_font_sizes/font_size = 12
 text = "3"
 vertical_alignment = 2

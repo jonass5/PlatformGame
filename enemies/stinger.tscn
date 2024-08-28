@@ -4,22 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://c24lf566dm3et" path="res://enemies/boss_stinger.png" id="2_7u518"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xm74b"]
-size = Vector2(21, 2)
+size = Vector2(42, 4)
 
 [node name="Stinger" instance=ExtResource("1_2s1ja")]
-speed = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="." index="0"]
 rotation = -0.785397
 texture = ExtResource("2_7u518")
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="1"]
-position = Vector2(0, -8.9407e-08)
-scale = Vector2(1, 0.2)
+position = Vector2(9.53674e-07, -1.78814e-07)
+scale = Vector2(2, 0.4)
 
 [node name="Hitbox" parent="." index="2"]
 collision_mask = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2(0.5, 0)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_xm74b")

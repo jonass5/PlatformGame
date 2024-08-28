@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cm38ky2ure14w" path="res://enemies/crawling_enemy.tscn" id="8_chyuj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6st3y"]
-size = Vector2(224, 7)
+size = Vector2(448, 16)
 
 [node name="Level04Tutorial" type="Node2D"]
 script = ExtResource("1_6cinw")
@@ -21,79 +21,78 @@ layer_0/tile_data = PackedInt32Array(65550, 65536, 2, 65549, 65536, 2, 65548, 65
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="CaveDoorToLevel03" parent="Doors" instance=ExtResource("3_pr7ss")]
-position = Vector2(8, 96)
+position = Vector2(16, 192)
 new_level_path = "res://world/levels/level_03_Tutorial.tscn"
 
 [node name="CaveDoorToLevel05" parent="Doors" instance=ExtResource("3_pr7ss")]
-position = Vector2(344, 96)
+position = Vector2(688, 192)
 new_level_path = "res://world/levels/level_05_Tutorial.tscn"
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="WalkingEnemy" parent="Enemies" instance=ExtResource("6_h6wy3")]
-position = Vector2(208, 96)
+position = Vector2(424, 192)
 
 [node name="CrawlingEnemy" parent="Enemies" instance=ExtResource("8_chyuj")]
-position = Vector2(112, 96)
+position = Vector2(224, 192)
 
 [node name="Spikes" type="Node2D" parent="."]
 
 [node name="Spikes2" parent="Spikes" instance=ExtResource("6_0agnu")]
-position = Vector2(48, 128)
+position = Vector2(96, 256)
 
 [node name="Spikes3" parent="Spikes" instance=ExtResource("6_0agnu")]
-position = Vector2(64, 128)
+position = Vector2(128, 256)
 
 [node name="Spikes4" parent="Spikes" instance=ExtResource("6_0agnu")]
-position = Vector2(80, 128)
+position = Vector2(160, 256)
 
 [node name="Spikes5" parent="Spikes" instance=ExtResource("6_0agnu")]
-position = Vector2(96, 128)
+position = Vector2(192, 256)
 
 [node name="Spikes6" parent="Spikes" instance=ExtResource("6_0agnu")]
-position = Vector2(112, 128)
+position = Vector2(224, 256)
 
 [node name="Spikes7" parent="Spikes" instance=ExtResource("6_0agnu")]
-position = Vector2(128, 128)
+position = Vector2(256, 256)
 
 [node name="Spikes8" parent="Spikes" instance=ExtResource("6_0agnu")]
-position = Vector2(144, 128)
+position = Vector2(288, 256)
 
 [node name="Spikes9" parent="Spikes" instance=ExtResource("6_0agnu")]
-position = Vector2(160, 128)
+position = Vector2(320, 256)
 
 [node name="Spikes10" parent="Spikes" instance=ExtResource("6_0agnu")]
-position = Vector2(176, 128)
+position = Vector2(352, 256)
 
 [node name="Spikes11" parent="Spikes" instance=ExtResource("6_0agnu")]
-position = Vector2(192, 128)
+position = Vector2(384, 256)
 
 [node name="Spikes12" parent="Spikes" instance=ExtResource("6_0agnu")]
-position = Vector2(208, 128)
+position = Vector2(416, 256)
 
 [node name="Spikes13" parent="Spikes" instance=ExtResource("6_0agnu")]
-position = Vector2(224, 128)
+position = Vector2(448, 256)
 
 [node name="Spikes14" parent="Spikes" instance=ExtResource("6_0agnu")]
-position = Vector2(240, 128)
+position = Vector2(480, 256)
 
 [node name="Spikes15" parent="Spikes" instance=ExtResource("6_0agnu")]
-position = Vector2(256, 128)
+position = Vector2(512, 256)
 
 [node name="CameraLimits" parent="." instance=ExtResource("5_8i2dp")]
-visible = false
-offset_left = 16.0
-offset_right = 336.0
-offset_bottom = 176.0
+offset_left = 32.0
+offset_right = 672.0
+offset_bottom = 360.0
 
 [node name="PositionTrigger" parent="." instance=ExtResource("8_4hg4w")]
-position = Vector2(48, 131)
+position = Vector2(96, 272)
 
 [node name="TargetPosition" parent="PositionTrigger" index="0"]
-position = Vector2(-19, -35)
+position = Vector2(-40, -80)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PositionTrigger"]
-position = Vector2(112, 9.5)
+position = Vector2(224, 8)
 shape = SubResource("RectangleShape2D_6st3y")
 
 [editable path="PositionTrigger"]

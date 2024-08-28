@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://g72de712su2d"]
 
 [ext_resource type="PackedScene" uid="uid://cov7bffo55ix6" path="res://menus/menu_components/input_map_button.tscn" id="1_bciuu"]
+[ext_resource type="Theme" uid="uid://b51i1llgdtccl" path="res://menus/menu_theme.tres" id="1_da6r0"]
 [ext_resource type="Script" path="res://menus/controls_menu.gd" id="1_keuih"]
-[ext_resource type="Theme" uid="uid://v155lwusxhu2" path="res://ui/default_theme.tres" id="2_ebe2j"]
 
 [node name="ControlsMenu" type="ColorRect"]
 anchors_preset = 15
@@ -10,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_da6r0")
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_keuih")
 
@@ -85,7 +86,6 @@ action_name = "Pause Game"
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer"]
 custom_minimum_size = Vector2(64, 16)
 layout_mode = 2
-theme = ExtResource("2_ebe2j")
 text = "Back"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ScrollContainer/BoxContainer/BackButton" to="." method="_on_back_button_pressed"]

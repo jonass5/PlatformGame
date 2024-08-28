@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cs3kyspr0gkui"]
 
+[ext_resource type="Theme" uid="uid://b51i1llgdtccl" path="res://menus/menu_theme.tres" id="1_dhom4"]
 [ext_resource type="PackedScene" uid="uid://dbvi8foqa1c82" path="res://ui/version_gui.tscn" id="1_ob5uv"]
 [ext_resource type="Script" path="res://menus/settings_menu.gd" id="1_tat8a"]
-[ext_resource type="Theme" uid="uid://v155lwusxhu2" path="res://ui/default_theme.tres" id="3_6l0no"]
 [ext_resource type="PackedScene" uid="uid://c165sgf7tgyiu" path="res://menus/menu_components/volume_checkbox.tscn" id="3_6u2r2"]
 [ext_resource type="PackedScene" uid="uid://daeqvns614qkb" path="res://menus/menu_components/volume_slider.tscn" id="4_ikssd"]
 
@@ -12,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_dhom4")
 color = Color(0, 0, 0, 1)
 script = ExtResource("1_tat8a")
 
@@ -33,6 +34,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="MasterSliderLabel" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 16)
 layout_mode = 2
 text = "Master Volume"
 
@@ -48,6 +50,7 @@ layout_mode = 2
 bus_name = "Master"
 
 [node name="MusicSliderLabel" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 16)
 layout_mode = 2
 text = "Music Volume"
 
@@ -63,6 +66,7 @@ layout_mode = 2
 bus_name = "Music"
 
 [node name="SoundSliderLabel" type="Label" parent="CenterContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(128, 16)
 layout_mode = 2
 text = "Sound Volume"
 
@@ -78,9 +82,8 @@ layout_mode = 2
 bus_name = "Sounds"
 
 [node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(64, 16)
+custom_minimum_size = Vector2(128, 32)
 layout_mode = 2
-theme = ExtResource("3_6l0no")
 text = "Back"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

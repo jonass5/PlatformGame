@@ -25,88 +25,88 @@ layer_0/tile_data = PackedInt32Array(14, 65536, 1, 13, 65536, 1, 12, 65536, 1, 1
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="TrapDoor" parent="Doors" instance=ExtResource("3_45lhf")]
-position = Vector2(32, 568)
+position = Vector2(64, 1136)
 new_level_path = "res://world/levels/level_max_06.tscn"
 
 [node name="CaveDoor2" parent="Doors" instance=ExtResource("3_02tfb")]
-position = Vector2(920, 64)
+position = Vector2(1840, 128)
 new_level_path = "res://world/levels/level_max_08.tscn"
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="CrawlingEnemy" parent="Enemies" instance=ExtResource("6_re4jj")]
-position = Vector2(224, 224)
+position = Vector2(448, 448)
 
 [node name="FlyingEnemy" parent="Enemies" instance=ExtResource("7_6nnyt")]
-position = Vector2(440, 96)
+position = Vector2(880, 192)
 
 [node name="WalkingEnemy" parent="Enemies" instance=ExtResource("8_inrsn")]
-position = Vector2(392, 512)
+position = Vector2(784, 1024)
 
 [node name="WalkingEnemy2" parent="Enemies" instance=ExtResource("8_inrsn")]
-position = Vector2(312, 80)
+position = Vector2(624, 160)
 
 [node name="PlantEnemy" parent="Enemies" instance=ExtResource("9_218bo")]
-position = Vector2(752, 32)
+position = Vector2(1504, 64)
 rotation = 3.14159
 
 [node name="PlantEnemy2" parent="Enemies" instance=ExtResource("9_218bo")]
-position = Vector2(824, 16)
+position = Vector2(1648, 32)
 rotation = 3.14159
+
+[node name="PlantEnemy3" parent="Enemies" instance=ExtResource("9_218bo")]
+position = Vector2(176, 672)
+rotation = -3.14159
 
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="UpDownMovingPlatform" parent="Platforms" instance=ExtResource("9_0d1kr")]
-position = Vector2(720, 400)
+position = Vector2(1440, 800)
 
 [node name="TriangleMovingPlatform" parent="Platforms" instance=ExtResource("11_8eum5")]
-position = Vector2(704, 216)
+position = Vector2(1408, 432)
 
 [node name="TriangleMovingPlatform2" parent="Platforms" instance=ExtResource("11_8eum5")]
-position = Vector2(744, 336)
+position = Vector2(1488, 672)
 
 [node name="UpDownMovingPlatform2" parent="Platforms" instance=ExtResource("9_0d1kr")]
-position = Vector2(816, 248)
+position = Vector2(1632, 496)
 
 [node name="UpDownMovingPlatform3" parent="Platforms" instance=ExtResource("9_0d1kr")]
-position = Vector2(825, 152)
+position = Vector2(1650, 304)
 
 [node name="LeftRightMovingPlatform" parent="Platforms" instance=ExtResource("12_qaebs")]
-position = Vector2(808, 96)
+position = Vector2(1616, 192)
 
 [node name="LeftRightMovingPlatform2" parent="Platforms" instance=ExtResource("12_qaebs")]
-position = Vector2(735, 128)
+position = Vector2(1470, 256)
 
 [node name="SaveStations" type="Node2D" parent="."]
 position = Vector2(1, 0)
 
 [node name="SaveStation" parent="SaveStations" instance=ExtResource("10_kb5yr")]
-position = Vector2(431, 384)
+position = Vector2(862, 768)
 
 [node name="Powerups" type="Node2D" parent="."]
 position = Vector2(0, 1)
 
-[node name="MissilePowerup" parent="." instance=ExtResource("11_cfiok")]
-position = Vector2(272, 488)
+[node name="MissilePowerup" parent="Powerups" instance=ExtResource("11_cfiok")]
+position = Vector2(544, 975)
 
 [node name="Bricks" type="Node2D" parent="."]
 
 [node name="Brick" parent="Bricks" instance=ExtResource("15_r2eby")]
-position = Vector2(496, 496)
+position = Vector2(992, 992)
 
 [node name="Brick2" parent="Bricks" instance=ExtResource("15_r2eby")]
-position = Vector2(512, 464)
+position = Vector2(1024, 928)
 
 [node name="Brick3" parent="Bricks" instance=ExtResource("15_r2eby")]
-position = Vector2(512, 480)
+position = Vector2(1024, 960)
 
 [node name="Brick4" parent="Bricks" instance=ExtResource("15_r2eby")]
-position = Vector2(512, 496)
+position = Vector2(1024, 992)
 
 [node name="CameraLimits" parent="." instance=ExtResource("12_11afd")]
-offset_right = 912.0
-offset_bottom = 544.0
-
-[node name="PlantEnemy" parent="." instance=ExtResource("9_218bo")]
-position = Vector2(88, 336)
-rotation = -3.14159
+offset_right = 1824.0
+offset_bottom = 1088.0

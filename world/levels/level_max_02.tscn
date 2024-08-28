@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://conrew7lgj0uw" path="res://world/position_trigger.tscn" id="11_rp2uw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6lwwj"]
-size = Vector2(1440, 16)
+size = Vector2(2880, 32)
 
 [node name="level_max_02" type="Node2D"]
 script = ExtResource("1_do6ma")
@@ -24,64 +24,63 @@ layer_0/tile_data = PackedInt32Array(1048575, 65536, 2, 1310719, 65536, 1, 12451
 [node name="Doors" type="Node2D" parent="."]
 
 [node name="CaveDoor" parent="Doors" instance=ExtResource("3_ygimp")]
-position = Vector2(-8, 288)
+position = Vector2(-16, 576)
 new_level_path = "res://world/levels/level_max_01.tscn"
 
 [node name="CaveDoor2" parent="Doors" instance=ExtResource("3_ygimp")]
-position = Vector2(1480, 288)
+position = Vector2(2960, 576)
 new_level_path = "res://world/levels/level_max_03.tscn"
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="CrawlingEnemy" parent="Enemies" instance=ExtResource("5_5afqs")]
-position = Vector2(880, 253)
+position = Vector2(1760, 506)
 
 [node name="FlyingEnemy" parent="Enemies" instance=ExtResource("6_wbqax")]
-position = Vector2(1432, 136)
+position = Vector2(2864, 272)
 
 [node name="FlyingEnemy2" parent="Enemies" instance=ExtResource("6_wbqax")]
-position = Vector2(1248, 120)
+position = Vector2(2496, 240)
 
 [node name="WalkingEnemy" parent="Enemies" instance=ExtResource("7_bv87f")]
-position = Vector2(656, 288)
+position = Vector2(1312, 576)
 
 [node name="WalkingEnemy2" parent="Enemies" instance=ExtResource("7_bv87f")]
-position = Vector2(272, 256)
+position = Vector2(544, 512)
 
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="LeftRightMovingPlatform" parent="Platforms" instance=ExtResource("9_v6xni")]
-position = Vector2(536, 296)
+position = Vector2(1072, 592)
 
 [node name="LeftRightMovingPlatform2" parent="Platforms" instance=ExtResource("9_v6xni")]
-position = Vector2(1168, 248)
+position = Vector2(2336, 496)
 
 [node name="SaveStations" type="Node2D" parent="."]
 position = Vector2(1, 0)
 
 [node name="SaveStation" parent="SaveStations" instance=ExtResource("10_qf82o")]
-position = Vector2(159, 288)
+position = Vector2(318, 576)
 
 [node name="Powerups" type="Node2D" parent="."]
 position = Vector2(0, 3)
 
 [node name="MissilePowerup" parent="Powerups" instance=ExtResource("10_bab4s")]
-position = Vector2(960, 197)
+position = Vector2(1920, 394)
 
 [node name="PositionTrigger" parent="." instance=ExtResource("11_rp2uw")]
-position = Vector2(48, 400)
+position = Vector2(96, 800)
 
 [node name="TargetPosition" parent="PositionTrigger" index="0"]
-position = Vector2(-24, -112)
+position = Vector2(-48, -224)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PositionTrigger"]
-position = Vector2(720, 8)
+position = Vector2(1440, 16)
 shape = SubResource("RectangleShape2D_6lwwj")
 
 [node name="CameraLimits" parent="." instance=ExtResource("11_is4c6")]
-visible = false
-offset_top = 104.0
-offset_right = 1472.0
-offset_bottom = 376.0
+offset_top = 176.0
+offset_right = 2944.0
+offset_bottom = 752.0
 
 [editable path="PositionTrigger"]

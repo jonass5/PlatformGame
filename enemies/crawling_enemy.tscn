@@ -8,40 +8,40 @@
 [ext_resource type="PackedScene" uid="uid://bwdq65xhu11si" path="res://enemies/enemy_health_bar.tscn" id="6_45q5d"]
 [ext_resource type="PackedScene" uid="uid://c1br858hwlc05" path="res://enemies/enemy.tscn" id="7_67ch4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kp5i0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcv7w"]
 atlas = ExtResource("1_cpv5o")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6vbhl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppcw7"]
 atlas = ExtResource("1_cpv5o")
-region = Rect2(16, 0, 16, 16)
+region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m3u6n"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0cdr"]
 atlas = ExtResource("1_cpv5o")
-region = Rect2(32, 0, 16, 16)
+region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kf0vu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg7dl"]
 atlas = ExtResource("1_cpv5o")
-region = Rect2(48, 0, 16, 16)
+region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lq83v"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsi58"]
 atlas = ExtResource("1_cpv5o")
-region = Rect2(32, 0, 16, 16)
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_itp15"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kp5i0")
+"texture": SubResource("AtlasTexture_xcv7w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6vbhl")
+"texture": SubResource("AtlasTexture_ppcw7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_m3u6n")
+"texture": SubResource("AtlasTexture_e0cdr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kf0vu")
+"texture": SubResource("AtlasTexture_rg7dl")
 }],
 "loop": true,
 "name": &"crawl",
@@ -49,7 +49,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lq83v")
+"texture": SubResource("AtlasTexture_jsi58")
 }],
 "loop": true,
 "name": &"fall",
@@ -57,18 +57,20 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nuis5"]
-size = Vector2(16, 8)
+size = Vector2(28, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nswa8"]
-size = Vector2(10, 5)
+size = Vector2(20, 7)
 
 [node name="CrawlingEnemy" type="Node2D"]
 script = ExtResource("1_kh8e2")
+max_speed = 400.0
+spin_speed = 1200.0
 
 [node name="Enemy" parent="." instance=ExtResource("7_67ch4")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_itp15")
 animation = &"fall"
 autoplay = "crawl"
@@ -78,24 +80,24 @@ position = Vector2(0, -8)
 collision_layer = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2(0, 4)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_nuis5")
 
 [node name="Hitbox" parent="." instance=ExtResource("3_utb2a")]
 collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -2.5)
+position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_nswa8")
 
 [node name="FloorCast" type="RayCast2D" parent="."]
 position = Vector2(0, -3)
-target_position = Vector2(0, 8)
+target_position = Vector2(0, 16)
 collision_mask = 3
 
 [node name="WallCast" type="RayCast2D" parent="."]
 position = Vector2(0, -4)
-target_position = Vector2(4, 0)
+target_position = Vector2(8, 0)
 collision_mask = 3
 
 [node name="Stats" type="Node" parent="."]
@@ -103,10 +105,10 @@ script = ExtResource("5_4lvfk")
 max_health = 2
 
 [node name="EnemyHealthBar" parent="." instance=ExtResource("6_45q5d")]
-offset_left = -11.0
-offset_top = -13.0
-offset_right = 11.0
-offset_bottom = -9.0
+offset_left = -22.0
+offset_top = -30.0
+offset_right = 22.0
+offset_bottom = -22.0
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]

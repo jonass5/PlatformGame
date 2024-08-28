@@ -56,10 +56,11 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3io5n"]
-size = Vector2(6, 4)
+size = Vector2(16, 12)
 
 [node name="Bullet" instance=ExtResource("1_wreq3")]
 script = ExtResource("2_xx6yq")
+speed = 400
 
 [node name="VisibleOnScreenNotifier2D" parent="." index="0"]
 position = Vector2(-128, 0)

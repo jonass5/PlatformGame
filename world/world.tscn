@@ -12,7 +12,7 @@
 script = ExtResource("1_pxeu2")
 
 [node name="Player" parent="." instance=ExtResource("1_mkr1u")]
-position = Vector2(73, 95)
+position = Vector2(157, 192)
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -24,9 +24,9 @@ offset_bottom = 3.0
 
 [node name="MissleUI" parent="GUI" instance=ExtResource("7_p6sfx")]
 offset_left = 3.0
-offset_top = 17.0
-offset_right = 16.0
-offset_bottom = 27.0
+offset_top = 34.0
+offset_right = 30.0
+offset_bottom = 54.0
 
 [node name="PauseGui" parent="GUI" instance=ExtResource("5_x0wdm")]
 

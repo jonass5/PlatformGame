@@ -5,8 +5,8 @@
 [ext_resource type="StyleBox" uid="uid://i3iy8accfawk" path="res://ui/health_bar_fill_style_box.tres" id="3_5vp6w"]
 
 [node name="EnemyHealthBar" type="ProgressBar"]
-offset_right = 317.0
-offset_bottom = 21.0
+offset_right = 634.0
+offset_bottom = 42.0
 theme = ExtResource("1_a5mhr")
 theme_override_styles/background = ExtResource("2_o2sk8")
 theme_override_styles/fill = ExtResource("3_5vp6w")
