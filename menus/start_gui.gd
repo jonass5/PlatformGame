@@ -26,4 +26,3 @@ func show_menu(menu_name: Menu.Name) -> void:
 			controls_menu.show()
 		Menu.Name.default_menu:
 			start_menu.show()
-

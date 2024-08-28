@@ -39,4 +39,3 @@ func _on_stats_no_health():
 func _on_hurtbox_hurt(_hitbox, damage: int):
 	stats.health -= damage
 	enemy.hurt(self)
-

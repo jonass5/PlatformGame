@@ -47,4 +47,3 @@ func get_yoffset(player_global_position_y: float, door_global_position_y: float)
 
 func _on_timer_timeout():
 	active = true
-

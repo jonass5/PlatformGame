@@ -33,4 +33,3 @@ func get_blaster_direction() -> int:
 	if blaster_sprite.rotation > 3.14 / 2 or blaster_sprite.rotation < -3.14 / 2:
 		return -1
 	return 1
-
