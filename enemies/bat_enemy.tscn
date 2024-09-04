@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dusxwpcemdbsx"]
+[gd_scene load_steps=12 format=3 uid="uid://dusxwpcemdbsx"]
 
 [ext_resource type="PackedScene" uid="uid://cyctgnqsxsnqf" path="res://enemies/flying_enemy.tscn" id="1_o77qy"]
 [ext_resource type="Texture2D" uid="uid://c1t60tlbnassf" path="res://enemies/Bat_red.png" id="2_5fj63"]
@@ -46,8 +46,34 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rkv75"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pxehj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_43jvm"]
+radius = 8.0
+
 [node name="BatEnemy" instance=ExtResource("1_o77qy")]
 
 [node name="AnimatedSprite2D" parent="." index="1"]
 sprite_frames = SubResource("SpriteFrames_v6ad1")
-frame_progress = 0.0
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_rkv75")
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_pxehj")
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_43jvm")
+
+[node name="Stats" parent="." index="5"]
+max_health = 6
+
+[node name="VisibleOnScreenNotifier2D" parent="." index="6"]
+position = Vector2(2.38419e-07, -2.5)
+scale = Vector2(1.6, 1.15)
