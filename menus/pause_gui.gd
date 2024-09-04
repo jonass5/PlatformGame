@@ -46,4 +46,3 @@ func show_menu(menu_name: Menu.Name) -> void:
 func _on_menu_closed():
 	hide_menus()
 	paused = false
-

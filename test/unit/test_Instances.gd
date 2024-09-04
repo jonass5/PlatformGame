@@ -51,4 +51,3 @@ func test_should_retrieve_data_from_stash():
 	
 	# tear down
 	player.free()
-

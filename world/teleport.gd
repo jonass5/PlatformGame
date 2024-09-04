@@ -18,4 +18,3 @@ func teleport(body):
 		if not targets.is_empty():
 			body.global_position = targets[0].global_position
 			Utils.instanciate_scene_on_level(TeleportEffectScene, body.global_position + OFFSET)
-
