@@ -9,7 +9,7 @@ func _enter_tree():
 
 
 func _ready():
-	RenderingServer.set_default_clear_color(Color.BLACK)
+	RenderingServer.set_default_clear_color(Color(0.8, 0.8, 0.8))
 	Events.door_entered.connect(change_levels)
 	Events.player_died.connect(game_over)
 	Music.play(Music.main_theme)
