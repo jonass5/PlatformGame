@@ -108,6 +108,7 @@ offset_left = -26.0
 offset_top = -32.0
 offset_right = 26.0
 offset_bottom = -24.0
+metadata/_edit_use_anchors_ = true
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]
