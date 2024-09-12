@@ -39,4 +39,3 @@ func play_with_distance(sound_stream: AudioStream, position: Vector2, pitch_scal
 		Sound.play(sound_stream, pitch_scale, -10.0)
 	elif volume_cluster == 3:
 		Sound.play(sound_stream, pitch_scale, -20.0)
-
