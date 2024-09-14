@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yxrx5gsf7c5l"
-path="res://.godot/imported/white_square.png-f262837e7753439369a9e7ebec4edcf0.ctex"
+uid="uid://dua1tj1ypuhcw"
+path="res://.godot/imported/save_station_square.png-73be18abadf760f20c7e895ab79eac10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ui/white_square.png"
-dest_files=["res://.godot/imported/white_square.png-f262837e7753439369a9e7ebec4edcf0.ctex"]
+source_file="res://world/save_station_square.png"
+dest_files=["res://.godot/imported/save_station_square.png-73be18abadf760f20c7e895ab79eac10.ctex"]
 
 [params]
 
