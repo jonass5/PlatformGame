@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diou8mo5yd8ur"
-path="res://.godot/imported/double_jump_effect.png-46a852ae312251d37afb22a48e07a37f.ctex"
+uid="uid://c1t60tlbnassf"
+path="res://.godot/imported/Bat_red.png-7006f278709a7081482a13b86a0a8597.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://effects/double_jump_effect.png"
-dest_files=["res://.godot/imported/double_jump_effect.png-46a852ae312251d37afb22a48e07a37f.ctex"]
+source_file="res://enemies/Bat_red.png"
+dest_files=["res://.godot/imported/Bat_red.png-7006f278709a7081482a13b86a0a8597.ctex"]
 
 [params]
 

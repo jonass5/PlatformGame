@@ -6,6 +6,11 @@ extends Node
 @onready var controls_menu = $ControlsMenu
 
 
+func _ready() -> void:
+	if not OS.has_feature("editor"):
+		get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN
+
+
 func _on_menu_changed(menu_name):
 	Sound.play(Sound.click, 1.0, -10.0)
 	hide_menus()

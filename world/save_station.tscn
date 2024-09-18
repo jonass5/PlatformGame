@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://world/save_station.gd" id="1_8y83n"]
 [ext_resource type="Texture2D" uid="uid://bxhe1giio8g5o" path="res://world/save_station.png" id="1_85lrm"]
-[ext_resource type="Texture2D" uid="uid://yxrx5gsf7c5l" path="res://ui/white_square.png" id="3_s2uet"]
+[ext_resource type="Texture2D" uid="uid://dua1tj1ypuhcw" path="res://world/save_station_square.png" id="3_wh5yk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7pfl"]
 size = Vector2(32, 40)
@@ -66,7 +66,7 @@ shape = SubResource("RectangleShape2D_k7pfl")
 [node name="WhiteSpaceSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -28)
 scale = Vector2(1e-05, 1.25)
-texture = ExtResource("3_s2uet")
+texture = ExtResource("3_wh5yk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -34,4 +34,3 @@ func create_button(action_event: InputEvent):
 
 func is_input_to_display_on_screen(action_event: InputEvent) -> bool:
 	return action_event.get_class() == "InputEventKey" || action_event.get_class() == "InputEventMouseButton"
-

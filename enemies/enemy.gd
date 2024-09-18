@@ -16,5 +16,3 @@ func no_health(enemy):
 
 func hurt(enemy):
 	enemy.enemy_health_bar.value = enemy.stats.health
-
-
