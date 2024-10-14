@@ -1,0 +1,90 @@
+[gd_scene load_steps=22 format=3 uid="uid://wwlyypybgp76"]
+
+[ext_resource type="PackedScene" uid="uid://bkkptul236bce" path="res://world/levels/level_01_Tutorial.tscn" id="1_n4n3w"]
+[ext_resource type="PackedScene" uid="uid://m7drw43nopo4" path="res://world/levels/level_02_Tutorial.tscn" id="2_bs2q4"]
+[ext_resource type="PackedScene" uid="uid://b1m54erkr6xg1" path="res://world/levels/level_03_Tutorial.tscn" id="3_6a7ak"]
+[ext_resource type="PackedScene" uid="uid://cei8k8v1djmqy" path="res://world/levels/level_04_Tutorial.tscn" id="4_nruqf"]
+[ext_resource type="PackedScene" uid="uid://blhqkxmmy6216" path="res://world/levels/level_05_Tutorial.tscn" id="5_oxdgp"]
+[ext_resource type="PackedScene" uid="uid://dl6th6rcfwmj5" path="res://world/levels/level_06_Tutorial.tscn" id="6_njemo"]
+[ext_resource type="PackedScene" uid="uid://b37t61xuvj3c" path="res://world/levels/level_07_Tutorial.tscn" id="7_ng1qo"]
+[ext_resource type="PackedScene" uid="uid://bxw0c6cek6th2" path="res://world/levels/level_10_Entrance_Hall.tscn" id="8_61wun"]
+[ext_resource type="PackedScene" uid="uid://crus7p2oa5py2" path="res://world/levels/level_30_Cave.tscn" id="9_afdxm"]
+[ext_resource type="PackedScene" uid="uid://xdxy33creuwc" path="res://world/levels/level_40_Jungle_Boss.tscn" id="10_gx4uw"]
+[ext_resource type="PackedScene" uid="uid://ugakarccc4xp" path="res://world/levels/level_41_Jungle.tscn" id="11_plxls"]
+[ext_resource type="PackedScene" uid="uid://bvcyil22qac2u" path="res://world/levels/level_42_Jungle.tscn" id="12_6rmmh"]
+[ext_resource type="PackedScene" uid="uid://bfvm4764mjwup" path="res://world/levels/level_43_Jungle.tscn" id="13_b3b6h"]
+[ext_resource type="PackedScene" uid="uid://ufcpa8iq0hx7" path="res://world/levels/level_max_01.tscn" id="14_ojjxx"]
+[ext_resource type="PackedScene" uid="uid://dp1w2klcnlqs1" path="res://world/levels/level_max_02.tscn" id="15_mvq30"]
+[ext_resource type="PackedScene" uid="uid://by7uvk5wuduno" path="res://world/levels/level_max_03.tscn" id="16_d6ump"]
+[ext_resource type="PackedScene" uid="uid://b0u51htmojpn" path="res://world/levels/level_max_04.tscn" id="17_raq67"]
+[ext_resource type="PackedScene" uid="uid://dw50qo6el4w6t" path="res://world/levels/level_max_05.tscn" id="18_ircor"]
+[ext_resource type="PackedScene" uid="uid://0qqdo5dywty3" path="res://world/levels/level_max_06.tscn" id="19_6uqwg"]
+[ext_resource type="PackedScene" uid="uid://cxnfico8lsr6p" path="res://world/levels/level_max_07.tscn" id="20_as0eo"]
+[ext_resource type="PackedScene" uid="uid://c2on8vha7rsn2" path="res://world/levels/level_max_08.tscn" id="21_cf5ix"]
+
+[node name="Overview" type="Node2D"]
+scale = Vector2(0.1, 0.1)
+
+[node name="Level01Tutorial" parent="." instance=ExtResource("1_n4n3w")]
+position = Vector2(33, 33)
+
+[node name="Level02Tutorial" parent="." instance=ExtResource("2_bs2q4")]
+position = Vector2(760, 40)
+
+[node name="Level03Tutorial" parent="." instance=ExtResource("3_6a7ak")]
+position = Vector2(1530, 50)
+
+[node name="Level04Tutorial" parent="." instance=ExtResource("4_nruqf")]
+position = Vector2(2300, 50)
+
+[node name="Level05Tutorial" parent="." instance=ExtResource("5_oxdgp")]
+position = Vector2(3070, 40)
+
+[node name="Level06Tutorial" parent="." instance=ExtResource("6_njemo")]
+position = Vector2(3840, 40.0001)
+
+[node name="Level07Tutorial" parent="." instance=ExtResource("7_ng1qo")]
+position = Vector2(4590, 40)
+
+[node name="Level10EntranceHall" parent="." instance=ExtResource("8_61wun")]
+position = Vector2(5350, -100)
+
+[node name="Level30Cave" parent="." instance=ExtResource("9_afdxm")]
+position = Vector2(3880, -690)
+
+[node name="Level40JungleBoss" parent="." instance=ExtResource("10_gx4uw")]
+position = Vector2(6060, -420)
+
+[node name="Level41Jungle" parent="." instance=ExtResource("11_plxls")]
+position = Vector2(6850, -420)
+
+[node name="Level42Jungle" parent="." instance=ExtResource("12_6rmmh")]
+position = Vector2(8980, -890)
+
+[node name="Level43Jungle" parent="." instance=ExtResource("13_b3b6h")]
+position = Vector2(8980, -2030)
+scale = Vector2(1, 1)
+
+[node name="level_max_01" parent="." instance=ExtResource("14_ojjxx")]
+position = Vector2(6110, 390)
+
+[node name="level_max_02" parent="." instance=ExtResource("15_mvq30")]
+position = Vector2(7250, -60)
+
+[node name="level_max_03" parent="." instance=ExtResource("16_d6ump")]
+position = Vector2(10330, -49.9999)
+
+[node name="level_max_04" parent="." instance=ExtResource("17_raq67")]
+position = Vector2(12150, 1010)
+
+[node name="level_max_05" parent="." instance=ExtResource("18_ircor")]
+position = Vector2(12840, 2090)
+
+[node name="level_max_06" parent="." instance=ExtResource("19_6uqwg")]
+position = Vector2(15150, 1950)
+
+[node name="level_max_07" parent="." instance=ExtResource("20_as0eo")]
+position = Vector2(15530, 760)
+
+[node name="level_max_08" parent="." instance=ExtResource("21_cf5ix")]
+position = Vector2(17430, 690)
